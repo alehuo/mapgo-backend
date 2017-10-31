@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
+    "start": "tsc && node src/app.js",
     "build": "npm test && tsc",
     "pretest": "tsc",
     "test": "nyc mocha",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.44",
+    "@types/node": "^8.0.47",
     "assert": "^1.4.1",
     "chai": "^4.1.2",
     "codecov": "^3.0.0",
