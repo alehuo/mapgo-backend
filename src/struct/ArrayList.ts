@@ -43,7 +43,7 @@ export default class ArrayList < T > {
     /**
      * Grows the array if needed.
      */
-    private grow() : void {
+    public grow() : void {
         let tmpData: Array < T > = new Array(this.data.length * 3);
         for (var i = 0; i < this.index; i++) {
             tmpData[i] = this.data[i];
@@ -61,4 +61,6 @@ export default class ArrayList < T > {
      * Returns the size of the array
      */
     public size() : number {return this.index;}
+
+    public dataLength() : number {return this.data.length;}
 }
