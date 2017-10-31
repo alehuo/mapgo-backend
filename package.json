@@ -7,7 +7,7 @@
     "start": "tsc && node dist/app.js",
     "build": "npm test && tsc",
     "pretest": "tsc",
-    "test": "nyc mocha dist/test/**/*.js",
+    "test": "nyc mocha",
     "posttest": "nyc report --reporter=json && codecov -f coverage/*.json"
   },
   "keywords": [],
