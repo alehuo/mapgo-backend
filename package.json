@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "build": "tsc",
+    "build": "npm test && tsc",
     "test": "mocha -r ts-node/register test/**.ts"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Aleksi Huotala",
+  "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.44",
