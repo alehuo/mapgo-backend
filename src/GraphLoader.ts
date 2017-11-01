@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import JsonNode from './struct/JsonNode';
+import JsonNode from './interface/JsonNode';
 
 /**
  * Loads the graph from JSON file.
