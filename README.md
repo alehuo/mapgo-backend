@@ -12,7 +12,7 @@ Projektin viikkoraportit tulevat löytymään back endin repositoriosta.
 
 ## Projekti
 
-Projektin ideana on toteuttaa web-sivu, joka piirtää karttoja. Karttojen piirtämiseen käytetään reittienhakualgoritmejä, joita ovat mm. Dijkstran algoritmi ja A* -algoritmi.
+Projektin ideana on toteuttaa web-sivu, joka piirtää karttoja. Karttojen piirtämiseen käytetään reittienhakualgoritmejä, joita ovat mm. Dijkstran algoritmi, BFS ja eräs oma algoritmi.
 
 Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit koodataan TypeScriptillä. Front end tulee olemaan yksisivuinen Reactilla toteutettu sovellus.
 
@@ -42,7 +42,7 @@ Weekly progress reports will be found in the back end repository (you are curren
 
 ## Project
 
-The target of this project is to implement a web application that draws maps using various path finding algorithms. For example, Dijkstra's and A* algorithms will be used.
+The target of this project is to implement a web application that draws maps using various path finding algorithms. For example, Dijkstra's, BFS and an own algorithm will be used.
 
 ## Links
 
