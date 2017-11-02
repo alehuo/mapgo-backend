@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/alehuo/mapgo-backend.svg?branch=master)](https://travis-ci.org/alehuo/mapgo-backend)
 [![codecov](https://codecov.io/gh/alehuo/mapgo-backend/branch/master/graph/badge.svg)](https://codecov.io/gh/alehuo/mapgo-backend)
 [![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=102)](https://opensource.org/licenses/mit-license.php)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Tämä repositorio sisältää back endin lähdekoodin Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit -kurssin projektille. Front endin lähdekoodi löytyy [täältä](https://github.com/alehuo/mapgo-frontend). 
 
