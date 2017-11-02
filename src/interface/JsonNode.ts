@@ -2,6 +2,7 @@ import JsonEdge from './JsonEdge';
 
 /**
  * JsonNode interface.
+ * @author Aleksi Huotala
  */
 interface JsonNode {
     /**

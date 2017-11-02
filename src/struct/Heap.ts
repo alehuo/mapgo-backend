@@ -2,6 +2,7 @@ import Comparator from './../interface/Comparator';
 
 /**
  * Minimum heap implementation.
+ * @author Aleksi Huotala
  */
 export default class Heap < T > {
 
@@ -146,6 +147,10 @@ export default class Heap < T > {
             que2[i] = this.queue[i];
         }
         return que2;
+    }
+
+    public isEmpty() : boolean {
+        return this.heapSize == 0;
     }
 
 }

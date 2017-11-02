@@ -1,5 +1,6 @@
 /**
  * JsonEdge interface.
+ * @author Aleksi Huotala
  */
 interface JsonEdge {
     /**

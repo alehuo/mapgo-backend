@@ -3,6 +3,7 @@
  *
  * @class ArrayList
  * @template T Types of the values that will be stored on the ArrayList.
+ * @author Aleksi Huotala
  */
 export default class ArrayList < T > {
 

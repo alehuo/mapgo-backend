@@ -1,5 +1,6 @@
 /**
  * Comparator interface.
+ * @author Aleksi Huotala
  */
 interface Comparator < T > {
     /**
