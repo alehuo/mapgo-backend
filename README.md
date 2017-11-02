@@ -3,6 +3,8 @@
 
 [![Build Status](https://travis-ci.org/alehuo/mapgo-backend.svg?branch=master)](https://travis-ci.org/alehuo/mapgo-backend)
 [![codecov](https://codecov.io/gh/alehuo/mapgo-backend/branch/master/graph/badge.svg)](https://codecov.io/gh/alehuo/mapgo-backend)
+[![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=102)](https://opensource.org/licenses/mit-license.php)
 
 Tämä repositorio sisältää back endin lähdekoodin Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit -kurssin projektille. Front endin lähdekoodi löytyy [täältä](https://github.com/alehuo/mapgo-frontend). 
 
@@ -11,6 +13,8 @@ Projektin viikkoraportit tulevat löytymään back endin repositoriosta.
 ## Projekti
 
 Projektin ideana on toteuttaa web-sivu, joka piirtää karttoja. Karttojen piirtämiseen käytetään reittienhakualgoritmejä, joita ovat mm. Dijkstran algoritmi ja A* -algoritmi.
+
+Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit koodataan TypeScriptillä. Front end tulee olemaan yksisivuinen Reactilla toteutettu sovellus.
 
 ## Linkkejä
 
@@ -21,6 +25,10 @@ Projektin ideana on toteuttaa web-sivu, joka piirtää karttoja. Karttojen piirt
 ### Viikkoraportit
 
 - [Viikkoraportti 1](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti1.md)
+
+## Lisenssi
+
+Tämä projekti on lisensoitu lisenssillä GNU General Public License 3.0.
 
 -------------------------------------------
 
@@ -45,3 +53,7 @@ The target of this project is to implement a web application that draws maps usi
 ### Weekly progress reports
 
 - [Weekly progress report 1](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti1.md)
+
+## License
+
+This project has been licensed under the GNU General Public License 3.0.
