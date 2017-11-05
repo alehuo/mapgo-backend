@@ -18,13 +18,13 @@ Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit 
 
 ## Linkkejä
 
-### Front end
-
-[Front endin GitHub-repositorio](https://github.com/alehuo/mapgo-frontend)
+### [Front endin GitHub-repositorio](https://github.com/alehuo/mapgo-frontend)
 
 ### Viikkoraportit
 
 - [Viikkoraportti 1](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti1.md)
+
+### [Määrittelydokumentaatio](https://github.com/alehuo/mapgo-backend/blob/master/doc/määrittelydokumentaatio.md)
 
 ## Lisenssi
 
