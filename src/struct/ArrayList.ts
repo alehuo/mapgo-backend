@@ -84,13 +84,6 @@ export default class ArrayList < T > {
     public dataLength() : number {return this.data.length;}
 
     /**
-     * Clears the array.
-     */
-    public clear() : void {
-        this.constructor(10);
-    }
-
-    /**
      * Returns the ArrayList as an array.
      */
     public asArray() : T[] {
