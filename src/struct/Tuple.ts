@@ -1,3 +1,6 @@
+/**
+ * Tuple class for encapsulating two objects.
+ */
 class Tuple < T,
 K > {
 

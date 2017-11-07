@@ -1,10 +1,8 @@
-import ArrayList from "../struct/ArrayList";
-import Step from "./../struct/Step";
-import Edge from "./../struct/Edge";
-import Coordinate from "./../struct/Coordinate";
+import {ArrayList, Step, Edge, Coordinate} from "../struct";
 
 /**
- * Algorithm interface is used to
+ * Algorithm interface is used to standardize different path finding algorithms.
+ * @author Aleksi Huotala
  */
 abstract class Algorithm {
 

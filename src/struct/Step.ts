@@ -1,6 +1,4 @@
-import ArrayList from "./ArrayList";
-import Coordinate from "./Coordinate";
-import Road from "./Road";
+import {ArrayList, Coordinate, Road} from "./";
 
 /**
  * Step class.
@@ -16,7 +14,7 @@ class Step {
      * Constructor.
      * @param arrSize Array size (number of roads per step)
      */
-    constructor(arrSize: number) {
+    constructor(arrSize : number) {
         this.r = new ArrayList < Road > (arrSize);
     }
 

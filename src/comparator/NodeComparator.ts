@@ -1,5 +1,5 @@
 import Comparator from './../interface/Comparator';
-import Node from './../struct/Node';
+import {Node} from './../struct';
 
 /**
  * Node comparator that orders the nodes in an ascending order by its weight.

@@ -1,11 +1,8 @@
 import * as fs from 'fs';
 import JsonNode from './../interface/JsonNode';
 import JsonEdge from './../interface/JsonEdge';
-import Edge from './../struct/Edge';
-import ArrayList from './../struct/ArrayList';
+import {Edge, ArrayList, Tuple, Coordinate} from './../struct';
 import {Arrays} from './../utils';
-import Tuple from './../struct/Tuple';
-import Coordinate from './../struct/Coordinate';
 
 /**
  * Graphloader.

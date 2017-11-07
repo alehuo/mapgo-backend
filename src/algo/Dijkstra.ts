@@ -1,13 +1,14 @@
-import Heap from './../struct/Heap';
-import Comparator from './../interface/Comparator';
-import ArrayList from './../struct/ArrayList';
-import Node from './../struct/Node';
-import Edge from './../struct/Edge';
+import {
+    Heap,
+    ArrayList,
+    Node,
+    Edge,
+    Coordinate,
+    Step
+} from './../struct';
 import Algorithm from './../struct/Algorithm';
-import NodeComparator from './../comparator/NodeComparator';
-import Step from './../struct/Step';
 import {Arrays} from '../utils';
-import Coordinate from './../struct/Coordinate';
+import NodeComparator from './../comparator/NodeComparator';
 
 /**
  * Dijkstra's algorithm.

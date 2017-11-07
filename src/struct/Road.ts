@@ -1,4 +1,4 @@
-import Coordinate from './Coordinate';
+import {Coordinate} from './';
 
 /**
  * Road class. This class is used to store starting and ending coordinates of a road.

@@ -1,4 +1,4 @@
-import JsonEdge from './JsonEdge';
+import {JsonEdge} from './';
 
 /**
  * JsonNode interface.
