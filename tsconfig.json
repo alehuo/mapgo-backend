@@ -4,10 +4,16 @@
     "module": "commonjs",
     "experimentalDecorators": true,
     "allowJs": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "rootDirs": [
+      "src", "test"
+    ],
+    "lib": ["es6"]
   },
   "include": [
-    "**/*.ts"
+    "./src/**/*.ts",
+    "./test/**/*.ts"
   ],
   "exclude": [
     "node_modules"

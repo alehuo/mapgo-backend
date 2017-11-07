@@ -4,3 +4,5 @@ coverage/
 src/**/*.js
 test/**/*.js
 *.map
+dist/
+log.txt
