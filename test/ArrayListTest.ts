@@ -29,6 +29,7 @@ import ArrayList from '../src/struct/ArrayList';
      * Big test 1
      * TODO: Add testing for array's dynamic size adjustment
      */
+    @timeout(10000)
     @test big1() {
         let arr : ArrayList < number > = new ArrayList < number > ();
 

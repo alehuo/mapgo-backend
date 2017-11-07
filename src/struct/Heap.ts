@@ -1,4 +1,5 @@
 import Comparator from './../interface/Comparator';
+import {Arrays} from '../utils/index';
 
 /**
  * Minimum heap implementation.
@@ -32,7 +33,22 @@ export default class Heap < T > {
      */
     constructor(comparator : Comparator < T >) {
         this.queue = new Array < T > (this.length);
+        Arrays.fillObj(this.queue, null);
+        Object.seal(this.queue);
         this.comparator = comparator;
+    }
+
+    /**
+     * Grows the array if needed.
+     */
+    private grow() : void {
+        let tmpData: Array < T > = new Array(this.queue.length * 3);
+        Arrays.fillObj(tmpData, null);
+        Object.seal(tmpData);
+        for (var i = 0; i < this.queue.length; i++) {
+            tmpData[i] = this.queue[i];
+        }
+        this.queue = tmpData;
     }
 
     /**
@@ -102,6 +118,11 @@ export default class Heap < T > {
         // Increase heap size
         this.heapSize = this.heapSize + 1;
 
+        // Grow the array if needed
+        if (this.heapSize == this.queue.length) {
+            this.grow();
+        }
+
         // Set i
         let i : number = this.heapSize - 1;
 
@@ -142,13 +163,18 @@ export default class Heap < T > {
      * Use for debugging.
      */
     public getContents() : T[] {
-        let que2 : T[] = new Array(this.heapSize);
+        let que2 : T[] = new Array < T > (this.heapSize);
+        Arrays.fillObj(que2, null);
+        Object.seal(que2);
         for (let i = 0; i < this.heapSize; i++) {
             que2[i] = this.queue[i];
         }
         return que2;
     }
 
+    /**
+     * Returns if the array is empty.
+     */
     public isEmpty() : boolean {
         return this.heapSize == 0;
     }

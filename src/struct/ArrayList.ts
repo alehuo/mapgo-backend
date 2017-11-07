@@ -1,3 +1,5 @@
+import {Arrays} from './../utils';
+
 /**
  * ArrayList class.
  *
@@ -27,6 +29,8 @@ export default class ArrayList < T > {
 
     constructor(size?: number) {
         this.data = new Array(size || 10);
+        Arrays.fillObj(this.data, null);
+        Object.seal(this.data);
         this.index = 0;
     }
 
@@ -45,7 +49,11 @@ export default class ArrayList < T > {
      * Grows the array if needed.
      */
     private grow() : void {
+
         let tmpData: Array < T > = new Array(this.data.length * 3);
+        Arrays.fillObj(tmpData, null);
+        Object.seal(tmpData);
+
         for (var i = 0; i < this.index; i++) {
             tmpData[i] = this.data[i];
         }
@@ -65,7 +73,7 @@ export default class ArrayList < T > {
 
     /**
      * Returns the size of the ArrayList. Initially, the length is 10.
-     * If enough elements are added, the array's size will triple to 
+     * If enough elements are added, the array's size will triple to
      * make space for new elements.
      */
     public dataLength() : number {return this.data.length;}

@@ -1,8 +1,9 @@
 import * as fs from 'fs';
-import JsonNode from './interface/JsonNode';
-import JsonEdge from './interface/JsonEdge';
-import Edge from './struct/Edge';
-import ArrayList from './struct/ArrayList';
+import JsonNode from './../interface/JsonNode';
+import JsonEdge from './../interface/JsonEdge';
+import Edge from './../struct/Edge';
+import ArrayList from './../struct/ArrayList';
+import {Arrays} from './../utils';
 
 /**
  * Graphloader.
@@ -23,12 +24,13 @@ export default class GraphLoader {
 
         // Create adjacency list
         let adjList: ArrayList < Edge > [] = new Array < ArrayList < Edge >> (data.length);
+        Arrays.fillObj(adjList, null);
+        Object.seal(adjList);
 
         // Fill it with stuff
         for (let i = 0; i < data.length; i++) {
 
-            // If the ArrayList is null, create one
-            if (adjList[i] == null) {
+            if(adjList[i] == null) {
                 adjList[i] = new ArrayList < Edge > ();
             }
 

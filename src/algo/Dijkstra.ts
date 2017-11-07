@@ -4,6 +4,7 @@ import ArrayList from './../struct/ArrayList';
 import Node from './../struct/Node';
 import Edge from './../struct/Edge';
 import NodeComparator from './../comparator/NodeComparator';
+import {Arrays} from '../utils';
 
 /**
  * Dijkstra's algorithm.
@@ -45,7 +46,11 @@ class Dijkstra {
     constructor(graph : ArrayList < Edge > []) {
         this.nodeCount = graph.length;
         this.dist = new Array < number > (this.nodeCount);
+        Arrays.fillNum(this.dist, this.INFINITY);
+        Object.seal(this.dist);
         this.path = new Array < number > (this.nodeCount);
+        Arrays.fillNum(this.path, 0);
+        Object.seal(this.path);
         this.graph = graph;
     }
 
@@ -54,10 +59,8 @@ class Dijkstra {
      * @param start Starting node
      */
     private initializeSingleSource(start : number) : void {
-        for(let i = 0; i < this.dist.length; i++) {
-            this.dist[i] = this.INFINITY;
-            this.path[i] = null;
-        }
+        Arrays.fillNum(this.dist, this.INFINITY);
+        Arrays.fillNum(this.path, 0);
         this.dist[start] = 0;
     }
 
@@ -67,13 +70,11 @@ class Dijkstra {
      */
     public shortestDistances(start : number) : number[] {
         // Visited list
-        let visited : boolean[] = new Array < boolean > (this.graph.length - 1);
+        let visited : boolean[] = new Array < boolean > (this.graph.length);
+        Arrays.fillBoolean(visited, false);
+        Object.seal(visited);
 
         this.start = start;
-
-        for (let i = 0; i < this.graph.length; i++) {
-            visited[i] = false;
-        }
 
         // Initialize single source
         this.initializeSingleSource(start);
@@ -87,6 +88,7 @@ class Dijkstra {
         // Start calculating shortest distances Also, when every step is done, make sure
         // we log what edges we visited as the map will be drawn based on that.
         while (!minHeap.isEmpty()) {
+            
             let u : Node = minHeap.heapDelMin();
 
             for (let i = 0; i < this.graph[u.number].size(); i++) {
@@ -98,10 +100,11 @@ class Dijkstra {
                     .get(i);
 
                 if (!visited[dest.getDest()]) {
+                    
                     // O(1)
                     if (this.dist[dest.getDest()] > this.dist[u.number] + dest.getWeight()) {
                         this.dist[dest.getDest()] = this.dist[u.number] + dest.getWeight();
-
+                        
                         // Add path
                         this.path[dest.getDest()] = u.number;
 
