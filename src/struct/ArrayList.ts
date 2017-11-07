@@ -28,9 +28,13 @@ export default class ArrayList < T > {
     private index : number;
 
     constructor(size?: number) {
+        // Create new array with fixed size
         this.data = new Array(size || 10);
+        // Fill it
         Arrays.fillObj(this.data, null);
+        // Steal it to prevent later modification.
         Object.seal(this.data);
+        // Starting index is zero
         this.index = 0;
     }
 
@@ -49,11 +53,12 @@ export default class ArrayList < T > {
      * Grows the array if needed.
      */
     private grow() : void {
-
+        // Create a new array that's three times bigger than the most recent one
         let tmpData: Array < T > = new Array(this.data.length * 3);
+        // Fill it and seal it.
         Arrays.fillObj(tmpData, null);
         Object.seal(tmpData);
-
+        // Loop the old array and add its elements to the new one.
         for (var i = 0; i < this.index; i++) {
             tmpData[i] = this.data[i];
         }
@@ -77,4 +82,18 @@ export default class ArrayList < T > {
      * make space for new elements.
      */
     public dataLength() : number {return this.data.length;}
+
+    /**
+     * Clears the array.
+     */
+    public clear() : void {
+        this.constructor(10);
+    }
+
+    /**
+     * Returns the ArrayList as an array.
+     */
+    public asArray() : T[] {
+        return this.data;
+    }
 }

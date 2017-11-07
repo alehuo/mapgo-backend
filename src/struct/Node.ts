@@ -14,6 +14,16 @@ class Node {
      */
     public weight : number;
 
+    /**
+     * Latitude
+     */
+    public lat : number;
+
+    /**
+     * Longitude
+     */
+    public lon : number;
+
     constructor(num : number, w : number) {
         this.weight = w;
         this.number = num;
