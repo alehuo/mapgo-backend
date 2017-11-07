@@ -39,6 +39,29 @@ abstract class Algorithm {
     }
 
     /**
+     * Returns the steps as a JSON string.
+     */
+    public getStepsAsJSON(pretty : boolean = false) : string {
+        let level: number = 0;
+        if (pretty) {
+            level = 2;
+        }
+        return JSON.stringify(this.steps.asArray(), this.replacer, level);
+    }
+
+    /**
+     * Replacer method to parse the Step[] array.
+     * @param key
+     * @param value
+     */
+    private replacer(key, value) {
+        if (key == "index") {
+            return undefined;
+        }
+        return value;
+    }
+
+    /**
      * Adds a new step.
      * @param step Step
      */
