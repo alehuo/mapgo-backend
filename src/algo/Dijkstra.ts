@@ -3,14 +3,32 @@ import Comparator from './../interface/Comparator';
 import ArrayList from './../struct/ArrayList';
 import Node from './../struct/Node';
 import Edge from './../struct/Edge';
+import Algorithm from './../struct/Algorithm';
 import NodeComparator from './../comparator/NodeComparator';
+import Step from './../struct/Step';
 import {Arrays} from '../utils';
+import Coordinate from './../struct/Coordinate';
 
 /**
  * Dijkstra's algorithm.
  * @author Aleksi Huotala
  */
-class Dijkstra {
+class Dijkstra extends Algorithm {
+
+    /**
+     * Coordinate list.
+     */
+    public coordlist : Coordinate[];
+
+    /**
+     * Steps.
+     */
+    public steps : ArrayList < Step >;
+
+    /**
+     * Adjacency list.
+     */
+    public graph : ArrayList < Edge > [];
 
     /**
      * Distance array
@@ -28,11 +46,6 @@ class Dijkstra {
     private nodeCount : number;
 
     /**
-     * Graph
-     */
-    private graph : ArrayList < Edge > [];
-
-    /**
      * Starting node
      */
     private start : number;
@@ -43,15 +56,21 @@ class Dijkstra {
      * Dijkstra's algorithm.
      * @param graph Graph.
      */
-    constructor(graph : ArrayList < Edge > []) {
+    constructor(graph : ArrayList < Edge > [], coordList : Coordinate[]) {
+        // Super constructor call.
+        super(graph, coordList);
+
+        // Set node count
         this.nodeCount = graph.length;
+
+        // Fill distance array.
         this.dist = new Array < number > (this.nodeCount);
         Arrays.fillNum(this.dist, this.INFINITY);
         Object.seal(this.dist);
+        // Fill path array.
         this.path = new Array < number > (this.nodeCount);
         Arrays.fillNum(this.path, 0);
         Object.seal(this.path);
-        this.graph = graph;
     }
 
     /**
@@ -69,6 +88,7 @@ class Dijkstra {
      * @param start Starting node
      */
     public shortestDistances(start : number) : number[] {
+
         // Visited list
         let visited : boolean[] = new Array < boolean > (this.graph.length);
         Arrays.fillBoolean(visited, false);
@@ -78,6 +98,7 @@ class Dijkstra {
 
         // Initialize single source
         this.initializeSingleSource(start);
+        this.resetSteps();
 
         // Init min heap
         let minHeap : Heap < Node > = new Heap < Node > (new NodeComparator());
@@ -88,7 +109,7 @@ class Dijkstra {
         // Start calculating shortest distances Also, when every step is done, make sure
         // we log what edges we visited as the map will be drawn based on that.
         while (!minHeap.isEmpty()) {
-            
+
             let u : Node = minHeap.heapDelMin();
 
             for (let i = 0; i < this.graph[u.number].size(); i++) {
@@ -100,13 +121,18 @@ class Dijkstra {
                     .get(i);
 
                 if (!visited[dest.getDest()]) {
-                    
+
                     // O(1)
                     if (this.dist[dest.getDest()] > this.dist[u.number] + dest.getWeight()) {
                         this.dist[dest.getDest()] = this.dist[u.number] + dest.getWeight();
-                        
+
                         // Add path
                         this.path[dest.getDest()] = u.number;
+
+                        // Add a new road.
+                        let step : Step = new Step(1);
+                        step.addRoad(this.coordlist[u.number], this.coordlist[dest.getDest()]);
+                        this.addStep(step)
 
                         // Add new node
                         let tmpNode : Node = new Node(dest.getDest(), this.dist[u.number] + dest.getWeight());
@@ -120,42 +146,6 @@ class Dijkstra {
         return this.dist;
     }
 
-    /**
-     * Creates and returns an adjacency list.
-     * @returns Adjacency list.
-     */
-    /*
-    private createAdjacencyList() : ArrayList < number > []{
-        let adjacencyList: ArrayList < number > [] = new Array < ArrayList < number >> (this.nodeCount);
-        for (let i = 0; i < this.w.length; i++) {
-            for (let j = 0; j < this.w[0].length; j++) {
-                // If there is a path from i to j
-                if (this.w[i][j] != 0) {
-                    if (adjacencyList[i] == null) {
-                        adjacencyList[i] = new ArrayList < number > ();
-                    }
-                    adjacencyList[i].add(j);
-                }
-            }
-        }
-        return adjacencyList;
-    }*/
-    /**
-     * Writes the shortest path from start to v. Currently used ONLY for debugging
-     */
-    public writeShortestPath(v : number) {
-
-        var fs = require('fs')
-        var logger = fs.createWriteStream('log.txt', {flags: 'a'})
-
-        let u : number = this.path[v];
-        while (u != this.start) {
-            logger.write(u + '\r\n');
-            u = this.path[u];
-        }
-        logger.write(u + '\r\n');
-
-    }
 }
 
 export default Dijkstra;
