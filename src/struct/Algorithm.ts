@@ -75,9 +75,7 @@ abstract class Algorithm {
      * Clears the steps -ArrayList.
      */
     public resetSteps() : void {
-        this
-            .steps
-            .clear();
+        this.steps = new ArrayList < Step > ();
     }
 }
 

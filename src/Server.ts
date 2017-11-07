@@ -49,7 +49,7 @@ class Server {
                 console.log('Starting to calculate shortest path using Dijksta\'s algorithm.');
                 let dijkstra : Dijkstra = new Dijkstra(this.data.arg1, this.data.arg2);
                 dijkstra.shortestDistances(0);
-                res.send(dijkstra.getStepsAsJSON(true));
+                res.send(dijkstra.getStepsAsJSON(false));
                 console.log('Finished calculating shortest path using Dijksta\'s algorithm.');
             });
         this

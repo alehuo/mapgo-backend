@@ -2,19 +2,10 @@
 
 import * as Utils from './utils';
 import JsonNode from './interface/JsonNode';
-import Edge from './struct/Edge';
 import Dijkstra from './algo/Dijkstra';
-import ArrayList from './struct/ArrayList';
+import {Edge, ArrayList, Tuple, Coordinate} from './struct';
+import * as express from 'express';
+import Server from './Server';
 
-/**
- * Just testing Dijkstra's algorithm.
- *
-*/
-
-let data : ArrayList < Edge > [] = Utils
-    .GraphLoader
-    .loadFile('./src/data/graph.json');
-
-let dijkstra : Dijkstra = new Dijkstra(data);
-
-console.log(dijkstra.shortestDistances(0));
+// Opens a server at a predefined port. Loads a graph into memory and allows drawing maps using various path finding algorithms.
+let server: Server = new Server(8080, './src/data/graph_small.json');
