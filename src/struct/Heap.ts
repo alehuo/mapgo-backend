@@ -5,7 +5,7 @@ import {Arrays} from '../utils/index';
  * Minimum heap implementation.
  * @author Aleksi Huotala
  */
-export default class Heap < T > {
+class Heap < T > {
 
     /**
      * Queue that holds the elements of the heap.
@@ -180,3 +180,5 @@ export default class Heap < T > {
     }
 
 }
+
+export default Heap;

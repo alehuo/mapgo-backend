@@ -46,11 +46,6 @@ class Dijkstra extends Algorithm {
      */
     private nodeCount : number;
 
-    /**
-     * Starting node
-     */
-    private start : number;
-
     private INFINITY : number = Number.MAX_SAFE_INTEGER;
 
     /**
@@ -95,8 +90,6 @@ class Dijkstra extends Algorithm {
         Arrays.fillBoolean(visited, false);
         Object.seal(visited);
 
-        this.start = start;
-
         // Initialize single source
         this.initializeSingleSource(start);
         this.resetSteps();
@@ -118,17 +111,17 @@ class Dijkstra extends Algorithm {
                 let strt : number = u.number;
                 // Destination edge, O(1) operation
                 let dest : Edge = this
-                    .graph[u.number]
+                    .graph[strt]
                     .get(i);
 
                 if (!visited[dest.getDest()]) {
 
                     // O(1)
-                    if (this.dist[dest.getDest()] > this.dist[u.number] + dest.getWeight()) {
-                        this.dist[dest.getDest()] = this.dist[u.number] + dest.getWeight();
+                    if (this.dist[dest.getDest()] > this.dist[strt] + dest.getWeight()) {
+                        this.dist[dest.getDest()] = this.dist[strt] + dest.getWeight();
 
                         // Add path
-                        this.path[dest.getDest()] = u.number;
+                        this.path[dest.getDest()] = strt;
 
                         // Add a new road.
                         let step : Step = new Step(1);
@@ -136,7 +129,7 @@ class Dijkstra extends Algorithm {
                         this.addStep(step)
 
                         // Add new node
-                        let tmpNode : Node = new Node(dest.getDest(), this.dist[u.number] + dest.getWeight());
+                        let tmpNode : Node = new Node(dest.getDest(), this.dist[strt] + dest.getWeight());
                         minHeap.heapInsert(tmpNode);
                     }
                 }

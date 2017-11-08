@@ -7,7 +7,7 @@ import {Arrays} from './../utils';
  * @template T Types of the values that will be stored on the ArrayList.
  * @author Aleksi Huotala
  */
-export default class ArrayList < T > {
+class ArrayList < T > {
 
     /**
      * Data.
@@ -90,3 +90,5 @@ export default class ArrayList < T > {
         return this.data;
     }
 }
+
+export default ArrayList;

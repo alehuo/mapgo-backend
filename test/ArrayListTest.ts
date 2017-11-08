@@ -1,6 +1,6 @@
 import {suite, test, slow, timeout} from 'mocha-typescript';
-import * as assert from 'assert';
-import ArrayList from '../src/struct/ArrayList';
+import * as assert from 'assert'
+import { ArrayList } from '../src/struct';
 
 /**
  * Tests for ArrayList class.
