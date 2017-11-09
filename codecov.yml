@@ -1,4 +1,3 @@
 ignore:
-  - "index.ts"
+  - "**/*/index.ts"
   - "test"
-  - "dist/test"
