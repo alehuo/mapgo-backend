@@ -8,7 +8,7 @@ import {Arrays} from './../utils';
  * Graphloader.
  * @author Aleksi Huotala
  */
-export default class GraphLoader {
+class GraphLoader {
     /**
      * Loads the graph from the defined JSON file.
      */
@@ -60,3 +60,5 @@ export default class GraphLoader {
         return new Tuple(adjList, coordinates);
     }
 }
+
+export default GraphLoader;
