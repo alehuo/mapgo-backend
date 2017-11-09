@@ -1,0 +1,4 @@
+ignore:
+  - "index.ts"
+  - "test"
+  - "dist/test"
