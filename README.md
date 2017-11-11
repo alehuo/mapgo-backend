@@ -24,6 +24,8 @@ Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit 
 
 - [Viikkoraportti 1](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti1.md)
 
+- [Viikkoraportti 2](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti2.md)
+
 ### [Määrittelydokumentaatio](https://github.com/alehuo/mapgo-backend/blob/master/doc/määrittelydokumentaatio.md)
 
 ## Lisenssi
@@ -53,6 +55,8 @@ The target of this project is to implement a web application that draws maps usi
 ### Weekly progress reports
 
 - [Weekly progress report 1](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti1.md)
+
+- [Weekly progress report 2](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti2.md)
 
 ## License
 
