@@ -1,6 +1,6 @@
 import * as Express from 'express';
 import {Tuple, ArrayList, Edge, Coordinate} from './struct';
-import {GraphLoader} from './utils';
+import {GraphLoader, Statistics} from './utils';
 import Dijkstra from './algo/Dijkstra';
 
 /**
@@ -47,7 +47,7 @@ class Server {
             .express
             .get("/calc/dijkstra", (req : any, res : any) => {
                 console.log('Starting to calculate shortest path using Dijksta\'s algorithm.');
-                let dijkstra : Dijkstra = new Dijkstra(this.data.arg1, this.data.arg2);
+                let dijkstra : Dijkstra = new Dijkstra(this.data.arg1, this.data.arg2, new Statistics(1));
                 dijkstra.shortestDistances(0);
                 res.send(dijkstra.getStepsAsJSON(false));
                 console.log('Finished calculating shortest path using Dijksta\'s algorithm.');

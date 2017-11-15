@@ -1,15 +1,11 @@
 import {ArrayList, Step, Edge, Coordinate} from "../struct";
+import {Statistics} from "../utils";
 
 /**
  * Algorithm interface is used to standardize different path finding algorithms.
  * @author Aleksi Huotala
  */
 abstract class Algorithm {
-
-    /**
-     * Steps.
-     */
-    public abstract steps : ArrayList < Step >;
 
     /**
      * Graph.
@@ -21,10 +17,15 @@ abstract class Algorithm {
      */
     public abstract coordlist : Coordinate[];
 
-    constructor(graph : ArrayList < Edge > [], coordList : Coordinate[]) {
+    /**
+     * Statistics.
+     */
+    private stats : Statistics;
+
+    constructor(graph : ArrayList < Edge > [], coordList : Coordinate[], stats : Statistics) {
         this.graph = graph;
-        this.steps = new ArrayList < Step > (coordList.length);
         this.coordlist = coordList;
+        this.stats = stats;
     }
 
     /**
@@ -32,7 +33,7 @@ abstract class Algorithm {
      */
     public getSteps() : Step[] {
         return this
-            .steps
+            .stats
             .asArray();
     }
 
@@ -44,7 +45,7 @@ abstract class Algorithm {
         if (pretty) {
             level = 2;
         }
-        return JSON.stringify(this.steps.asArray(), this.replacer, level);
+        return JSON.stringify(this.getSteps(), this.replacer, level);
     }
 
     /**
@@ -60,20 +61,16 @@ abstract class Algorithm {
     }
 
     /**
-     * Adds a new step.
+     * Adds a new edge.
      * @param step Step
      */
-    public addStep(step : Step) : void {
-        this
-            .steps
-            .add(step);
-    }
+    public addEdge(startingCoordinate : Coordinate, endingCoordinate : Coordinate) {}
 
     /**
      * Clears the steps -ArrayList.
      */
     public resetSteps() : void {
-        this.steps = new ArrayList < Step > ();
+        this.stats.resetSteps();
     }
 }
 

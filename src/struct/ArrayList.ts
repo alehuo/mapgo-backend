@@ -84,10 +84,21 @@ class ArrayList < T > {
     public dataLength() : number {return this.data.length;}
 
     /**
-     * Returns the ArrayList as an array.
+     * Returns the ArrayList as an array. Removes empty elements from the end.
+     * O(n) operation if null elements are removed from the end of the array, otherwise O(1).
      */
-    public asArray() : T[] {
-        return this.data;
+    public asArray(removeNulls: boolean) : T[] {
+        if(!removeNulls) {
+            return this.data;
+        }
+
+        let tmpArr : T[] = new Array < T > (this.index);
+        Arrays.fillObj(tmpArr, null);
+        Object.seal(tmpArr);
+        for (let i = 0; i < tmpArr.length; i++) {
+            tmpArr[i] = this.data[i];
+        }
+        return tmpArr;
     }
 }
 
