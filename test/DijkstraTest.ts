@@ -1,7 +1,7 @@
 import {suite, test, slow, timeout} from 'mocha-typescript';
 import * as assert from 'assert';
 import {ArrayList, Edge, Coordinate, Tuple} from '../src/struct';
-import {Arrays} from '../src/utils';
+import {Statistics, Arrays} from '../src/utils';
 import Dijkstra from '../src/algo/Dijkstra';
 
 /**
@@ -55,7 +55,7 @@ import Dijkstra from '../src/algo/Dijkstra';
     @test small1() {
         let data : Tuple < ArrayList < Edge > [],
             Coordinate[] > = this.init();
-        let dijkstra : Dijkstra = new Dijkstra(data.arg1, data.arg2);
+        let dijkstra : Dijkstra = new Dijkstra(data.arg1, data.arg2, new Statistics(10));
 
         let shortestDistances: number[][] = [
             [0,5,8,11,3,10,9,5],

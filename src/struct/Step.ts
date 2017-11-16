@@ -35,7 +35,11 @@ class Step {
     public getRoads() : Road[] {
         return this
             .r
-            .asArray();
+            .asArray(true);
+    }
+
+    public count(): number {
+        return this.r.size();
     }
 
 }

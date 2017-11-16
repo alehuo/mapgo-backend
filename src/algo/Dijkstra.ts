@@ -7,7 +7,7 @@ import {
     Step
 } from './../struct';
 import Algorithm from './../struct/Algorithm';
-import {Arrays} from '../utils';
+import {Arrays, Statistics} from '../utils';
 import NodeComparator from './../comparator/NodeComparator';
 
 /**
@@ -52,9 +52,9 @@ class Dijkstra extends Algorithm {
      * Dijkstra's algorithm.
      * @param graph Graph.
      */
-    constructor(graph : ArrayList < Edge > [], coordList : Coordinate[]) {
+    constructor(graph : ArrayList < Edge > [], coordList : Coordinate[], stats : Statistics) {
         // Super constructor call.
-        super(graph, coordList);
+        super(graph, coordList, stats);
 
         // Set node count
         this.nodeCount = graph.length;
@@ -123,10 +123,8 @@ class Dijkstra extends Algorithm {
                         // Add path
                         this.path[dest.getDest()] = strt;
 
-                        // Add a new road.
-                        let step : Step = new Step(1);
-                        step.addRoad(this.coordlist[u.number], this.coordlist[dest.getDest()]);
-                        this.addStep(step)
+                        // Add a new edge.
+                        this.addEdge(this.coordlist[u.number], this.coordlist[dest.getDest()]);
 
                         // Add new node
                         let tmpNode : Node = new Node(dest.getDest(), this.dist[strt] + dest.getWeight());
