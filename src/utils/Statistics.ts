@@ -53,10 +53,11 @@ class Statistics {
 
         // If we have reached the step limit
         if (this.edgesPerStep == this.currentStep.count()) {
+            let tmpStep: any = this.currentStep;
             // Add the step to the steps ArrayList
             this
                 .steps
-                .add(this.currentStep);
+                .add(tmpStep);
             // Reinitialize current step.
             this.currentStep = new Step(this.edgesPerStep);
         }

@@ -64,7 +64,9 @@ abstract class Algorithm {
      * Adds a new edge.
      * @param step Step
      */
-    public addEdge(startingCoordinate : Coordinate, endingCoordinate : Coordinate) {}
+    public addEdge(startingCoordinate : Coordinate, endingCoordinate : Coordinate) {
+        this.stats.addEdge(startingCoordinate, endingCoordinate);
+    }
 
     /**
      * Clears the steps -ArrayList.
