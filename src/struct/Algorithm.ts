@@ -1,5 +1,5 @@
-import {ArrayList, Step, Edge, Coordinate} from "../struct";
-import {Statistics} from "../utils";
+import { ArrayList, Step, Edge, Coordinate } from "../struct";
+import { Statistics } from "../utils";
 
 /**
  * Algorithm interface is used to standardize different path finding algorithms.
@@ -10,19 +10,19 @@ abstract class Algorithm {
     /**
      * Graph.
      */
-    public abstract graph : ArrayList < Edge > [];
+    private graph: ArrayList<Edge>[];
 
     /**
      * Coordinate list. Index points to the coordinate a single node has.
      */
-    public abstract coordlist : Coordinate[];
+    private coordlist: Coordinate[];
 
     /**
      * Statistics.
      */
-    private stats : Statistics;
+    private stats: Statistics;
 
-    constructor(graph : ArrayList < Edge > [], coordList : Coordinate[], stats : Statistics) {
+    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
         this.graph = graph;
         this.coordlist = coordList;
         this.stats = stats;
@@ -31,7 +31,7 @@ abstract class Algorithm {
     /**
      * Returns the algorithm's steps.
      */
-    public getSteps() : Step[] {
+    public getSteps(): Step[] {
         return this
             .stats
             .asArray();
@@ -40,7 +40,7 @@ abstract class Algorithm {
     /**
      * Returns the steps as a JSON string.
      */
-    public getStepsAsJSON(pretty : boolean = false) : string {
+    public getStepsAsJSON(pretty: boolean = false): string {
         let level: number = 0;
         if (pretty) {
             level = 2;
@@ -60,19 +60,29 @@ abstract class Algorithm {
         return value;
     }
 
+    public abstract run(): void;
+
     /**
      * Adds a new edge.
      * @param step Step
      */
-    public addEdge(startingCoordinate : Coordinate, endingCoordinate : Coordinate) {
+    public addEdge(startingCoordinate: Coordinate, endingCoordinate: Coordinate) {
         this.stats.addEdge(startingCoordinate, endingCoordinate);
     }
 
     /**
      * Clears the steps -ArrayList.
      */
-    public resetSteps() : void {
+    public resetSteps(): void {
         this.stats.resetSteps();
+    }
+
+    public getGraph(): ArrayList<Edge>[] {
+        return this.graph;
+    }
+
+    public getCoordList(): Coordinate[]{
+        return this.coordlist;
     }
 }
 

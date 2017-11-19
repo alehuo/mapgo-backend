@@ -28,8 +28,9 @@
     "typescript": "^2.5.3"
   },
   "dependencies": {
-    "@types/ws": "^3.2.0",
+    "@types/socket.io": "^1.4.31",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
-    "ws": "^3.3.1"
+    "socket.io": "^2.0.4"
   }
 }

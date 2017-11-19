@@ -6,3 +6,7 @@ export {default as JsonEdge}
 from './JsonEdge';
 export {default as JsonNode}
 from './JsonNode';
+export {default as Algo}
+from './Algo';
+export {default as Data}
+from './Data';

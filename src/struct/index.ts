@@ -14,5 +14,5 @@ export {default as Step}
 from './Step';
 export {default as Tuple}
 from './Tuple';
-export {default as Algoritm}
+export {default as Algorithm}
 from './Algorithm';

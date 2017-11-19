@@ -4,11 +4,12 @@ import {
     Node,
     Edge,
     Coordinate,
-    Step
+    Step,
+    Algorithm
 } from './../struct';
-import Algorithm from './../struct/Algorithm';
 import {Arrays, Statistics} from '../utils';
 import NodeComparator from './../comparator/NodeComparator';
+import { Algo } from '../interface/index';
 
 /**
  * Dijkstra's algorithm.
@@ -17,19 +18,9 @@ import NodeComparator from './../comparator/NodeComparator';
 class Dijkstra extends Algorithm {
 
     /**
-     * Coordinate list.
-     */
-    public coordlist : Coordinate[];
-
-    /**
      * Steps.
      */
     public steps : ArrayList < Step >;
-
-    /**
-     * Adjacency list.
-     */
-    public graph : ArrayList < Edge > [];
 
     /**
      * Distance array
@@ -80,13 +71,21 @@ class Dijkstra extends Algorithm {
     }
 
     /**
+     * Execute the algorithm.
+     */
+    public run(): void {
+        // Calculate shortest distances from the starting node.
+        this.shortestDistances(0);
+    }
+
+    /**
      * Calculates the shortest distances to other nodes from a starting node
      * @param start Starting node
      */
     public shortestDistances(start : number) : number[] {
 
         // Visited list
-        let visited : boolean[] = new Array < boolean > (this.graph.length);
+        let visited : boolean[] = new Array < boolean > (this.getGraph().length);
         Arrays.fillBoolean(visited, false);
         Object.seal(visited);
 
@@ -106,12 +105,12 @@ class Dijkstra extends Algorithm {
 
             let u : Node = minHeap.heapDelMin();
 
-            for (let i = 0; i < this.graph[u.number].size(); i++) {
+            for (let i = 0; i < this.getGraph()[u.number].size(); i++) {
                 // Starting
                 let strt : number = u.number;
                 // Destination edge, O(1) operation
                 let dest : Edge = this
-                    .graph[strt]
+                    .getGraph()[strt]
                     .get(i);
 
                 if (!visited[dest.getDest()]) {
@@ -124,7 +123,7 @@ class Dijkstra extends Algorithm {
                         this.path[dest.getDest()] = strt;
 
                         // Add a new edge.
-                        this.addEdge(this.coordlist[u.number], this.coordlist[dest.getDest()]);
+                        this.addEdge(this.getCoordList()[u.number], this.getCoordList()[dest.getDest()]);
 
                         // Add new node
                         let tmpNode : Node = new Node(dest.getDest(), this.dist[strt] + dest.getWeight());
@@ -137,7 +136,6 @@ class Dijkstra extends Algorithm {
         // Return the table
         return this.dist;
     }
-
 }
 
 export default Dijkstra;
