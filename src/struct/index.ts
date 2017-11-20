@@ -8,6 +8,8 @@ export {default as Heap}
 from './Heap';
 export {default as Node}
 from './Node';
+export {default as AStarNode}
+from './AStarNode';
 export {default as Road}
 from './Road';
 export {default as Step}
