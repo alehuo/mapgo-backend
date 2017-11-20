@@ -18,11 +18,6 @@ import { Algo } from '../interface/index';
 class Dijkstra extends Algorithm {
 
     /**
-     * Steps.
-     */
-    public steps : ArrayList < Step >;
-
-    /**
      * Distance array
      */
     private dist : number[];
@@ -36,8 +31,6 @@ class Dijkstra extends Algorithm {
      * Number of nodes
      */
     private nodeCount : number;
-
-    private INFINITY : number = Number.MAX_SAFE_INTEGER;
 
     /**
      * Dijkstra's algorithm.
@@ -68,14 +61,6 @@ class Dijkstra extends Algorithm {
         Arrays.fillNum(this.dist, this.INFINITY);
         Arrays.fillNum(this.path, 0);
         this.dist[start] = 0;
-    }
-
-    /**
-     * Execute the algorithm.
-     */
-    public run(): void {
-        // Calculate shortest distances from the starting node.
-        this.shortestDistances(0);
     }
 
     /**
@@ -135,6 +120,14 @@ class Dijkstra extends Algorithm {
         }
         // Return the table
         return this.dist;
+    }
+
+    /**
+     * Execute the algorithm.
+     */
+    public run(): void {
+        // Calculate shortest distances from the starting node.
+        this.shortestDistances(0);
     }
 }
 
