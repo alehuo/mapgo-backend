@@ -1,10 +1,10 @@
 import * as Express from 'express';
 import { Tuple, ArrayList, Edge, Coordinate, Step , Algorithm} from './struct';
 import { GraphLoader, Statistics } from './utils';
-import Dijkstra from './algo/Dijkstra';
 import * as io from 'socket.io';
 import { Status, AlgorithmType } from './enum/index';
 import { Data } from './interface/index';
+import { AStar, Dijkstra } from './algo/index';
 
 /**
  * Server.
@@ -71,7 +71,7 @@ class Server {
                             algo = new Dijkstra(this.data.arg1, this.data.arg2, new Statistics(100));
                             break;
                         case AlgorithmType.ASTAR:
-                            console.log('ASTAR not yet implemented');
+                            algo = new AStar(this.data.arg1, this.data.arg2, new Statistics(100));
                             break;
                         default:
                             throw ("Unknown algorithm");
