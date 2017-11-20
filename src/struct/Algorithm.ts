@@ -22,6 +22,11 @@ abstract class Algorithm {
      */
     private stats: Statistics;
 
+    /**
+     * Infinity
+     */
+    INFINITY : number = Number.MAX_SAFE_INTEGER;
+
     constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
         this.graph = graph;
         this.coordlist = coordList;
