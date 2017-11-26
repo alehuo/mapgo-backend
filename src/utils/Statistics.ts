@@ -77,11 +77,6 @@ class Statistics {
     }
 
     public asArray(): Step[] {
-        // ##########
-        for (let i = 0; i < this.steps.size(); i++) {
-            console.log(this.steps.get(i).count());
-        }
-        // ##########
         return this
             .steps
             .asArray(true);
