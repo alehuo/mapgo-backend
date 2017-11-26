@@ -1,4 +1,6 @@
-# Mapgo-backend
+# Mapgo
+
+![Mapgo logo](doc/mapgo_logo.png)
 
 
 [![Build Status](https://travis-ci.org/alehuo/mapgo-backend.svg?branch=master)](https://travis-ci.org/alehuo/mapgo-backend)
@@ -6,9 +8,12 @@
 [![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-Tämä repositorio sisältää back endin lähdekoodin Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit -kurssin projektille. Front endin lähdekoodi löytyy [täältä](https://github.com/alehuo/mapgo-frontend). 
+Tämä repositorio sisältää back endin lähdekoodin Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit -kurssin projektille. Front endin lähdekoodi löytyy [täältä](https://github.com/alehuo/mapgo-frontend).
+
+### Mapgo-sovellukseen pääset käsiksi [tästä](http://mapgo-front.herokuapp.com/)
 
 Projektin viikkoraportit tulevat löytymään back endin repositoriosta.
+
 
 ## Projekti
 

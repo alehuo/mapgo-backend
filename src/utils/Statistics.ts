@@ -76,6 +76,14 @@ class Statistics {
         this.roadId++;
     }
 
+    /**
+     * Call after everything is done
+     */
+    public done(): void {
+        this.steps.add(this.currentStep);
+        this.currentStep = null;
+    }
+
     public asArray(): Step[] {
         return this
             .steps
