@@ -37,6 +37,7 @@ abstract class Algorithm {
      * Returns the algorithm's steps.
      */
     public getSteps(): Step[] {
+        this.stats.done();
         return this
             .stats
             .asArray();
