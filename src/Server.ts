@@ -12,11 +12,6 @@ import { AStar, Dijkstra } from './algo/index';
 class Server {
 
     /**
-     * Express server
-     */
-    private express: Express.application;
-
-    /**
      * WebSocket
      */
     private ws: any;
@@ -29,21 +24,11 @@ class Server {
 
     private wsPort: number;
 
-    constructor(port: number, wsPort: number, graphFile: string) {
+    constructor(wsPort: number, graphFile: string) {
         //WebSocket port
         this.wsPort = wsPort;
         // Load graph.
         this.initGraph(graphFile);
-        // Initialize express.
-        this.express = Express();
-        // Initialize routes.
-        this.routes();
-        // Start the server.
-        this
-            .express
-            .listen(port, (err) => {
-                console.log("Listening on %d", port);
-            });
         // WebSocket
         let socket = io(wsPort, {
             origins: "*:*"
@@ -118,18 +103,6 @@ class Server {
                 }
             });
         });
-    }
-
-    /**
-     * Initializes the application's routes.
-     */
-    private routes(): void {
-        this
-            .express
-            .get("/", (req: any, res: any) => {
-                res.send("Hello world! WebSocket endpoint is at ws://locahost:" + this.wsPort);
-            });
-        this
     }
 
     /**
