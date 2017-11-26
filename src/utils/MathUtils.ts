@@ -1,6 +1,9 @@
-import { Coordinate } from "../struct/index";
+import { Coordinate, Point } from "../struct/index";
 
 class MathUtils {
+
+    public static rEarth: number = 6371 * 1000 * 100;
+
     /**
      * Converts degrees to radians
      * @param deg Radians
@@ -19,7 +22,6 @@ class MathUtils {
         let startingCoordinate: Coordinate = start;
         let endingCoordinate: Coordinate = end;
 
-        let rEarth: number = 6371e3;
         let angle1: number = MathUtils.toRadians(startingCoordinate.lat);
         let angle2: number = MathUtils.toRadians(endingCoordinate.lat);
 
@@ -32,9 +34,15 @@ class MathUtils {
 
         let c: number = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-        let d: number = rEarth * c * 100;
+        let d: number = MathUtils.rEarth * c;
 
-        return d * 100;
+        return d;
+    }
+
+    public static convertCoordinateToPoint(coord: Coordinate): Point {
+        let x: number = Math.floor(MathUtils.rEarth * Math.cos(coord.lat) * Math.cos(coord.lon))
+        let y: number = Math.floor(MathUtils.rEarth * Math.cos(coord.lat) * Math.sin(coord.lon));
+        return new Point(x, y);
     }
 }
 
