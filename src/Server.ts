@@ -1,4 +1,3 @@
-import * as Express from 'express';
 import { Tuple, ArrayList, Edge, Coordinate, Step, Algorithm } from './struct';
 import { GraphLoader, Statistics } from './utils';
 import * as io from 'socket.io';
