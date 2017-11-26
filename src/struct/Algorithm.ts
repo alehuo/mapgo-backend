@@ -1,5 +1,5 @@
-import { ArrayList, Step, Edge, Coordinate } from "../struct";
-import { Statistics } from "../utils";
+import { ArrayList, Step, Edge, Coordinate, Point } from "../struct";
+import { Statistics, MathUtils } from "../utils";
 
 /**
  * Algorithm interface is used to standardize different path finding algorithms.
@@ -21,6 +21,11 @@ abstract class Algorithm {
      * Statistics.
      */
     private stats: Statistics;
+
+    /**
+     * Infinity
+     */
+    INFINITY: number = Number.MAX_SAFE_INTEGER;
 
     constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
         this.graph = graph;
@@ -63,11 +68,13 @@ abstract class Algorithm {
     public abstract run(): void;
 
     /**
-     * Adds a new edge.
+     * Adds a new edge. Conversion to xy is applied here.
      * @param step Step
      */
     public addEdge(startingCoordinate: Coordinate, endingCoordinate: Coordinate) {
-        this.stats.addEdge(startingCoordinate, endingCoordinate);
+        let startingPoint: Point = MathUtils.convertCoordinateToPoint(startingCoordinate);
+        let endingPoint: Point = MathUtils.convertCoordinateToPoint(endingCoordinate);
+        this.stats.addEdge(startingPoint, endingPoint);
     }
 
     /**
@@ -81,8 +88,28 @@ abstract class Algorithm {
         return this.graph;
     }
 
-    public getCoordList(): Coordinate[]{
+    public getCoordList(): Coordinate[] {
         return this.coordlist;
+    }
+
+    public getMinX(): number {
+        return this.stats.getMinX();
+    }
+
+    public getMaxX(): number {
+        return this.stats.getMaxX();
+    }
+
+    public getMinY(): number {
+        return this.stats.getMinY();
+    }
+
+    public getMaxY(): number {
+        return this.stats.getMaxY();
+    }
+
+    public getRoadMaxId(): number {
+        return this.stats.getRoadMaxId();
     }
 }
 

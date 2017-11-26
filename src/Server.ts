@@ -1,10 +1,10 @@
 import * as Express from 'express';
-import { Tuple, ArrayList, Edge, Coordinate, Step , Algorithm} from './struct';
+import { Tuple, ArrayList, Edge, Coordinate, Step, Algorithm } from './struct';
 import { GraphLoader, Statistics } from './utils';
-import Dijkstra from './algo/Dijkstra';
 import * as io from 'socket.io';
 import { Status, AlgorithmType } from './enum/index';
-import { Data } from './interface/index';
+import { Data, MinMaxData } from './interface/index';
+import { AStar, Dijkstra } from './algo/index';
 
 /**
  * Server.
@@ -61,17 +61,20 @@ class Server {
                     let start: Data = {
                         status: Status.CALCULATING
                     };
-                    socket.emit("event", JSON.stringify(start));
+                    
+                    socket.emit("calculating_started", JSON.stringify(start));
 
                     let algo: Algorithm;
+
+                    let stepSize: number = (msg.stepSize == undefined) ? 100 : msg.stepSize;
 
                     // Algorithm switching
                     switch (msg.algo) {
                         case AlgorithmType.DIJKSTRA:
-                            algo = new Dijkstra(this.data.arg1, this.data.arg2, new Statistics(100));
+                            algo = new Dijkstra(this.data.arg1, this.data.arg2, new Statistics(stepSize));
                             break;
                         case AlgorithmType.ASTAR:
-                            console.log('ASTAR not yet implemented');
+                            algo = new AStar(this.data.arg1, this.data.arg2, new Statistics(stepSize));
                             break;
                         default:
                             throw ("Unknown algorithm");
@@ -84,19 +87,32 @@ class Server {
                     // Get the steps returned by the algorithm
                     let steps: Step[] = algo.getSteps();
 
-                    // Send each step, step by step
-                    for (let i = 0; i < steps.length; i++) {
-                        let data: Data = {
-                            status: Status.CALCULATING_SENDING_STEP,
-                            payload: steps[i].getRoads()
-                        };
-                        socket.emit("event", JSON.stringify(data));
+                    let data2: MinMaxData = {
+                        status: Status.SENDING_MIN_MAX_X_Y,
+                        minX: algo.getMinX(),
+                        maxX: algo.getMaxX(),
+                        minY: algo.getMinY(),
+                        maxY: algo.getMaxY(),
+                        roadCount: algo.getRoadMaxId()
                     }
+                
+                    if (socket.emit("sending_min_max_x_y", JSON.stringify(data2))) {
+                        // Send each step, step by step
+                        for (let i = 0; i < steps.length; i++) {
+                            let data: Data = {
+                                status: Status.CALCULATING_SENDING_STEP,
+                                payload: steps[i].getRoads()
+                            };
+                            socket.emit("calculating_sending_step", JSON.stringify(data));
+                        }
 
-                    let data: Data = {
-                        status: Status.CALC_FINISHED
-                    };
-                    socket.emit("event", JSON.stringify(data));
+                        let data: Data = {
+                            status: Status.CALC_FINISHED
+                        };
+                        socket.emit("calculating_finished", JSON.stringify(data));
+                    } else {
+                        throw ("Error sending lat and lon data.");
+                    }
 
                     console.log('Finished calculating map with algorithm %s', msg.algo.toString());
                 }

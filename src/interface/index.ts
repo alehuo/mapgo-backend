@@ -10,3 +10,5 @@ export {default as Algo}
 from './Algo';
 export {default as Data}
 from './Data';
+export {default as MinMaxData}
+from './MinMaxData';

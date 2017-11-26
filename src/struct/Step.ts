@@ -1,4 +1,4 @@
-import {ArrayList, Coordinate, Road} from "./";
+import {ArrayList, Coordinate, Road, Point} from "./";
 
 /**
  * Step class.
@@ -20,13 +20,13 @@ class Step {
 
     /**
      * Adds a new road.
-     * @param startCoord Starting coordinate
-     * @param endCoord Ending coordinate
+     * @param startPoint Starting point
+     * @param endPoint Ending point
      */
-    public addRoad(startCoord : Coordinate, endCoord : Coordinate) {
+    public addRoad(startPoint : Point, endPoint : Point, roadId: number) {
         this
             .r
-            .add(new Road(startCoord, endCoord));
+            .add(new Road(startPoint, endPoint, roadId));
     }
 
     /**
