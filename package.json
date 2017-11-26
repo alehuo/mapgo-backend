@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/src/app.js",
   "scripts": {
-    "start": "tsc && node dist/src/app.js",
+    "start": "tsc && node --max-old-space-size=8192 dist/src/app.js",
     "build": "npm test && tsc",
     "pretest": "tsc",
     "test": "nyc mocha",
