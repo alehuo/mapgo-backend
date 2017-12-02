@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ArrayList | mapgo-backend</title>
+	<title>Queue | mapgo-backend</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,37 +56,19 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_struct_arraylist_.html">&quot;struct/ArrayList&quot;</a>
+					<a href="../modules/_struct_queue_.html">&quot;struct/Queue&quot;</a>
 				</li>
 				<li>
-					<a href="_struct_arraylist_.arraylist.html">ArrayList</a>
+					<a href="_struct_queue_.queue.html">Queue</a>
 				</li>
 			</ul>
-			<h1>Class ArrayList&lt;T&gt;</h1>
+			<h1>Class Queue&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>ArrayList class.</p>
-					</div>
-					<dl class="tsd-comment-tags">
-						<dt>class</dt>
-						<dd><p>ArrayList</p>
-						</dd>
-						<dt>template</dt>
-						<dd><p>T Types of the values that will be stored on the ArrayList.</p>
-						</dd>
-						<dt>author</dt>
-						<dd><p>Aleksi Huotala</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -99,7 +81,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ArrayList</span>
+						<span class="target">Queue</span>
 					</li>
 				</ul>
 			</section>
@@ -110,25 +92,27 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_struct_arraylist_.arraylist.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_struct_queue_.queue.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_arraylist_.arraylist.html#data" class="tsd-kind-icon">data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_arraylist_.arraylist.html#index" class="tsd-kind-icon">index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_queue_.queue.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_queue_.queue.html#head" class="tsd-kind-icon">head</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_queue_.queue.html#n" class="tsd-kind-icon">n</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_queue_.queue.html#tail" class="tsd-kind-icon">tail</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_arraylist_.arraylist.html#add" class="tsd-kind-icon">add</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_arraylist_.arraylist.html#asarray" class="tsd-kind-icon">as<wbr>Array</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_arraylist_.arraylist.html#datalength" class="tsd-kind-icon">data<wbr>Length</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_arraylist_.arraylist.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_struct_arraylist_.arraylist.html#grow" class="tsd-kind-icon">grow</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_arraylist_.arraylist.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_queue_.queue.html#dequeue" class="tsd-kind-icon">dequeue</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_queue_.queue.html#empty" class="tsd-kind-icon">empty</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_queue_.queue.html#enqueue" class="tsd-kind-icon">enqueue</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_queue_.queue.html#full" class="tsd-kind-icon">full</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_queue_.queue.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_struct_queue_.queue.html#grow" class="tsd-kind-icon">grow</a></li>
 							</ul>
 						</section>
 					</div>
@@ -140,22 +124,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Array<wbr>List<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Queue<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_struct_queue_.queue.html" class="tsd-signature-type">Queue</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L28">struct/ArrayList.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L23">struct/Queue.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> size: <span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> size: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;10</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_struct_queue_.queue.html" class="tsd-signature-type">Queue</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -165,76 +149,134 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="data" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L19">struct/ArrayList.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L23">struct/Queue.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Data.</p>
+							<p>Queue contents.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{Array &lt; T &gt;}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>ArrayList</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="index" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> index</h3>
-					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="head" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> head</h3>
+					<div class="tsd-signature tsd-kind-icon">head<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L28">struct/ArrayList.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L8">struct/Queue.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Current index of the array.</p>
+							<p>Head.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{number}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>ArrayList</p>
-							</dd>
-						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="n" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> n</h3>
+					<div class="tsd-signature tsd-kind-icon">n<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L18">struct/Queue.ts:18</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Queue contents size.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="tail" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> tail</h3>
+					<div class="tsd-signature tsd-kind-icon">tail<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L13">struct/Queue.ts:13</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Tail.</p>
+						</div>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="add" class="tsd-anchor"></a>
-					<h3>add</h3>
+					<a name="dequeue" class="tsd-anchor"></a>
+					<h3>dequeue</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">dequeue<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L45">struct/ArrayList.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L59">struct/Queue.ts:59</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Adds a object to the ArrayList</p>
+									<p>Removes the element at the head of the queue.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="empty" class="tsd-anchor"></a>
+					<h3>empty</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">empty<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L71">struct/Queue.ts:71</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns if the queue is empty.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="enqueue" class="tsd-anchor"></a>
+					<h3>enqueue</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">enqueue<span class="tsd-signature-symbol">(</span>elem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L45">struct/Queue.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Queues an element.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">T</span></h5>
+									<h5>elem: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Object</p>
+										<p>Element to be queued</p>
 									</div>
 								</li>
 							</ul>
@@ -243,86 +285,46 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="asarray" class="tsd-anchor"></a>
-					<h3>as<wbr>Array</h3>
+					<a name="full" class="tsd-anchor"></a>
+					<h3>full</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">as<wbr>Array<span class="tsd-signature-symbol">(</span>removeNulls<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">full<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L90">struct/ArrayList.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L78">struct/Queue.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns the ArrayList as an array. Removes empty elements from the end.
-									O(n) operation if null elements are removed from the end of the array, otherwise O(1).</p>
+									<p>Returns if the queue is full.</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>removeNulls: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getdata" class="tsd-anchor"></a>
+					<h3>get<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L37">struct/Queue.ts:37</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the data of the queue.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="datalength" class="tsd-anchor"></a>
-					<h3>data<wbr>Length</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">data<wbr>Length<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L84">struct/ArrayList.ts:84</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the size of the ArrayList. Initially, the length is 10.
-										If enough elements are added, the array&#39;s size will triple to
-									make space for new elements.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="get" class="tsd-anchor"></a>
-					<h3>get</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L72">struct/ArrayList.ts:72</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the element in a certain index. O(1)</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Index</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -336,37 +338,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L55">struct/ArrayList.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Queue.ts#L89">struct/Queue.ts:89</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Grows the array if needed.</p>
+									<p>Grows the queue if needed.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="size" class="tsd-anchor"></a>
-					<h3>size</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/ArrayList.ts#L77">struct/ArrayList.ts:77</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the amount of elements in the ArrayList.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -379,7 +359,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_struct_arraylist_.html">"struct/<wbr>Array<wbr>List"</a>
+						<a href="../modules/_struct_queue_.html">"struct/<wbr>Queue"</a>
 					</li>
 				</ul>
 			</nav>
@@ -388,34 +368,40 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_struct_arraylist_.arraylist.html" class="tsd-kind-icon">Array<wbr>List</a>
+						<a href="_struct_queue_.queue.html" class="tsd-kind-icon">Queue</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_struct_arraylist_.arraylist.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_struct_queue_.queue.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_struct_arraylist_.arraylist.html#data" class="tsd-kind-icon">data</a>
+								<a href="_struct_queue_.queue.html#data" class="tsd-kind-icon">data</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_struct_arraylist_.arraylist.html#index" class="tsd-kind-icon">index</a>
+								<a href="_struct_queue_.queue.html#head" class="tsd-kind-icon">head</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_struct_queue_.queue.html#n" class="tsd-kind-icon">n</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_struct_queue_.queue.html#tail" class="tsd-kind-icon">tail</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_arraylist_.arraylist.html#add" class="tsd-kind-icon">add</a>
+								<a href="_struct_queue_.queue.html#dequeue" class="tsd-kind-icon">dequeue</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_arraylist_.arraylist.html#asarray" class="tsd-kind-icon">as<wbr>Array</a>
+								<a href="_struct_queue_.queue.html#empty" class="tsd-kind-icon">empty</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_arraylist_.arraylist.html#datalength" class="tsd-kind-icon">data<wbr>Length</a>
+								<a href="_struct_queue_.queue.html#enqueue" class="tsd-kind-icon">enqueue</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_arraylist_.arraylist.html#get" class="tsd-kind-icon">get</a>
+								<a href="_struct_queue_.queue.html#full" class="tsd-kind-icon">full</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_struct_queue_.queue.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_struct_arraylist_.arraylist.html#grow" class="tsd-kind-icon">grow</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_arraylist_.arraylist.html#size" class="tsd-kind-icon">size</a>
+								<a href="_struct_queue_.queue.html#grow" class="tsd-kind-icon">grow</a>
 							</li>
 						</ul>
 					</li>

@@ -20,3 +20,5 @@ export { default as Algorithm }
     from './Algorithm';
 export { default as Point }
     from './Point';
+export { default as Queue }
+    from './Queue';
