@@ -56,8 +56,8 @@ class ArrayList<T> {
         // Create a new array that's three times bigger than the most recent one
         let tmpData: Array<T> = new Array(Math.floor(this.data.length * 3 / 2) + 1);
         // Fill it and seal it.
-        //Arrays.fillObj(tmpData, null);
-        //Object.seal(tmpData);
+        Arrays.fillObj(tmpData, null);
+        Object.seal(tmpData);
         // Loop the old array and add its elements to the new one.
         for (var i = 0; i < this.index; i++) {
             tmpData[i] = this.data[i];
