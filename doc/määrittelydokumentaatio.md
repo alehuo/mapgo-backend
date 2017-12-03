@@ -2,7 +2,7 @@
 
 ## Minkä ongelman ohjelma ratkaisee?
 
-Ohjelma vertailee verkkoalgoritmien toimintaa piirtämällä kartan sille annetusta verkosta.
+Jos joskus olet pohtinut, että miten eri verkonhakualgoritmit toimivat, niin tämä ohjelma ratkaisee sen ongelman. Ohjelma vertailee verkkoalgoritmien toimintaa piirtämällä kartan sille annetusta verkosta. 
 
 ## Mitä syötteitä ohjelma saa ja miten näitä käytetään?
 
@@ -31,6 +31,11 @@ Listaa käytetään esim. vieraslistoissa.
 - add O(1) keskimääräinen, pahin O(n)
 - get O(1)
 
+#### Jono (Queue)
+
+- enqueue O(1) keskimääräinen, pahin O(n)
+- dequeue O(1)
+
 ### Algoritmien aika- ja tilavaativuuksia
 
 Algoritmi | Aika              | Tila
@@ -39,9 +44,11 @@ Dijkstra  | O(\|E\| + \|V\| log \|V\|) | O(\|V\|)
 A*  | O(\|E\| + \|V\| log \|V\|) | O(\|V\|)  
 BFS       | O(\|V\| + \|E\|) | O(\|V\|)
 
+**Huom.** Front-endistä on vaikea havainnollistaa algoritmien aikavaativuuksia, sillä canvakselle piirtäminen on melko raskas operaatio.
+
 ## Mitä algoritmejä käytän?
 
-Aluksi toteutan projektiini Dijkstran ja A*-algoritmin. Myöhemmin tarkoituksena on toteuttaa BFS-algoritmi.
+Projektissa käytetään Dijkstran, A* ja BFS -algoritmiä.
 
 ## Lähteet
 
