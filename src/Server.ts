@@ -2,8 +2,8 @@ import { Tuple, ArrayList, Edge, Coordinate, Step, Algorithm } from './struct';
 import { GraphLoader, Statistics } from './utils';
 import * as io from 'socket.io';
 import { Status, AlgorithmType } from './enum/index';
-import { Data, MinMaxData } from './interface/index';
-import { AStar, Dijkstra } from './algo/index';
+import { Data, MinMaxData, AvailableAlgo } from './interface/index';
+import { AStar, Dijkstra, BFS } from './algo/index';
 
 /**
  * Server.
@@ -34,6 +34,13 @@ class Server {
         });
 
         socket.on('connection', (socket) => {
+            
+            let data: Data = {
+                status: Status.SENDING_AVAILABLE_ALGORITHMS,
+                payload: this.getAvailableAlgos()
+            };
+            socket.emit('algorithmList', JSON.stringify(data));
+
             socket.on('command', (message: string) => {
                 // If we receive a message, parse it to JSON
                 let msg: Data = JSON.parse(message);
@@ -45,7 +52,7 @@ class Server {
                     let start: Data = {
                         status: Status.CALCULATING
                     };
-                    
+
                     socket.emit("calculating_started", JSON.stringify(start));
 
                     let algo: Algorithm;
@@ -60,12 +67,16 @@ class Server {
                         case AlgorithmType.ASTAR:
                             algo = new AStar(this.data.arg1, this.data.arg2, new Statistics(stepSize));
                             break;
+                        case AlgorithmType.BFS:
+                            algo = new BFS(this.data.arg1, this.data.arg2, new Statistics(stepSize));
+                            break;
                         default:
                             throw ("Unknown algorithm");
                     }
 
                     console.log('Starting to calculate map using algorithm %s', msg.algo.toString());
 
+                    // Runs the algorithm.
                     algo.run();
 
                     // Get the steps returned by the algorithm
@@ -79,7 +90,7 @@ class Server {
                         maxY: algo.getMaxY(),
                         roadCount: algo.getRoadMaxId()
                     }
-                
+
                     if (socket.emit("sending_min_max_x_y", JSON.stringify(data2))) {
                         // Send each step, step by step
                         for (let i = 0; i < steps.length; i++) {
@@ -101,6 +112,14 @@ class Server {
                     console.log('Finished calculating map with algorithm %s', msg.algo.toString());
                 }
             });
+            // Send algorithm list on request.
+            /*socket.on('getAlgoList', (socket) => {
+                let data: Data = {
+                    status: Status.SENDING_AVAILABLE_ALGORITHMS,
+                    payload: this.getAvailableAlgos()
+                };
+                socket.emit('algorithmList', JSON.stringify(data));
+            });*/
         });
     }
 
@@ -112,6 +131,23 @@ class Server {
         console.log('Starting to load graph from %s', fileName);
         this.data = GraphLoader.loadFile(fileName);
         console.log('Successfully loaded graph from %s', fileName);
+    }
+
+    private getAvailableAlgos(): AvailableAlgo[] {
+        return [
+            {
+                displayName: "Dijkstra's algorithm",
+                command: AlgorithmType.DIJKSTRA
+            },
+            {
+                displayName: "A* algorithm",
+                command: AlgorithmType.ASTAR
+            },
+            {
+                displayName: "BFS algorithm",
+                command: AlgorithmType.BFS
+            }
+        ];
     }
 }
 

@@ -35,6 +35,8 @@ class Dijkstra extends Algorithm {
     /**
      * Dijkstra's algorithm.
      * @param graph Graph.
+     * @param coordList Coordinate list.
+     * @param stats Statistics.
      */
     constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
         // Super constructor call.
