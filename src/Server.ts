@@ -34,6 +34,13 @@ class Server {
         });
 
         socket.on('connection', (socket) => {
+            
+            let data: Data = {
+                status: Status.SENDING_AVAILABLE_ALGORITHMS,
+                payload: this.getAvailableAlgos()
+            };
+            socket.emit('algorithmList', JSON.stringify(data));
+
             socket.on('command', (message: string) => {
                 // If we receive a message, parse it to JSON
                 let msg: Data = JSON.parse(message);
@@ -106,13 +113,13 @@ class Server {
                 }
             });
             // Send algorithm list on request.
-            socket.on('getAlgoList', () => {
+            /*socket.on('getAlgoList', (socket) => {
                 let data: Data = {
                     status: Status.SENDING_AVAILABLE_ALGORITHMS,
                     payload: this.getAvailableAlgos()
                 };
                 socket.emit('algorithmList', JSON.stringify(data));
-            });
+            });*/
         });
     }
 
