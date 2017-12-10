@@ -19,6 +19,22 @@ Projektin ideana on toteuttaa web-sovellus, joka piirtää karttoja. Karttojen p
 
 Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit koodataan TypeScriptillä. Front end tulee olemaan yksisivuinen Reactilla toteutettu sovellus. Front end ja back end yhdistetään käyttämällä WebSocket-yhteyttä.
 
+## Käynnistysohjeet
+
+1. Kloonaa repo
+2. Suorita komento ```yarn```
+3. Tämän jälkeen aja testit komennolla ```yarn test```
+4. ```npm start```
+
+### Docker
+
+Vaihtoehtoisesti voit hakea projektin Dockerin image repositoriosta ja suorittaa sen komennolla ```yarn run-container```. Ei aja itse testejä (vielä)
+
+### Buildaaminen Dockerilla
+
+1. Luo Docker-kuva komennolla ```yarn build-container```.
+2. Käynnistä Docker-instanssi komennolla ```yarn run-container```
+
 ## Linkkejä
 
 ### [Front endin GitHub-repositorio](https://github.com/alehuo/mapgo-frontend)

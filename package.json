@@ -9,9 +9,12 @@
     "pretest": "tsc",
     "test": "nyc mocha",
     "posttest": "nyc report --reporter=json && codecov -f coverage/*.json",
-    "genDoc": "typedoc --module commonjs --target ES6 --out doc/typedoc src/"
+    "genDoc": "typedoc --module commonjs --target ES6 --out doc/typedoc src/",
+    "build-container": "docker build -t alehuo/mapgo-backend .",
+    "run-container": "docker run -p 8081:8081 -d alehuo/mapgo-backend",
+    "publish-container": "docker push alehuo/mapgo-backend"
   },
-  "keywords": [],
+  "keywords": ["Visualizer", "Algorithm", "Dijkstra", "BFS", "AStar", "TypeScript"],
   "author": "Aleksi Huotala",
   "license": "MIT",
   "devDependencies": {
