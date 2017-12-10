@@ -26,13 +26,30 @@ import { Comparator } from '../src/interface/index';
     /**
      * Numbers are inserted on descending order
      */
-    @test testElementInsert1() {
+    @timeout(20000)
+    @test testElementInsertSmall() {
+        for (let i = 10000; i > 10; i-=100) {
+            this.testHeapDescending(i);
+        }
+    }
+
+    /**
+     * Numbers are inserted on descending order
+     */
+    @timeout(20000)
+    @test testElementInsertLarge() {
+        for (let i = 100000; i > 10; i /= 3) {
+            this.testHeapDescending(Math.ceil(i));
+        }
+    }
+
+    private testHeapDescending(heapSize: number): void {
         let heap: Heap<number> = this.createHeap();
 
 
         assert.ok(heap.isEmpty());
 
-        for (let i = 10000; i >= 0; i--) {
+        for (let i = heapSize; i >= 0; i--) {
             heap.heapInsert(i);
         }
 
@@ -53,20 +70,14 @@ import { Comparator } from '../src/interface/index';
 
         assert.ok(heap.isEmpty());
 
-
     }
 
-    /**
-     * Numbers are inserted on random order
-     */
-    @test testElementInsert2() {
+    private testHeapRandom(heapSize: number, maxNum: number): void {
         let heap: Heap<number> = this.createHeap();
-
-        let maxNum: number = 100000;
 
         assert.ok(heap.isEmpty());
 
-        for (let i = 10000; i >= 0; i--) {
+        for (let i = heapSize; i >= 0; i--) {
             heap.heapInsert(Math.random() * maxNum);
         }
 
@@ -80,6 +91,26 @@ import { Comparator } from '../src/interface/index';
         }
 
         assert.ok(heap.isEmpty());
+    }
+
+    /**
+     * Numbers are inserted on random order
+     */
+    @timeout(20000)
+    @test testElementInsertRandomSmall() {
+        for (let i = 10000; i > 10; i-=100) {
+            this.testHeapRandom(i, 1000000);
+        }
+    }
+
+    /**
+     * Numbers are inserted on random order
+     */
+    @timeout(20000)
+    @test testElementInsertRandomLarge() {
+        for (let i = 100000; i > 10; i /= 3) {
+            this.testHeapRandom(Math.ceil(i), 1000000);
+        }
     }
 
     /*

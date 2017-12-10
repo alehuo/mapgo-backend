@@ -58,7 +58,6 @@ import { Statistics, Arrays } from '../src/utils';
             algo.run();
         }
         
-        // Should rework getSteps() as currently it marks the calculation as done.
         assert.equal(algo.getSteps().length, 25);
 
         algo = new TestAlgorithm(data.arg1, data.arg2, new Statistics(5));
