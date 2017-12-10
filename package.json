@@ -14,7 +14,7 @@
     "run-container": "docker run -p 8081:8081 -d alehuo/mapgo-backend",
     "publish-container": "docker push alehuo/mapgo-backend"
   },
-  "keywords": [],
+  "keywords": ["Visualizer", "Algorithm", "Dijkstra", "BFS", "AStar", "TypeScript"],
   "author": "Aleksi Huotala",
   "license": "MIT",
   "devDependencies": {
