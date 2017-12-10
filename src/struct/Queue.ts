@@ -84,6 +84,13 @@ class Queue<T> {
     }
 
     /**
+     * Returns the amount of elements in the queue.
+     */
+    public size(): number {
+        return this.tail;
+    }
+
+    /**
      * Grows the queue if needed.
      */
     private grow(): void {
