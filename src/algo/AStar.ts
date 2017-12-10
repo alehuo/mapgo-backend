@@ -1,4 +1,4 @@
-import { Algorithm, ArrayList, Edge, Coordinate, Heap, Node, AStarNode } from "../struct/index";
+import { Algorithm, ArrayList, Edge, Coordinate, Heap, Node, AStarNode, Point } from "../struct/index";
 import { Statistics, Arrays, MathUtils } from "../utils/index";
 import { AStarComparator } from "../comparator/index";
 /**
@@ -111,8 +111,15 @@ class AStar extends Algorithm {
     /**
      * Execute the algorithm.
      */
-    public run(): void {
-        this.calculate(0, this.nodeCount - 1);
+    public run(startingNode?: number): void {
+        if (startingNode == null || startingNode === undefined) {
+            startingNode = 0;
+        }
+        let startCoords: Coordinate = this.getCoordList()[startingNode];
+        let startingPoint: Point = MathUtils.convertCoordinateToPoint(startCoords);
+        this.setStartCoords(startingPoint);
+        
+        this.calculate(startingNode, this.nodeCount - 1);
     }
 
 }
