@@ -1,5 +1,5 @@
-import { Algorithm, ArrayList, Edge, Coordinate, Queue } from '../struct';
-import { Statistics, Arrays } from '../utils/index';
+import { Algorithm, ArrayList, Edge, Coordinate, Queue, Point } from '../struct';
+import { Statistics, Arrays, MathUtils } from '../utils/index';
 import { NodeColor } from '../enum/index';
 
 /**
@@ -111,8 +111,15 @@ class BFS extends Algorithm {
         this.dist[startingNode] = 0;
     }
 
-    public run(): void {
-        this.bfs(0);
+    public run(startingNode?: number): void {
+        if (startingNode == null || startingNode === undefined) {
+            startingNode = 0;
+        }
+        let startCoords: Coordinate = this.getCoordList()[startingNode];
+        let startingPoint: Point = MathUtils.convertCoordinateToPoint(startCoords);
+        this.setStartCoords(startingPoint);
+        
+        this.bfs(startingNode);
     }
 
 }

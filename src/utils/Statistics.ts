@@ -28,13 +28,30 @@ class Statistics {
     private minY: number = Number.MAX_SAFE_INTEGER;
     private maxY: number = Number.MIN_SAFE_INTEGER;
 
+    private startX: number;
+    private startY: number;
+
     constructor(edgesPerStep: number) {
         this.edgesPerStep = edgesPerStep;
         this.steps = new ArrayList();
         this.currentStep = new Step(edgesPerStep);
     }
 
-    public addEdge(startingPoint: Point, endingPoint: Point) {
+    /**
+     * Sets the starting point.
+     * @param startingPoint Starting point.
+     */
+    public setStartingPoint(startingPoint: Point): void {
+        this.startX = startingPoint.x;
+        this.startY = startingPoint.y;
+    }
+
+    /**
+     * Adds a new edge.
+     * @param startingPoint Starting point.
+     * @param endingPoint Ending point.
+     */
+    public addEdge(startingPoint: Point, endingPoint: Point): void {
 
         if (this.currentStep.count() == this.edgesPerStep) {
             this.steps.add(this.currentStep);
@@ -84,37 +101,61 @@ class Statistics {
         this.currentStep = null;
     }
 
+    /**
+     * Returns Algorithm's steps as an Array.
+     */
     public asArray(): Step[] {
         return this
             .steps
             .asArray(true);
     }
 
+    /**
+     * Resets the algorithm's steps.
+     */
     public resetSteps(): void {
         this.steps = new ArrayList<Step>();
         this.currentStep = new Step(this.edgesPerStep);
     }
 
+    /**
+     * Returns the minimum X.
+     */
     public getMinX(): number {
         return this.minX;
     }
 
+    /**
+     * Returns the maximum X.
+     */
     public getMaxX(): number {
         return this.maxX;
     }
 
+    /**
+     * Returns the minimum Y.
+     */
     public getMinY(): number {
         return this.minY;
     }
 
+    /**
+     * Returns the maximum Y.
+     */
     public getMaxY(): number {
         return this.maxY;
     }
 
+    /**
+     * Returns the road maximum id.
+     */
     public getRoadMaxId(): number {
         return this.roadId;
     }
 
+    /**
+     * Checks the step if we require additional steps to be created.
+     */
     private stepCheck(): void {
 
         if (this.currentStep !== null) {
@@ -130,6 +171,20 @@ class Statistics {
                 this.currentStep = new Step(this.edgesPerStep);
             }
         }
+    }
+
+    /**
+     * Returns the starting X coordinate.
+     */
+    public getStartX(): number {
+        return this.startX;
+    }
+
+    /**
+     * Returns the starting Y coordinate.
+     */
+    public getStartY(): number {
+        return this.startY;
     }
 }
 

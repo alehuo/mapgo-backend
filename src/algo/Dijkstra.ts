@@ -5,9 +5,10 @@ import {
     Edge,
     Coordinate,
     Step,
-    Algorithm
+    Algorithm,
+    Point
 } from './../struct';
-import { Arrays, Statistics } from '../utils';
+import { Arrays, Statistics, MathUtils } from '../utils';
 import NodeComparator from './../comparator/NodeComparator';
 import { Algo } from '../interface/index';
 
@@ -129,9 +130,16 @@ class Dijkstra extends Algorithm {
     /**
      * Execute the algorithm.
      */
-    public run(): void {
+    public run(startingNode?: number): void {
+        if (startingNode == null || startingNode === undefined) {
+            startingNode = 0;
+        }
+        let startCoords: Coordinate = this.getCoordList()[startingNode];
+        let startingPoint: Point = MathUtils.convertCoordinateToPoint(startCoords);
+        this.setStartCoords(startingPoint);
+        
         // Calculate shortest distances from the starting node.
-        this.shortestDistances(0);
+        this.shortestDistances(startingNode);
     }
 }
 

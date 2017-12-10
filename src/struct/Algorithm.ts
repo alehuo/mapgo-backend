@@ -66,7 +66,7 @@ abstract class Algorithm {
         return value;
     }
 
-    public abstract run(): void;
+    public abstract run(startingNode?: number): void;
 
     /**
      * Adds a new edge. Conversion to xy is applied here.
@@ -111,6 +111,18 @@ abstract class Algorithm {
 
     public getRoadMaxId(): number {
         return this.stats.getRoadMaxId();
+    }
+
+    public getStartX(): number {
+        return this.stats.getStartX();
+    }
+
+    public getStartY(): number {
+        return this.stats.getStartY();
+    }
+
+    public setStartCoords(point: Point) {
+        this.stats.setStartingPoint(point);
     }
 }
 

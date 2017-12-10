@@ -79,7 +79,8 @@ class Server {
                     console.log('Starting to calculate map using algorithm %s', msg.algo.toString());
 
                     // Runs the algorithm.
-                    algo.run();
+                    // Defines a custom starting node number.
+                    algo.run(msg.startingNode);
 
                     // Get the steps returned by the algorithm
                     let steps: Step[] = algo.getSteps();
@@ -90,7 +91,9 @@ class Server {
                         maxX: algo.getMaxX(),
                         minY: algo.getMinY(),
                         maxY: algo.getMaxY(),
-                        roadCount: algo.getRoadMaxId()
+                        roadCount: algo.getRoadMaxId(),
+                        startingX: algo.getStartX(),
+                        startingY: algo.getStartY()
                     }
 
                     if (socket.emit("sending_min_max_x_y", JSON.stringify(data2))) {
