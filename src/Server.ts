@@ -33,6 +33,8 @@ class Server {
             origins: "*:*"
         });
 
+        console.log('Specified ws port is %d', wsPort);
+
         socket.on('connection', (socket) => {
             
             let data: Data = {
@@ -112,14 +114,6 @@ class Server {
                     console.log('Finished calculating map with algorithm %s', msg.algo.toString());
                 }
             });
-            // Send algorithm list on request.
-            /*socket.on('getAlgoList', (socket) => {
-                let data: Data = {
-                    status: Status.SENDING_AVAILABLE_ALGORITHMS,
-                    payload: this.getAvailableAlgos()
-                };
-                socket.emit('algorithmList', JSON.stringify(data));
-            });*/
         });
     }
 
@@ -128,9 +122,7 @@ class Server {
      * @param fileName
      */
     private initGraph(fileName: string): void {
-        console.log('Starting to load graph from %s', fileName);
         this.data = GraphLoader.loadFile(fileName);
-        console.log('Successfully loaded graph from %s', fileName);
     }
 
     private getAvailableAlgos(): AvailableAlgo[] {
