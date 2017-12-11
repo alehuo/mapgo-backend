@@ -80,7 +80,7 @@ class Server {
 
                     // Runs the algorithm.
                     // Defines a custom starting node number.
-                    algo.run(msg.startingNode);
+                    algo.run(msg.startingNode, msg.endingNode);
 
                     // Get the steps returned by the algorithm
                     let steps: Step[] = algo.getSteps();
