@@ -7,7 +7,9 @@ interface MinMaxData extends Data {
     maxY: number, // Max Y
     roadCount: number, // Road count
     startingX: number, // Starting X
-    startingY: number // Starting Y
+    startingY: number, // Starting Y
+    endingX?: number, // Ending X
+    endingY?: number // Ending Y
 }
 
 export default MinMaxData;

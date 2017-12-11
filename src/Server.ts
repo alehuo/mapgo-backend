@@ -36,7 +36,7 @@ class Server {
         console.log('Specified ws port is %d', wsPort);
 
         socket.on('connection', (socket) => {
-            
+
             let data: Data = {
                 status: Status.SENDING_AVAILABLE_ALGORITHMS,
                 payload: this.getAvailableAlgos()
@@ -94,6 +94,11 @@ class Server {
                         roadCount: algo.getRoadMaxId(),
                         startingX: algo.getStartX(),
                         startingY: algo.getStartY()
+                    }
+
+                    if (msg.algo == AlgorithmType.ASTAR) {
+                        data2.endingX = algo.getEndX();
+                        data2.endingY = algo.getEndY();
                     }
 
                     if (socket.emit("sending_min_max_x_y", JSON.stringify(data2))) {
