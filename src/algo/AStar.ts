@@ -102,7 +102,9 @@ class AStar extends Algorithm {
                         this.addEdge(this.getCoordList()[u.number], this.getCoordList()[dest.getDest()]);
 
                         // Add new node
-                        let tmpNode: Node = new Node(dest.getDest(), this.distStart[strt]);
+                        let tmpNode: Node = new Node(dest.getDest(), this.getCoordList[strt]);
+                        tmpNode.lat = this.getCoordList()[dest.getDest()].lat;
+                        tmpNode.lon = this.getCoordList()[dest.getDest()].lon;
                         heap.heapInsert(tmpNode);
                     }
                 }
