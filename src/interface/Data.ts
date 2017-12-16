@@ -4,6 +4,7 @@ interface Data {
     status: Status,
     stepSize?: number,
     startingNode?: number,
+    endingNode?: number,
     algo?: AlgorithmType,
     payload?: any
 }

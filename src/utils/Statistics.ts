@@ -31,6 +31,9 @@ class Statistics {
     private startX: number;
     private startY: number;
 
+    private endX: number;
+    private endY: number;
+
     constructor(edgesPerStep: number) {
         this.edgesPerStep = edgesPerStep;
         this.steps = new ArrayList();
@@ -45,6 +48,17 @@ class Statistics {
         this.startX = startingPoint.x;
         this.startY = startingPoint.y;
     }
+
+
+    /**
+     * Sets the ending point.
+     * @param endingPoint Ending point.
+     */
+    public setEndingPoint(endingPoint: Point): void {
+        this.endX = endingPoint.x;
+        this.endY = endingPoint.y;
+    }
+
 
     /**
      * Adds a new edge.
@@ -185,6 +199,20 @@ class Statistics {
      */
     public getStartY(): number {
         return this.startY;
+    }
+
+    /**
+     * Returns the ending X coordinate.
+     */
+    public getEndX(): number {
+        return this.endX;
+    }
+
+    /**
+     * Returns the ending Y coordinate.
+     */
+    public getEndY(): number {
+        return this.endY;
     }
 }
 

@@ -77,6 +77,10 @@ class AStar extends Algorithm {
 
             let u: Node = heap.heapDelMin();
 
+            if (u.number == end) {
+                return;
+            }
+
             for (let i = 0; i < this.getGraph()[u.number].size(); i++) {
                 // Starting
                 let strt: number = u.number;
@@ -98,7 +102,9 @@ class AStar extends Algorithm {
                         this.addEdge(this.getCoordList()[u.number], this.getCoordList()[dest.getDest()]);
 
                         // Add new node
-                        let tmpNode: Node = new Node(dest.getDest(), this.distStart[strt]);
+                        let tmpNode: Node = new Node(dest.getDest(), this.getCoordList[strt]);
+                        tmpNode.lat = this.getCoordList()[dest.getDest()].lat;
+                        tmpNode.lon = this.getCoordList()[dest.getDest()].lon;
                         heap.heapInsert(tmpNode);
                     }
                 }
@@ -111,15 +117,38 @@ class AStar extends Algorithm {
     /**
      * Execute the algorithm.
      */
-    public run(startingNode?: number): void {
+    public run(startingNode?: number, endingNode?: number): void {
         if (startingNode == null || startingNode === undefined) {
             startingNode = 0;
+        } else {
+            if (startingNode < 0) {
+                startingNode = 0;
+            }
+            if (startingNode > this.nodeCount - 1) {
+                startingNode = this.nodeCount - 1;
+            }
         }
+
+        if (endingNode == null || endingNode === undefined) {
+            endingNode = this.nodeCount - 1;
+        } else {
+            if (endingNode > this.nodeCount - 1) {
+                endingNode = this.nodeCount - 1;
+            }
+
+            if (endingNode < 0) {
+                endingNode = 0;
+            }
+        }
+
         let startCoords: Coordinate = this.getCoordList()[startingNode];
         let startingPoint: Point = MathUtils.convertCoordinateToPoint(startCoords);
+        let endCoords: Coordinate = this.getCoordList()[endingNode];
+        let endingPoint: Point = MathUtils.convertCoordinateToPoint(endCoords);
         this.setStartCoords(startingPoint);
-        
-        this.calculate(startingNode, this.nodeCount - 1);
+        this.setEndCoords(endingPoint);
+
+        this.calculate(startingNode, endingNode);
     }
 
 }

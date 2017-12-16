@@ -66,7 +66,7 @@ abstract class Algorithm {
         return value;
     }
 
-    public abstract run(startingNode?: number): void;
+    public abstract run(startingNode?: number, endingNode?: number): void;
 
     /**
      * Adds a new edge. Conversion to xy is applied here.
@@ -117,12 +117,24 @@ abstract class Algorithm {
         return this.stats.getStartX();
     }
 
+    public getEndY(): number {
+        return this.stats.getEndY();
+    }
+
+    public getEndX(): number {
+        return this.stats.getEndX();
+    }
+
     public getStartY(): number {
         return this.stats.getStartY();
     }
 
     public setStartCoords(point: Point) {
         this.stats.setStartingPoint(point);
+    }
+
+    public setEndCoords(point: Point) {
+        this.stats.setEndingPoint(point);
     }
 }
 

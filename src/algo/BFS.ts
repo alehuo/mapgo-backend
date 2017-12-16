@@ -114,6 +114,13 @@ class BFS extends Algorithm {
     public run(startingNode?: number): void {
         if (startingNode == null || startingNode === undefined) {
             startingNode = 0;
+        } else {
+            if (startingNode < 0) {
+                startingNode = 0;
+            }
+            if (startingNode > this.nodeCount - 1) {
+                startingNode = this.nodeCount - 1;
+            }
         }
         let startCoords: Coordinate = this.getCoordList()[startingNode];
         let startingPoint: Point = MathUtils.convertCoordinateToPoint(startCoords);
