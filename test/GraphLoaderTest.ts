@@ -10,7 +10,7 @@ import { ArrayList, Tuple, Edge, Coordinate } from '../src/struct';
 @suite class GraphLoaderTest {
     @test fileLoading() {
         let data: Tuple<ArrayList<Edge>[],
-            Coordinate[]> = GraphLoader.loadFile(__dirname + '/../../test/testGraph.json');
+            Tuple<Coordinate[], number[]>> = GraphLoader.loadFile(__dirname + '/../../test/testGraph.json');
 
         let coords: Coordinate[] = [
             new Coordinate(1, 1),

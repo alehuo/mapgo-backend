@@ -59,6 +59,13 @@ class Statistics {
         this.endY = endingPoint.y;
     }
 
+    public setMinMaxData(data: number[]) {
+        this.minX = data[0];
+        this.maxX = data[1];
+        this.minY = data[2];
+        this.maxY = data[3];
+    }
+
 
     /**
      * Adds a new edge.
@@ -72,6 +79,7 @@ class Statistics {
             this.currentStep = new Step(this.edgesPerStep);
         }
 
+        /*
         if (startingPoint.x < this.minX) {
             this.minX = startingPoint.x;
         }
@@ -98,6 +106,7 @@ class Statistics {
             this.maxY = endingPoint.y;
         }
 
+*/
 
         // Add new edge.
         this

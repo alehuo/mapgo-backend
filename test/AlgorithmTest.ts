@@ -10,7 +10,7 @@ import { Statistics, Arrays } from '../src/utils';
 @suite class AlgorithmTest {
 
     init(): Tuple<ArrayList<Edge>[],
-        Coordinate[]> {
+        Tuple<Coordinate[], number[]>> {
         let adjList: ArrayList<Edge>[] = new Array<ArrayList<Edge>>(8);
         Arrays.fillObj(adjList, null);
         Object.seal(adjList);
@@ -34,7 +34,7 @@ import { Statistics, Arrays } from '../src/utils';
         Arrays.fillObj(coords, new Coordinate(42, 42));
         Object.seal(coords);
 
-        return new Tuple<ArrayList<Edge>[], Coordinate[]>(adjList, coords);
+        return new Tuple<ArrayList<Edge>[], Tuple<Coordinate[], number[]>>(adjList, new Tuple(coords, [1, 2, 3, 4]));
     }
 
     private addTwEdge(adjList: ArrayList<Edge>[], source: number, dest: number, weight: number) {
@@ -50,19 +50,19 @@ import { Statistics, Arrays } from '../src/utils';
 
     @test test1() {
         let data: Tuple<ArrayList<Edge>[],
-            Coordinate[]> = this.init();
-        let algo: Algorithm = new TestAlgorithm(data.arg1, data.arg2, new Statistics(1));
+            Tuple<Coordinate[], number[]>> = this.init();
+        let algo: Algorithm = new TestAlgorithm(data.arg1, data.arg2.arg1, new Statistics(1), data.arg2.arg2);
         assert.equal(algo.getCoordList().length, 8);
 
-        for(let i = 0; i < 25; i++) {
+        for (let i = 0; i < 25; i++) {
             algo.run();
         }
-        
+
         assert.equal(algo.getSteps().length, 25);
 
-        algo = new TestAlgorithm(data.arg1, data.arg2, new Statistics(5));
-        
-        for(let i = 0; i < 25; i++) {
+        algo = new TestAlgorithm(data.arg1, data.arg2.arg1, new Statistics(5), data.arg2.arg2);
+
+        for (let i = 0; i < 25; i++) {
             algo.run();
         }
 

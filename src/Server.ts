@@ -19,7 +19,7 @@ class Server {
      * Graph file loaded as a Tuple.
      */
     private data: Tuple<ArrayList<Edge>[],
-        Coordinate[]>;
+        Tuple<Coordinate[], number[]>>;
 
     private wsPort: number;
 
@@ -64,13 +64,13 @@ class Server {
                     // Algorithm switching
                     switch (msg.algo) {
                         case AlgorithmType.DIJKSTRA:
-                            algo = new Dijkstra(this.data.arg1, this.data.arg2, new Statistics(stepSize));
+                            algo = new Dijkstra(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2);
                             break;
                         case AlgorithmType.ASTAR:
-                            algo = new AStar(this.data.arg1, this.data.arg2, new Statistics(stepSize));
+                            algo = new AStar(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2);
                             break;
                         case AlgorithmType.BFS:
-                            algo = new BFS(this.data.arg1, this.data.arg2, new Statistics(stepSize));
+                            algo = new BFS(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2);
                             break;
                         default:
                             throw ("Unknown algorithm");

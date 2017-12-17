@@ -28,8 +28,8 @@ class AStar extends Algorithm {
      */
     private nodeCount: number;
 
-    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
-        super(graph, coordList, stats);
+    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics, minMaxData: number[]) {
+        super(graph, coordList, stats, minMaxData);
 
         // Set node count
         this.nodeCount = graph.length;
@@ -68,7 +68,7 @@ class AStar extends Algorithm {
         Object.seal(visited);
 
         // Minimum heap that takes the goal's coordinates as its argument.
-        let heap: Heap<AStarNode> = new Heap<AStarNode>(new AStarComparator(this.getCoordList()[end].lat, this.getCoordList()[end].lon));
+        let heap: Heap<AStarNode> = new Heap<AStarNode>(new AStarComparator(this.getCoordList()[start].lat, this.getCoordList()[start].lon, this.getCoordList()[end].lat, this.getCoordList()[end].lon));
 
         // Insert starting node
         heap.heapInsert(new AStarNode(start, this.distStart[start]));

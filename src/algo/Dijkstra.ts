@@ -39,9 +39,9 @@ class Dijkstra extends Algorithm {
      * @param coordList Coordinate list.
      * @param stats Statistics.
      */
-    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
+    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics, minMaxData: number[]) {
         // Super constructor call.
-        super(graph, coordList, stats);
+        super(graph, coordList, stats, minMaxData);
 
         // Set node count
         this.nodeCount = graph.length;
