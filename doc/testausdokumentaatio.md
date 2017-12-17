@@ -78,3 +78,14 @@ Kuten huomataan, niin Javan ja JavaScriptin toteutukset ovat hyvin lähellä suo
 | 4194304 | 211 ms | 4332.6 ms | 267.1 ms |
 | 8388608 | 426.8 ms | 11955.9 ms | 568.2 ms |
 | 16777216 | 1789 ms | - ms | 3295.3 ms |
+
+Kekoa testattaessa on otettava huomioon se, että Comparatorin toiminta vaikuttaa heap-insert ja heap-del-min -metodien aikavaativuuteen. Oletetaan, että meillä on käytössä Comparator, mikä lajittelee luvut pienimmästä suurimpaan. Jos kekoon lisätään nyt lukuja käänteisessä järjestyksessä, niin n kappaletta lukuja lisätessä aikaa kuluu n * log(n). Jos taas lukuja poistetaan keosta, niin tällöin aikaa kuluu myös keskimäärin n * log(n). 
+
+Testasin keon operaatioiden aikavaativuuden siten, että lisäsin kekoon ensin miljoonia lukuja käänteisessä järjestyksessä ja mittasin siihen kuluvan ajan. Tämän jälkeen poistin keosta kaikki luvut, josta otin myös ylös siihen kuluneen ajan. Ajoin tätä muutaman tuhat kertaa läpi, ja joka kierroksen lopussa jaoin lisäykseen kuluneen ajan poistoon kuluneen ajan. Tämä suhde konvergoituu luvun 1.00 lähelle, joten voidaan sanoa että tätä testaustekniikkaa käyttämällä heapify-operaation tasainen kutsunta kertoo lisäys- ja poisto-operaatioiden toimivan aikavaativuudella O(log n).
+
+Lukuja lisätessä kekoon satunnaisesti insert toimii nyt epävakaammin: heapify-operaatiota kutsutaan n. 50% ajasta. Insertin aikavaativuus on siis O(1):n ja O(log n):n välissä, mutta poisto-operaation aikavaativuus on edelleen O(log n).
+Lisäykseet suoritettiin nyt huomattavasti nopeammin kuin poistot.
+
+Allaolevassa kuvassa on lisätty ensin n-1 lukua, jonka jälkeen viimeinen heap-insert -metodi toimii ajassa O(log n). Regressio saatiin suoraan toimimaan yllättävän hyvin.
+
+![heap-insert](heapinsert.png)

@@ -32,9 +32,9 @@ class Heap<T> {
      * @param comparator Comparator
      */
     constructor(comparator: Comparator<T>) {
-        this.queue = new Array<T>(100000);
-        /*Arrays.fillObj(this.queue, null);
-        Object.seal(this.queue);*/
+        this.queue = new Array<T>(this.length);
+        Arrays.fillObj(this.queue, null);
+        Object.seal(this.queue);
         this.comparator = comparator;
     }
 
@@ -43,8 +43,8 @@ class Heap<T> {
      */
     private grow(): void {
         let tmpData: Array<T> = new Array(Math.floor(this.queue.length * 3 / 2) + 1);
-        /*Arrays.fillObj(tmpData, null);
-        Object.seal(tmpData);*/
+        Arrays.fillObj(tmpData, null);
+        Object.seal(tmpData);
         for (var i = 0; i < this.queue.length; i++) {
             tmpData[i] = this.queue[i];
         }
