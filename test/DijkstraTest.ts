@@ -69,7 +69,7 @@ import Dijkstra from '../src/algo/Dijkstra';
         ];
 
         for (let i = 0; i < 8; i++) {
-            let distArr: number[] = dijkstra.shortestDistances(i);
+            let distArr: number[] = dijkstra.shortestDistances(i,data.arg1.length);
             for (let j = 0; j < 8; j++) {
                 assert.equal(distArr[j], shortestDistances[i][j], distArr[j] + " should be " + shortestDistances[i][j]);
             }

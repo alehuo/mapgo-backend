@@ -96,7 +96,7 @@ class Server {
                         startingY: algo.getStartY()
                     }
 
-                    if (msg.algo == AlgorithmType.ASTAR) {
+                    if (msg.algo == AlgorithmType.ASTAR || msg.algo == AlgorithmType.DIJKSTRA) {
                         data2.endingX = algo.getEndX();
                         data2.endingY = algo.getEndY();
                     }
