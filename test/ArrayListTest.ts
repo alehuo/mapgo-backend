@@ -29,7 +29,7 @@ import { ArrayList } from '../src/struct';
      * Big test 1
      * TODO: Add testing for array's dynamic size adjustment
      */
-    @timeout(10000)
+    @timeout(40000)
     @test big1() {
         let arr: ArrayList<number> = new ArrayList<number>();
 
