@@ -96,8 +96,11 @@
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_comparator_astarcomparator_.astarcomparator.html#heuristics" class="tsd-kind-icon">heuristics</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_comparator_astarcomparator_.astarcomparator.html#latend" class="tsd-kind-icon">lat<wbr>End</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_comparator_astarcomparator_.astarcomparator.html#latstart" class="tsd-kind-icon">lat<wbr>Start</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_comparator_astarcomparator_.astarcomparator.html#lonend" class="tsd-kind-icon">lon<wbr>End</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_comparator_astarcomparator_.astarcomparator.html#lonstart" class="tsd-kind-icon">lon<wbr>Start</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -115,17 +118,23 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new AStar<wbr>Comparator<span class="tsd-signature-symbol">(</span>latEnd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, lonEnd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_comparator_astarcomparator_.astarcomparator.html" class="tsd-signature-type">AStarComparator</a></li>
+						<li class="tsd-signature tsd-kind-icon">new AStar<wbr>Comparator<span class="tsd-signature-symbol">(</span>latStart<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, lonStart<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, latEnd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, lonEnd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_comparator_astarcomparator_.astarcomparator.html" class="tsd-signature-type">AStarComparator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/comparator/AStarComparator.ts#L8">comparator/AStarComparator.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/comparator/AStarComparator.ts#L11">comparator/AStarComparator.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
+								<li>
+									<h5>latStart: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>lonStart: <span class="tsd-signature-type">number</span></h5>
+								</li>
 								<li>
 									<h5>latEnd: <span class="tsd-signature-type">number</span></h5>
 								</li>
@@ -141,12 +150,32 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="heuristics" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> heuristics</h3>
+					<div class="tsd-signature tsd-kind-icon">heuristics<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/comparator/AStarComparator.ts#L11">comparator/AStarComparator.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="latend" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> lat<wbr>End</h3>
 					<div class="tsd-signature tsd-kind-icon">lat<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/comparator/AStarComparator.ts#L7">comparator/AStarComparator.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/comparator/AStarComparator.ts#L7">comparator/AStarComparator.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="latstart" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> lat<wbr>Start</h3>
+					<div class="tsd-signature tsd-kind-icon">lat<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/comparator/AStarComparator.ts#L9">comparator/AStarComparator.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,7 +185,17 @@
 					<div class="tsd-signature tsd-kind-icon">lon<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/comparator/AStarComparator.ts#L8">comparator/AStarComparator.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/comparator/AStarComparator.ts#L8">comparator/AStarComparator.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="lonstart" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> lon<wbr>Start</h3>
+					<div class="tsd-signature tsd-kind-icon">lon<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/comparator/AStarComparator.ts#L10">comparator/AStarComparator.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -173,7 +212,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/comparator/AStarComparator.ts#L15">comparator/AStarComparator.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/comparator/AStarComparator.ts#L20">comparator/AStarComparator.ts:20</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -213,10 +252,19 @@
 								<a href="_comparator_astarcomparator_.astarcomparator.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_comparator_astarcomparator_.astarcomparator.html#heuristics" class="tsd-kind-icon">heuristics</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_comparator_astarcomparator_.astarcomparator.html#latend" class="tsd-kind-icon">lat<wbr>End</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_comparator_astarcomparator_.astarcomparator.html#latstart" class="tsd-kind-icon">lat<wbr>Start</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_comparator_astarcomparator_.astarcomparator.html#lonend" class="tsd-kind-icon">lon<wbr>End</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_comparator_astarcomparator_.astarcomparator.html#lonstart" class="tsd-kind-icon">lon<wbr>Start</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_comparator_astarcomparator_.astarcomparator.html#compare" class="tsd-kind-icon">compare</a>

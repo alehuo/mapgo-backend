@@ -55,6 +55,8 @@ Vaihtoehtoisesti voit hakea projektin Dockerin image repositoriosta ja suorittaa
 
 - [Viikkoraportti 6](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti6.md)
 
+- [Viikkoraportti 7](https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti7.md)
+
 ### [Määrittelydokumentaatio](https://github.com/alehuo/mapgo-backend/blob/master/doc/määrittelydokumentaatio.md)
 
 ### [Testausdokumentaatio](https://github.com/alehuo/mapgo-backend/blob/master/doc/testausdokumentaatio.md)

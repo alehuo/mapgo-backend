@@ -108,6 +108,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#infinity" class="tsd-kind-icon">INFINITY</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_astar_.astar.html#comparator" class="tsd-kind-icon">comparator</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_astar_.astar.html#distend" class="tsd-kind-icon">dist<wbr>End</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_astar_.astar.html#diststart" class="tsd-kind-icon">dist<wbr>Start</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_astar_.astar.html#nodecount" class="tsd-kind-icon">node<wbr>Count</a></li>
@@ -120,17 +121,23 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#addedge" class="tsd-kind-icon">add<wbr>Edge</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_algo_astar_.astar.html#calculate" class="tsd-kind-icon">calculate</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getcoordlist" class="tsd-kind-icon">get<wbr>Coord<wbr>List</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getendx" class="tsd-kind-icon">get<wbr>EndX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getendy" class="tsd-kind-icon">get<wbr>EndY</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getgraph" class="tsd-kind-icon">get<wbr>Graph</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getmaxx" class="tsd-kind-icon">get<wbr>MaxX</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getmaxy" class="tsd-kind-icon">get<wbr>MaxY</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getminx" class="tsd-kind-icon">get<wbr>MinX</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getminy" class="tsd-kind-icon">get<wbr>MinY</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getroadmaxid" class="tsd-kind-icon">get<wbr>Road<wbr>Max<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getstartx" class="tsd-kind-icon">get<wbr>StartX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getstarty" class="tsd-kind-icon">get<wbr>StartY</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getsteps" class="tsd-kind-icon">get<wbr>Steps</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#getstepsasjson" class="tsd-kind-icon">get<wbr>Steps<wbr>AsJSON</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_algo_astar_.astar.html#initialize" class="tsd-kind-icon">initialize</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#resetsteps" class="tsd-kind-icon">reset<wbr>Steps</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_algo_astar_.astar.html#run" class="tsd-kind-icon">run</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#setendcoords" class="tsd-kind-icon">set<wbr>End<wbr>Coords</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_astar_.astar.html#setstartcoords" class="tsd-kind-icon">set<wbr>Start<wbr>Coords</a></li>
 							</ul>
 						</section>
 					</div>
@@ -142,14 +149,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new AStar<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_edge_.edge.html" class="tsd-signature-type">Edge</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, coordList<span class="tsd-signature-symbol">: </span><a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">[]</span>, stats<span class="tsd-signature-symbol">: </span><a href="_utils_statistics_.statistics.html" class="tsd-signature-type">Statistics</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_algo_astar_.astar.html" class="tsd-signature-type">AStar</a></li>
+						<li class="tsd-signature tsd-kind-icon">new AStar<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_edge_.edge.html" class="tsd-signature-type">Edge</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, coordList<span class="tsd-signature-symbol">: </span><a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">[]</span>, stats<span class="tsd-signature-symbol">: </span><a href="_utils_statistics_.statistics.html" class="tsd-signature-type">Statistics</a>, minMaxData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, comparator<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interface_comparator_.comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_node_.node.html" class="tsd-signature-type">Node</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_algo_astar_.astar.html" class="tsd-signature-type">AStar</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/algo/AStar.ts#L29">algo/AStar.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L36">algo/AStar.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -162,6 +169,12 @@
 								</li>
 								<li>
 									<h5>stats: <a href="_utils_statistics_.statistics.html" class="tsd-signature-type">Statistics</a></h5>
+								</li>
+								<li>
+									<h5>minMaxData: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>comparator: <a href="../interfaces/_interface_comparator_.comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_node_.node.html" class="tsd-signature-type">Node</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_algo_astar_.astar.html" class="tsd-signature-type">AStar</a></h4>
@@ -178,7 +191,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#infinity">INFINITY</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L28">struct/Algorithm.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L28">struct/Algorithm.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -188,12 +201,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="comparator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> comparator</h3>
+					<div class="tsd-signature tsd-kind-icon">comparator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L36">algo/AStar.ts:36</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Comparator.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="distend" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> dist<wbr>End</h3>
 					<div class="tsd-signature tsd-kind-icon">dist<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/algo/AStar.ts#L18">algo/AStar.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L20">algo/AStar.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -208,7 +236,7 @@
 					<div class="tsd-signature tsd-kind-icon">dist<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/algo/AStar.ts#L13">algo/AStar.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L15">algo/AStar.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -223,7 +251,7 @@
 					<div class="tsd-signature tsd-kind-icon">node<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/algo/AStar.ts#L29">algo/AStar.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L31">algo/AStar.ts:31</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -238,7 +266,7 @@
 					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/algo/AStar.ts#L23">algo/AStar.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L25">algo/AStar.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -261,7 +289,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#addedge">addEdge</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L75">struct/Algorithm.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L76">struct/Algorithm.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -286,13 +314,13 @@
 					<a name="calculate" class="tsd-anchor"></a>
 					<h3>calculate</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">calculate<span class="tsd-signature-symbol">(</span>start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">calculate<span class="tsd-signature-symbol">(</span>start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/algo/AStar.ts#L62">algo/AStar.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L73">algo/AStar.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -304,7 +332,7 @@
 									<h5>end: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -319,10 +347,46 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getcoordlist">getCoordList</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L92">struct/Algorithm.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L93">struct/Algorithm.ts:93</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getendx" class="tsd-anchor"></a>
+					<h3>get<wbr>EndX</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>EndX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getendx">getEndX</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L125">struct/Algorithm.ts:125</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getendy" class="tsd-anchor"></a>
+					<h3>get<wbr>EndY</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>EndY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getendy">getEndY</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L121">struct/Algorithm.ts:121</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -337,7 +401,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getgraph">getGraph</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L88">struct/Algorithm.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L89">struct/Algorithm.ts:89</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_edge_.edge.html" class="tsd-signature-type">Edge</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -355,7 +419,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getmaxx">getMaxX</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L100">struct/Algorithm.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L101">struct/Algorithm.ts:101</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -373,7 +437,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getmaxy">getMaxY</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L108">struct/Algorithm.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L109">struct/Algorithm.ts:109</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -391,7 +455,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getminx">getMinX</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L96">struct/Algorithm.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L97">struct/Algorithm.ts:97</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -409,7 +473,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getminy">getMinY</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L104">struct/Algorithm.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L105">struct/Algorithm.ts:105</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -427,7 +491,43 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getroadmaxid">getRoadMaxId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L112">struct/Algorithm.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L113">struct/Algorithm.ts:113</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getstartx" class="tsd-anchor"></a>
+					<h3>get<wbr>StartX</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>StartX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getstartx">getStartX</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L117">struct/Algorithm.ts:117</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getstarty" class="tsd-anchor"></a>
+					<h3>get<wbr>StartY</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>StartY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getstarty">getStartY</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L129">struct/Algorithm.ts:129</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -445,7 +545,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getsteps">getSteps</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L39">struct/Algorithm.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L40">struct/Algorithm.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -468,7 +568,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getstepsasjson">getStepsAsJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L49">struct/Algorithm.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L50">struct/Algorithm.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -496,7 +596,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/algo/AStar.ts#L57">algo/AStar.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L67">algo/AStar.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -531,7 +631,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#resetsteps">resetSteps</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Algorithm.ts#L84">struct/Algorithm.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L85">struct/Algorithm.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -547,14 +647,14 @@
 					<a name="run" class="tsd-anchor"></a>
 					<h3>run</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>startingNode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, endingNode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#run">run</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/algo/AStar.ts#L114">algo/AStar.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/AStar.ts#L131">algo/AStar.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -562,6 +662,63 @@
 									<p>Execute the algorithm.</p>
 								</div>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> startingNode: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> endingNode: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setendcoords" class="tsd-anchor"></a>
+					<h3>set<wbr>End<wbr>Coords</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>End<wbr>Coords<span class="tsd-signature-symbol">(</span>point<span class="tsd-signature-symbol">: </span><a href="_struct_point_.point.html" class="tsd-signature-type">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#setendcoords">setEndCoords</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L137">struct/Algorithm.ts:137</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>point: <a href="_struct_point_.point.html" class="tsd-signature-type">Point</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setstartcoords" class="tsd-anchor"></a>
+					<h3>set<wbr>Start<wbr>Coords</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Start<wbr>Coords<span class="tsd-signature-symbol">(</span>point<span class="tsd-signature-symbol">: </span><a href="_struct_point_.point.html" class="tsd-signature-type">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#setstartcoords">setStartCoords</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L133">struct/Algorithm.ts:133</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>point: <a href="_struct_point_.point.html" class="tsd-signature-type">Point</a></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -593,6 +750,9 @@
 								<a href="_algo_astar_.astar.html#infinity" class="tsd-kind-icon">INFINITY</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_algo_astar_.astar.html#comparator" class="tsd-kind-icon">comparator</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_algo_astar_.astar.html#distend" class="tsd-kind-icon">dist<wbr>End</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
@@ -614,6 +774,12 @@
 								<a href="_algo_astar_.astar.html#getcoordlist" class="tsd-kind-icon">get<wbr>Coord<wbr>List</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_astar_.astar.html#getendx" class="tsd-kind-icon">get<wbr>EndX</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_astar_.astar.html#getendy" class="tsd-kind-icon">get<wbr>EndY</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_algo_astar_.astar.html#getgraph" class="tsd-kind-icon">get<wbr>Graph</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -632,6 +798,12 @@
 								<a href="_algo_astar_.astar.html#getroadmaxid" class="tsd-kind-icon">get<wbr>Road<wbr>Max<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_astar_.astar.html#getstartx" class="tsd-kind-icon">get<wbr>StartX</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_astar_.astar.html#getstarty" class="tsd-kind-icon">get<wbr>StartY</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_algo_astar_.astar.html#getsteps" class="tsd-kind-icon">get<wbr>Steps</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -645,6 +817,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_algo_astar_.astar.html#run" class="tsd-kind-icon">run</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_astar_.astar.html#setendcoords" class="tsd-kind-icon">set<wbr>End<wbr>Coords</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_astar_.astar.html#setstartcoords" class="tsd-kind-icon">set<wbr>Start<wbr>Coords</a>
 							</li>
 						</ul>
 					</li>

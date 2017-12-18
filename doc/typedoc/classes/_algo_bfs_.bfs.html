@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Algorithm | mapgo-backend</title>
+	<title>BFS | mapgo-backend</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_struct_algorithm_.html">&quot;struct/Algorithm&quot;</a>
+					<a href="../modules/_algo_bfs_.html">&quot;algo/BFS&quot;</a>
 				</li>
 				<li>
-					<a href="_struct_algorithm_.algorithm.html">Algorithm</a>
+					<a href="_algo_bfs_.bfs.html">BFS</a>
 				</li>
 			</ul>
-			<h1>Class Algorithm</h1>
+			<h1>Class BFS</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Algorithm interface is used to standardize different path finding algorithms.</p>
+						<p>BFS algorithm.</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>author</dt>
@@ -85,16 +85,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Algorithm</span>
+						<a href="_struct_algorithm_.algorithm.html" class="tsd-signature-type">Algorithm</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="_algo_dijkstra_.dijkstra.html" class="tsd-signature-type">Dijkstra</a>
-							</li>
-							<li>
-								<a href="_algo_astar_.astar.html" class="tsd-signature-type">AStar</a>
-							</li>
-							<li>
-								<a href="_algo_bfs_.bfs.html" class="tsd-signature-type">BFS</a>
+								<span class="target">BFS</span>
 							</li>
 						</ul>
 					</li>
@@ -107,40 +101,43 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_algo_bfs_.bfs.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#infinity" class="tsd-kind-icon">INFINITY</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_algorithm_.algorithm.html#coordlist" class="tsd-kind-icon">coordlist</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_algorithm_.algorithm.html#graph" class="tsd-kind-icon">graph</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_struct_algorithm_.algorithm.html#stats" class="tsd-kind-icon">stats</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#infinity" class="tsd-kind-icon">INFINITY</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_bfs_.bfs.html#color" class="tsd-kind-icon">color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_bfs_.bfs.html#dist" class="tsd-kind-icon">dist</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_bfs_.bfs.html#nodecount" class="tsd-kind-icon">node<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_bfs_.bfs.html#queue" class="tsd-kind-icon">queue</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_algo_bfs_.bfs.html#tree" class="tsd-kind-icon">tree</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#addedge" class="tsd-kind-icon">add<wbr>Edge</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getcoordlist" class="tsd-kind-icon">get<wbr>Coord<wbr>List</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getendx" class="tsd-kind-icon">get<wbr>EndX</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getendy" class="tsd-kind-icon">get<wbr>EndY</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getgraph" class="tsd-kind-icon">get<wbr>Graph</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getmaxx" class="tsd-kind-icon">get<wbr>MaxX</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getmaxy" class="tsd-kind-icon">get<wbr>MaxY</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getminx" class="tsd-kind-icon">get<wbr>MinX</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getminy" class="tsd-kind-icon">get<wbr>MinY</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getroadmaxid" class="tsd-kind-icon">get<wbr>Road<wbr>Max<wbr>Id</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getstartx" class="tsd-kind-icon">get<wbr>StartX</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getstarty" class="tsd-kind-icon">get<wbr>StartY</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getsteps" class="tsd-kind-icon">get<wbr>Steps</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#getstepsasjson" class="tsd-kind-icon">get<wbr>Steps<wbr>AsJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_struct_algorithm_.algorithm.html#replacer" class="tsd-kind-icon">replacer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#resetsteps" class="tsd-kind-icon">reset<wbr>Steps</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#run" class="tsd-kind-icon">run</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#setendcoords" class="tsd-kind-icon">set<wbr>End<wbr>Coords</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_algorithm_.algorithm.html#setstartcoords" class="tsd-kind-icon">set<wbr>Start<wbr>Coords</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#addedge" class="tsd-kind-icon">add<wbr>Edge</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_algo_bfs_.bfs.html#bfs" class="tsd-kind-icon">bfs</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getcoordlist" class="tsd-kind-icon">get<wbr>Coord<wbr>List</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getendx" class="tsd-kind-icon">get<wbr>EndX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getendy" class="tsd-kind-icon">get<wbr>EndY</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getgraph" class="tsd-kind-icon">get<wbr>Graph</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getmaxx" class="tsd-kind-icon">get<wbr>MaxX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getmaxy" class="tsd-kind-icon">get<wbr>MaxY</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getminx" class="tsd-kind-icon">get<wbr>MinX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getminy" class="tsd-kind-icon">get<wbr>MinY</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getroadmaxid" class="tsd-kind-icon">get<wbr>Road<wbr>Max<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getstartx" class="tsd-kind-icon">get<wbr>StartX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getstarty" class="tsd-kind-icon">get<wbr>StartY</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getsteps" class="tsd-kind-icon">get<wbr>Steps</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#getstepsasjson" class="tsd-kind-icon">get<wbr>Steps<wbr>AsJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_algo_bfs_.bfs.html#init" class="tsd-kind-icon">init</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#resetsteps" class="tsd-kind-icon">reset<wbr>Steps</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_algo_bfs_.bfs.html#run" class="tsd-kind-icon">run</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#setendcoords" class="tsd-kind-icon">set<wbr>End<wbr>Coords</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_algo_bfs_.bfs.html#setstartcoords" class="tsd-kind-icon">set<wbr>Start<wbr>Coords</a></li>
 							</ul>
 						</section>
 					</div>
@@ -148,46 +145,68 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Algorithm<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_edge_.edge.html" class="tsd-signature-type">Edge</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, coordList<span class="tsd-signature-symbol">: </span><a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">[]</span>, stats<span class="tsd-signature-symbol">: </span><a href="_utils_statistics_.statistics.html" class="tsd-signature-type">Statistics</a>, minMaxData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_struct_algorithm_.algorithm.html" class="tsd-signature-type">Algorithm</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new BFS<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_edge_.edge.html" class="tsd-signature-type">Edge</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, coordList<span class="tsd-signature-symbol">: </span><a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">[]</span>, stats<span class="tsd-signature-symbol">: </span><a href="_utils_statistics_.statistics.html" class="tsd-signature-type">Statistics</a>, minMaxData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_algo_bfs_.bfs.html" class="tsd-signature-type">BFS</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L28">struct/Algorithm.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L34">algo/BFS.ts:34</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>BFS algorithm.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>graph: <a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_edge_.edge.html" class="tsd-signature-type">Edge</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Graph.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>coordList: <a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Coordinate list.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>stats: <a href="_utils_statistics_.statistics.html" class="tsd-signature-type">Statistics</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Statistics.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>minMaxData: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_struct_algorithm_.algorithm.html" class="tsd-signature-type">Algorithm</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_algo_bfs_.bfs.html" class="tsd-signature-type">BFS</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="infinity" class="tsd-anchor"></a>
 					<h3>INFINITY</h3>
 					<div class="tsd-signature tsd-kind-icon">INFINITY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;Number.MAX_SAFE_INTEGER</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#infinity">INFINITY</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L28">struct/Algorithm.ts:28</a></li>
 						</ul>
@@ -199,62 +218,93 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="coordlist" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> coordlist</h3>
-					<div class="tsd-signature tsd-kind-icon">coordlist<span class="tsd-signature-symbol">:</span> <a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="color" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> color</h3>
+					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <a href="../enums/_enum_nodecolor_.nodecolor.html" class="tsd-signature-type">NodeColor</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L18">struct/Algorithm.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L14">algo/BFS.ts:14</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Coordinate list. Index points to the coordinate a single node has.</p>
+							<p>Color array.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="graph" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> graph</h3>
-					<div class="tsd-signature tsd-kind-icon">graph<span class="tsd-signature-symbol">:</span> <a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_edge_.edge.html" class="tsd-signature-type">Edge</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="dist" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> dist</h3>
+					<div class="tsd-signature tsd-kind-icon">dist<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L13">struct/Algorithm.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L19">algo/BFS.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Graph.</p>
+							<p>Distance array.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="stats" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> stats</h3>
-					<div class="tsd-signature tsd-kind-icon">stats<span class="tsd-signature-symbol">:</span> <a href="_utils_statistics_.statistics.html" class="tsd-signature-type">Statistics</a></div>
+					<a name="nodecount" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> node<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">node<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L23">struct/Algorithm.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L29">algo/BFS.ts:29</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Statistics.</p>
+							<p>Node count.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="queue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> queue</h3>
+					<div class="tsd-signature tsd-kind-icon">queue<span class="tsd-signature-symbol">:</span> <a href="_struct_queue_.queue.html" class="tsd-signature-type">Queue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L34">algo/BFS.ts:34</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Queue.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="tree" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> tree</h3>
+					<div class="tsd-signature tsd-kind-icon">tree<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L24">algo/BFS.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Tree.</p>
 						</div>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="addedge" class="tsd-anchor"></a>
 					<h3>add<wbr>Edge</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">add<wbr>Edge<span class="tsd-signature-symbol">(</span>startingCoordinate<span class="tsd-signature-symbol">: </span><a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a>, endingCoordinate<span class="tsd-signature-symbol">: </span><a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#addedge">addEdge</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L76">struct/Algorithm.ts:76</a></li>
 								</ul>
@@ -278,14 +328,46 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="bfs" class="tsd-anchor"></a>
+					<h3>bfs</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">bfs<span class="tsd-signature-symbol">(</span>startingNode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L66">algo/BFS.ts:66</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>BFS algorithm.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>startingNode: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Starting node.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getcoordlist" class="tsd-anchor"></a>
 					<h3>get<wbr>Coord<wbr>List</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Coord<wbr>List<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_struct_coordinate_.coordinate.html" class="tsd-signature-type">Coordinate</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getcoordlist">getCoordList</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L93">struct/Algorithm.ts:93</a></li>
 								</ul>
@@ -294,15 +376,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getendx" class="tsd-anchor"></a>
 					<h3>get<wbr>EndX</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>EndX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getendx">getEndX</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L125">struct/Algorithm.ts:125</a></li>
 								</ul>
@@ -311,15 +394,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getendy" class="tsd-anchor"></a>
 					<h3>get<wbr>EndY</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>EndY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getendy">getEndY</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L121">struct/Algorithm.ts:121</a></li>
 								</ul>
@@ -328,15 +412,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getgraph" class="tsd-anchor"></a>
 					<h3>get<wbr>Graph</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Graph<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_struct_arraylist_.arraylist.html" class="tsd-signature-type">ArrayList</a><span class="tsd-signature-symbol">&lt;</span><a href="_struct_edge_.edge.html" class="tsd-signature-type">Edge</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getgraph">getGraph</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L89">struct/Algorithm.ts:89</a></li>
 								</ul>
@@ -345,15 +430,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getmaxx" class="tsd-anchor"></a>
 					<h3>get<wbr>MaxX</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>MaxX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getmaxx">getMaxX</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L101">struct/Algorithm.ts:101</a></li>
 								</ul>
@@ -362,15 +448,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getmaxy" class="tsd-anchor"></a>
 					<h3>get<wbr>MaxY</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>MaxY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getmaxy">getMaxY</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L109">struct/Algorithm.ts:109</a></li>
 								</ul>
@@ -379,15 +466,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getminx" class="tsd-anchor"></a>
 					<h3>get<wbr>MinX</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>MinX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getminx">getMinX</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L97">struct/Algorithm.ts:97</a></li>
 								</ul>
@@ -396,15 +484,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getminy" class="tsd-anchor"></a>
 					<h3>get<wbr>MinY</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>MinY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getminy">getMinY</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L105">struct/Algorithm.ts:105</a></li>
 								</ul>
@@ -413,15 +502,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getroadmaxid" class="tsd-anchor"></a>
 					<h3>get<wbr>Road<wbr>Max<wbr>Id</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Road<wbr>Max<wbr>Id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getroadmaxid">getRoadMaxId</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L113">struct/Algorithm.ts:113</a></li>
 								</ul>
@@ -430,15 +520,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getstartx" class="tsd-anchor"></a>
 					<h3>get<wbr>StartX</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>StartX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getstartx">getStartX</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L117">struct/Algorithm.ts:117</a></li>
 								</ul>
@@ -447,15 +538,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getstarty" class="tsd-anchor"></a>
 					<h3>get<wbr>StartY</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>StartY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getstarty">getStartY</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L129">struct/Algorithm.ts:129</a></li>
 								</ul>
@@ -464,15 +556,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getsteps" class="tsd-anchor"></a>
 					<h3>get<wbr>Steps</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Steps<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_struct_step_.step.html" class="tsd-signature-type">Step</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getsteps">getSteps</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L40">struct/Algorithm.ts:40</a></li>
 								</ul>
@@ -486,15 +579,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getstepsasjson" class="tsd-anchor"></a>
 					<h3>get<wbr>Steps<wbr>AsJSON</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Steps<wbr>AsJSON<span class="tsd-signature-symbol">(</span>pretty<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#getstepsasjson">getStepsAsJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L50">struct/Algorithm.ts:50</a></li>
 								</ul>
@@ -515,47 +609,46 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="replacer" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> replacer</h3>
+					<a name="init" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> init</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">replacer<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">(</span>startingNode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L63">struct/Algorithm.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L94">algo/BFS.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Replacer method to parse the Step[] array.</p>
+									<p>Initializes data structures for BFS algorithm.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>key: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<h5>startingNode: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>Starting node.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="resetsteps" class="tsd-anchor"></a>
 					<h3>reset<wbr>Steps</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">reset<wbr>Steps<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#resetsteps">resetSteps</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L85">struct/Algorithm.ts:85</a></li>
 								</ul>
@@ -569,17 +662,18 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="run" class="tsd-anchor"></a>
 					<h3>run</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>startingNode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, endingNode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>startingNode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#run">run</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L70">struct/Algorithm.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/algo/BFS.ts#L114">algo/BFS.ts:114</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -587,23 +681,21 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> startingNode: <span class="tsd-signature-type">number</span></h5>
 								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> endingNode: <span class="tsd-signature-type">number</span></h5>
-								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="setendcoords" class="tsd-anchor"></a>
 					<h3>set<wbr>End<wbr>Coords</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">set<wbr>End<wbr>Coords<span class="tsd-signature-symbol">(</span>point<span class="tsd-signature-symbol">: </span><a href="_struct_point_.point.html" class="tsd-signature-type">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#setendcoords">setEndCoords</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L137">struct/Algorithm.ts:137</a></li>
 								</ul>
@@ -618,15 +710,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="setstartcoords" class="tsd-anchor"></a>
 					<h3>set<wbr>Start<wbr>Coords</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">set<wbr>Start<wbr>Coords<span class="tsd-signature-symbol">(</span>point<span class="tsd-signature-symbol">: </span><a href="_struct_point_.point.html" class="tsd-signature-type">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_struct_algorithm_.algorithm.html">Algorithm</a>.<a href="_struct_algorithm_.algorithm.html#setstartcoords">setStartCoords</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Algorithm.ts#L133">struct/Algorithm.ts:133</a></li>
 								</ul>
@@ -650,7 +743,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_struct_algorithm_.html">"struct/<wbr>Algorithm"</a>
+						<a href="../modules/_algo_bfs_.html">"algo/BFS"</a>
 					</li>
 				</ul>
 			</nav>
@@ -659,79 +752,88 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_struct_algorithm_.algorithm.html" class="tsd-kind-icon">Algorithm</a>
+						<a href="_algo_bfs_.bfs.html" class="tsd-kind-icon">BFS</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_algo_bfs_.bfs.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#infinity" class="tsd-kind-icon">INFINITY</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_struct_algorithm_.algorithm.html#coordlist" class="tsd-kind-icon">coordlist</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#infinity" class="tsd-kind-icon">INFINITY</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_struct_algorithm_.algorithm.html#graph" class="tsd-kind-icon">graph</a>
+								<a href="_algo_bfs_.bfs.html#color" class="tsd-kind-icon">color</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_struct_algorithm_.algorithm.html#stats" class="tsd-kind-icon">stats</a>
+								<a href="_algo_bfs_.bfs.html#dist" class="tsd-kind-icon">dist</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_algo_bfs_.bfs.html#nodecount" class="tsd-kind-icon">node<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_algo_bfs_.bfs.html#queue" class="tsd-kind-icon">queue</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_algo_bfs_.bfs.html#tree" class="tsd-kind-icon">tree</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#addedge" class="tsd-kind-icon">add<wbr>Edge</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#addedge" class="tsd-kind-icon">add<wbr>Edge</a>
+								<a href="_algo_bfs_.bfs.html#bfs" class="tsd-kind-icon">bfs</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getcoordlist" class="tsd-kind-icon">get<wbr>Coord<wbr>List</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getcoordlist" class="tsd-kind-icon">get<wbr>Coord<wbr>List</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getendx" class="tsd-kind-icon">get<wbr>EndX</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getendx" class="tsd-kind-icon">get<wbr>EndX</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getendy" class="tsd-kind-icon">get<wbr>EndY</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getendy" class="tsd-kind-icon">get<wbr>EndY</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getgraph" class="tsd-kind-icon">get<wbr>Graph</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getgraph" class="tsd-kind-icon">get<wbr>Graph</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getmaxx" class="tsd-kind-icon">get<wbr>MaxX</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getmaxx" class="tsd-kind-icon">get<wbr>MaxX</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getmaxy" class="tsd-kind-icon">get<wbr>MaxY</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getmaxy" class="tsd-kind-icon">get<wbr>MaxY</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getminx" class="tsd-kind-icon">get<wbr>MinX</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getminx" class="tsd-kind-icon">get<wbr>MinX</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getminy" class="tsd-kind-icon">get<wbr>MinY</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getminy" class="tsd-kind-icon">get<wbr>MinY</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getroadmaxid" class="tsd-kind-icon">get<wbr>Road<wbr>Max<wbr>Id</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getroadmaxid" class="tsd-kind-icon">get<wbr>Road<wbr>Max<wbr>Id</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getstartx" class="tsd-kind-icon">get<wbr>StartX</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getstartx" class="tsd-kind-icon">get<wbr>StartX</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getstarty" class="tsd-kind-icon">get<wbr>StartY</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getstarty" class="tsd-kind-icon">get<wbr>StartY</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getsteps" class="tsd-kind-icon">get<wbr>Steps</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getsteps" class="tsd-kind-icon">get<wbr>Steps</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#getstepsasjson" class="tsd-kind-icon">get<wbr>Steps<wbr>AsJSON</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#getstepsasjson" class="tsd-kind-icon">get<wbr>Steps<wbr>AsJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_struct_algorithm_.algorithm.html#replacer" class="tsd-kind-icon">replacer</a>
+								<a href="_algo_bfs_.bfs.html#init" class="tsd-kind-icon">init</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#resetsteps" class="tsd-kind-icon">reset<wbr>Steps</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#resetsteps" class="tsd-kind-icon">reset<wbr>Steps</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#run" class="tsd-kind-icon">run</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_algo_bfs_.bfs.html#run" class="tsd-kind-icon">run</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#setendcoords" class="tsd-kind-icon">set<wbr>End<wbr>Coords</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#setendcoords" class="tsd-kind-icon">set<wbr>End<wbr>Coords</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_struct_algorithm_.algorithm.html#setstartcoords" class="tsd-kind-icon">set<wbr>Start<wbr>Coords</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_algo_bfs_.bfs.html#setstartcoords" class="tsd-kind-icon">set<wbr>Start<wbr>Coords</a>
 							</li>
 						</ul>
 					</li>

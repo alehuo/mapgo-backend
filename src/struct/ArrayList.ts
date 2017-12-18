@@ -31,9 +31,9 @@ class ArrayList<T> {
         // Create new array with fixed size
         this.data = new Array(size || 10);
         // Fill it
-        //Arrays.fillObj(this.data, null);
+        Arrays.fillObj(this.data, null);
         // Steal it to prevent later modification.
-        //Object.seal(this.data);
+        Object.seal(this.data);
         // Starting index is zero
         this.index = 0;
     }

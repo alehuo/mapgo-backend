@@ -4,6 +4,7 @@ import * as io from 'socket.io';
 import { Status, AlgorithmType } from './enum/index';
 import { Data, MinMaxData, AvailableAlgo } from './interface/index';
 import { AStar, Dijkstra, BFS } from './algo/index';
+import AStarComparator from './comparator/AStarComparator';
 
 /**
  * Server.
@@ -19,7 +20,7 @@ class Server {
      * Graph file loaded as a Tuple.
      */
     private data: Tuple<ArrayList<Edge>[],
-        Coordinate[]>;
+        Tuple<Coordinate[], number[]>>;
 
     private wsPort: number;
 
@@ -64,13 +65,13 @@ class Server {
                     // Algorithm switching
                     switch (msg.algo) {
                         case AlgorithmType.DIJKSTRA:
-                            algo = new Dijkstra(this.data.arg1, this.data.arg2, new Statistics(stepSize));
+                            algo = new Dijkstra(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2);
                             break;
                         case AlgorithmType.ASTAR:
-                            algo = new AStar(this.data.arg1, this.data.arg2, new Statistics(stepSize));
+                            algo = new AStar(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2, new AStarComparator(this.data.arg2.arg1[msg.startingNode].lat, this.data.arg2.arg1[msg.endingNode].lon, this.data.arg2.arg1[msg.endingNode].lat, this.data.arg2.arg1[msg.endingNode].lon));
                             break;
                         case AlgorithmType.BFS:
-                            algo = new BFS(this.data.arg1, this.data.arg2, new Statistics(stepSize));
+                            algo = new BFS(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2);
                             break;
                         default:
                             throw ("Unknown algorithm");
@@ -96,7 +97,7 @@ class Server {
                         startingY: algo.getStartY()
                     }
 
-                    if (msg.algo == AlgorithmType.ASTAR) {
+                    if (msg.algo == AlgorithmType.ASTAR || msg.algo == AlgorithmType.DIJKSTRA) {
                         data2.endingX = algo.getEndX();
                         data2.endingY = algo.getEndY();
                     }

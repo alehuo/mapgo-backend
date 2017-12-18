@@ -11,7 +11,7 @@ import Dijkstra from '../src/algo/Dijkstra';
 @suite class DijkstraTest {
 
     init(): Tuple<ArrayList<Edge>[],
-        Coordinate[]> {
+        Tuple<Coordinate[], number[]>> {
         let adjList: ArrayList<Edge>[] = new Array<ArrayList<Edge>>(8);
         Arrays.fillObj(adjList, null);
         Object.seal(adjList);
@@ -35,7 +35,7 @@ import Dijkstra from '../src/algo/Dijkstra';
         Arrays.fillObj(coords, new Coordinate(42, 42));
         Object.seal(coords);
 
-        return new Tuple<ArrayList<Edge>[], Coordinate[]>(adjList, coords);
+        return new Tuple<ArrayList<Edge>[], Tuple<Coordinate[], number[]>>(adjList, new Tuple(coords, [1, 2, 3, 4]));
     }
 
     private addTwEdge(adjList: ArrayList<Edge>[], source: number, dest: number, weight: number) {
@@ -54,8 +54,8 @@ import Dijkstra from '../src/algo/Dijkstra';
      */
     @test small1() {
         let data: Tuple<ArrayList<Edge>[],
-            Coordinate[]> = this.init();
-        let dijkstra: Dijkstra = new Dijkstra(data.arg1, data.arg2, new Statistics(10));
+            Tuple<Coordinate[], number[]>> = this.init();
+        let dijkstra: Dijkstra = new Dijkstra(data.arg1, data.arg2.arg1, new Statistics(10), data.arg2.arg2);
 
         let shortestDistances: number[][] = [
             [0, 5, 8, 11, 3, 10, 9, 5],
@@ -69,7 +69,7 @@ import Dijkstra from '../src/algo/Dijkstra';
         ];
 
         for (let i = 0; i < 8; i++) {
-            let distArr: number[] = dijkstra.shortestDistances(i);
+            let distArr: number[] = dijkstra.shortestDistances(i, data.arg1.length);
             for (let j = 0; j < 8; j++) {
                 assert.equal(distArr[j], shortestDistances[i][j], distArr[j] + " should be " + shortestDistances[i][j]);
             }

@@ -39,9 +39,9 @@ class Dijkstra extends Algorithm {
      * @param coordList Coordinate list.
      * @param stats Statistics.
      */
-    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
+    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics, minMaxData: number[]) {
         // Super constructor call.
-        super(graph, coordList, stats);
+        super(graph, coordList, stats, minMaxData);
 
         // Set node count
         this.nodeCount = graph.length;
@@ -70,7 +70,7 @@ class Dijkstra extends Algorithm {
      * Calculates the shortest distances to other nodes from a starting node
      * @param start Starting node
      */
-    public shortestDistances(start: number): number[] {
+    public shortestDistances(start: number, end: number): number[] {
 
         // Visited list
         let visited: boolean[] = new Array<boolean>(this.getGraph().length);
@@ -93,6 +93,10 @@ class Dijkstra extends Algorithm {
 
             let u: Node = minHeap.heapDelMin();
 
+            if (visited[end]) {
+                break;
+            }
+
             for (let i = 0; i < this.getGraph()[u.number].size(); i++) {
                 // Starting
                 let strt: number = u.number;
@@ -100,8 +104,6 @@ class Dijkstra extends Algorithm {
                 let dest: Edge = this
                     .getGraph()[strt]
                     .get(i);
-
-
 
                 if (!visited[dest.getDest()]) {
 
@@ -122,6 +124,8 @@ class Dijkstra extends Algorithm {
                 }
             }
             visited[u.number] = true;
+
+
         }
         // Return the table
         return this.dist;
@@ -130,7 +134,7 @@ class Dijkstra extends Algorithm {
     /**
      * Execute the algorithm.
      */
-    public run(startingNode?: number): void {
+    public run(startingNode?: number, endingNode?: number): void {
         if (startingNode == null || startingNode === undefined) {
             startingNode = 0;
         } else {
@@ -141,13 +145,28 @@ class Dijkstra extends Algorithm {
                 startingNode = this.nodeCount - 1;
             }
         }
-        
+
+        if (endingNode == null || endingNode === undefined) {
+            endingNode = this.nodeCount - 1;
+        } else {
+            if (endingNode > this.nodeCount - 1) {
+                endingNode = this.nodeCount - 1;
+            }
+
+            if (endingNode < 0) {
+                endingNode = 0;
+            }
+        }
+
         let startCoords: Coordinate = this.getCoordList()[startingNode];
         let startingPoint: Point = MathUtils.convertCoordinateToPoint(startCoords);
+        let endCoords: Coordinate = this.getCoordList()[endingNode];
+        let endingPoint: Point = MathUtils.convertCoordinateToPoint(endCoords);
         this.setStartCoords(startingPoint);
+        this.setEndCoords(endingPoint);
 
         // Calculate shortest distances from the starting node.
-        this.shortestDistances(startingNode);
+        this.shortestDistances(startingNode, endingNode);
     }
 }
 

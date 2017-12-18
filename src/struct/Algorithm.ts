@@ -27,10 +27,11 @@ abstract class Algorithm {
      */
     INFINITY: number = Number.MAX_SAFE_INTEGER;
 
-    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
+    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics, minMaxData: number[]) {
         this.graph = graph;
         this.coordlist = coordList;
         this.stats = stats;
+        this.stats.setMinMaxData(minMaxData);
     }
 
     /**

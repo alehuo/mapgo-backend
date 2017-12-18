@@ -1,6 +1,8 @@
 import { Algorithm, ArrayList, Edge, Coordinate, Heap, Node, AStarNode, Point } from "../struct/index";
 import { Statistics, Arrays, MathUtils } from "../utils/index";
 import { AStarComparator } from "../comparator/index";
+import Comparator from "../interface/Comparator";
+
 /**
  * A* algorithm.
  * @author Aleksi Huotala
@@ -28,11 +30,19 @@ class AStar extends Algorithm {
      */
     private nodeCount: number;
 
-    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics) {
-        super(graph, coordList, stats);
+    /**
+     * Comparator.
+     */
+    private comparator: any;
+
+    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics, minMaxData: number[], comparator: Comparator<Node>) {
+        super(graph, coordList, stats, minMaxData);
 
         // Set node count
         this.nodeCount = graph.length;
+
+        // Comparator
+        this.comparator = comparator;
 
         // Fill starting distance array.
         this.distStart = new Array<number>(this.nodeCount);
@@ -56,10 +66,11 @@ class AStar extends Algorithm {
      */
     private initialize(start: number, end: number): void {
         Arrays.fillNum(this.distStart, this.INFINITY);
+        Arrays.fillNum(this.path, 0);
         this.distStart[start] = 0;
     }
 
-    public calculate(start: number, end: number): void {
+    public calculate(start: number, end: number): number {
         // Initialize
         this.initialize(start, end);
         // Visited list
@@ -68,7 +79,7 @@ class AStar extends Algorithm {
         Object.seal(visited);
 
         // Minimum heap that takes the goal's coordinates as its argument.
-        let heap: Heap<AStarNode> = new Heap<AStarNode>(new AStarComparator(this.getCoordList()[end].lat, this.getCoordList()[end].lon));
+        let heap: Heap<AStarNode> = new Heap<AStarNode>(this.comparator);
 
         // Insert starting node
         heap.heapInsert(new AStarNode(start, this.distStart[start]));
@@ -78,7 +89,7 @@ class AStar extends Algorithm {
             let u: Node = heap.heapDelMin();
 
             if (u.number == end) {
-                return;
+                break;
             }
 
             for (let i = 0; i < this.getGraph()[u.number].size(); i++) {
@@ -90,7 +101,6 @@ class AStar extends Algorithm {
                     .get(i);
 
                 if (!visited[dest.getDest()]) {
-
                     // O(1)
                     if (this.distStart[dest.getDest()] > this.distStart[strt] + dest.getWeight()) {
                         this.distStart[dest.getDest()] = this.distStart[strt] + dest.getWeight();
@@ -112,6 +122,7 @@ class AStar extends Algorithm {
             visited[u.number] = true;
 
         }
+        return this.distStart[end];
     }
 
     /**
