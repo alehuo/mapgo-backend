@@ -4,6 +4,7 @@ import * as io from 'socket.io';
 import { Status, AlgorithmType } from './enum/index';
 import { Data, MinMaxData, AvailableAlgo } from './interface/index';
 import { AStar, Dijkstra, BFS } from './algo/index';
+import AStarComparator from './comparator/AStarComparator';
 
 /**
  * Server.
@@ -67,7 +68,7 @@ class Server {
                             algo = new Dijkstra(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2);
                             break;
                         case AlgorithmType.ASTAR:
-                            algo = new AStar(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2);
+                            algo = new AStar(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2, new AStarComparator(this.data.arg2.arg1[msg.startingNode].lat, this.data.arg2.arg1[msg.endingNode].lon, this.data.arg2.arg1[msg.endingNode].lat, this.data.arg2.arg1[msg.endingNode].lon));
                             break;
                         case AlgorithmType.BFS:
                             algo = new BFS(this.data.arg1, this.data.arg2.arg1, new Statistics(stepSize), this.data.arg2.arg2);

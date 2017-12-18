@@ -179,6 +179,17 @@ class Heap<T> {
         return this.heapSize == 0;
     }
 
+    /**
+     * Returns the element in a certain index. O(1) operation.
+     * @param index Index
+     */
+    public get(index: number): T {
+        if (index > this.heapSize) {
+            return;
+        }
+        return this.queue[index];
+    }
+
 }
 
 export default Heap;

@@ -76,6 +76,21 @@
 				<h2 id="projekti">Projekti</h2>
 				<p>Projektin ideana on toteuttaa web-sovellus, joka piirtää karttoja. Karttojen piirtämiseen käytetään reittienhakualgoritmejä, joita ovat mm. Dijkstran algoritmi, A* ja BFS.</p>
 				<p>Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit koodataan TypeScriptillä. Front end tulee olemaan yksisivuinen Reactilla toteutettu sovellus. Front end ja back end yhdistetään käyttämällä WebSocket-yhteyttä.</p>
+				<h2 id="sovelluksen-k-ytt-ohjeet">Sovelluksen käyttöohjeet</h2>
+				<ol>
+					<li>Kloonaa repo</li>
+					<li>Suorita komento <code>yarn</code></li>
+					<li>Tämän jälkeen aja testit komennolla <code>yarn test</code></li>
+					<li><code>npm start</code></li>
+				</ol>
+				<p>Tämän jälkeen siirry <a href="https://github.com/alehuo/mapgo-frontend">Front-endin</a> repositorioon ja noudata siellä olevia ohjeita.</p>
+				<h3 id="docker">Docker</h3>
+				<p>Vaihtoehtoisesti voit hakea projektin Dockerin image repositoriosta ja suorittaa sen komennolla <code>yarn run-container</code>. Ei aja itse testejä (vielä)</p>
+				<h3 id="buildaaminen-dockerilla">Buildaaminen Dockerilla</h3>
+				<ol>
+					<li>Luo Docker-kuva komennolla <code>yarn build-container</code>.</li>
+					<li>Käynnistä Docker-instanssi komennolla <code>yarn run-container</code></li>
+				</ol>
 				<h2 id="linkkej-">Linkkejä</h2>
 				<h3 id="-front-endin-github-repositorio-https-github-com-alehuo-mapgo-frontend-"><a href="https://github.com/alehuo/mapgo-frontend">Front endin GitHub-repositorio</a></h3>
 				<h3 id="viikkoraportit">Viikkoraportit</h3>
@@ -88,36 +103,17 @@
 					</li>
 					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti4.md">Viikkoraportti 4</a></p>
 					</li>
+					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti5.md">Viikkoraportti 5</a></p>
+					</li>
+					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti6.md">Viikkoraportti 6</a></p>
+					</li>
 				</ul>
 				<h3 id="-m-rittelydokumentaatio-https-github-com-alehuo-mapgo-backend-blob-master-doc-m-rittelydokumentaatio-md-"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/määrittelydokumentaatio.md">Määrittelydokumentaatio</a></h3>
 				<h3 id="-testausdokumentaatio-https-github-com-alehuo-mapgo-backend-blob-master-doc-testausdokumentaatio-md-"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/testausdokumentaatio.md">Testausdokumentaatio</a></h3>
+				<h3 id="-toteutusdokumentaatio-https-github-com-alehuo-mapgo-backend-blob-master-doc-toteutusdokumentaatio-md-"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/toteutusdokumentaatio.md">Toteutusdokumentaatio</a></h3>
+				<h3 id="-typedoc-http-htmlpreview-github-io-https-github-com-alehuo-mapgo-backend-blob-master-doc-typedoc-index-html-"><a href="http://htmlpreview.github.io/?https://github.com/alehuo/mapgo-backend/blob/master/doc/typedoc/index.html">Typedoc</a></h3>
 				<h2 id="lisenssi">Lisenssi</h2>
 				<p>Tämä projekti on lisensoitu lisenssillä GNU General Public License 3.0.</p>
-				<hr>
-				<h1 id="in-english">In english</h1>
-				<p>This repository contains source code for course project of &quot;Intermediate studies project: Data structures and algorithms&quot;.</p>
-				<p>Source code of the front end can be found <a href="https://github.com/alehuo/mapgo-frontend">here</a>. </p>
-				<p>Weekly progress reports will be found in the back end repository (you are currently browsing it)</p>
-				<h2 id="project">Project</h2>
-				<p>The target of this project is to implement a web application that draws maps using various path finding algorithms. For example, Dijkstra&#39;s, A* and BFS algorithms will be used.</p>
-				<h2 id="links">Links</h2>
-				<h3 id="front-end">Front end</h3>
-				<p><a href="https://github.com/alehuo/mapgo-frontend">Front end&#39;s GitHub repository</a></p>
-				<h3 id="weekly-progress-reports">Weekly progress reports</h3>
-				<ul>
-					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti1.md">Weekly progress report 1</a></p>
-					</li>
-					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti2.md">Weekly progress report 2</a></p>
-					</li>
-					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti3.md">Weekly progress report 3</a></p>
-					</li>
-					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti4.md">Weekly progress report 4</a></p>
-					</li>
-				</ul>
-				<h3 id="-specification-documentation-https-github-com-alehuo-mapgo-backend-blob-master-doc-m-rittelydokumentaatio-md-"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/määrittelydokumentaatio.md">Specification documentation</a></h3>
-				<h3 id="-testing-documentation-https-github-com-alehuo-mapgo-backend-blob-master-doc-testausdokumentaatio-md-"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/testausdokumentaatio.md">Testing documentation</a></h3>
-				<h2 id="license">License</h2>
-				<p>This project has been licensed under the GNU General Public License 3.0.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -131,6 +127,9 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_algo_astar_.html">"algo/AStar"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_algo_bfs_.html">"algo/BFS"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_algo_dijkstra_.html">"algo/<wbr>Dijkstra"</a>
@@ -154,6 +153,9 @@
 						<a href="modules/_enum_algorithmtype_.html">"enum/<wbr>Algorithm<wbr>Type"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_enum_nodecolor_.html">"enum/<wbr>Node<wbr>Color"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_enum_status_.html">"enum/<wbr>Status"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -161,6 +163,9 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_interface_algo_.html">"interface/<wbr>Algo"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_interface_availablealgo_.html">"interface/<wbr>Available<wbr>Algo"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_interface_comparable_.html">"interface/<wbr>Comparable"</a>

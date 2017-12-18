@@ -119,6 +119,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_heap_.heap.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_heap_.heap.html#getcontents" class="tsd-kind-icon">get<wbr>Contents</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_struct_heap_.heap.html#grow" class="tsd-kind-icon">grow</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_struct_heap_.heap.html#heapdelmin" class="tsd-kind-icon">heap<wbr>Del<wbr>Min</a></li>
@@ -145,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L28">struct/Heap.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L28">struct/Heap.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -177,7 +178,7 @@
 					<div class="tsd-signature tsd-kind-icon">comparator<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_interface_comparator_.comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L28">struct/Heap.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L28">struct/Heap.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -192,7 +193,7 @@
 					<div class="tsd-signature tsd-kind-icon">heap<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L18">struct/Heap.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L18">struct/Heap.ts:18</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -207,7 +208,7 @@
 					<div class="tsd-signature tsd-kind-icon">length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;10</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L23">struct/Heap.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L23">struct/Heap.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -222,7 +223,7 @@
 					<div class="tsd-signature tsd-kind-icon">queue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L13">struct/Heap.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L13">struct/Heap.ts:13</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -235,6 +236,37 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L186">struct/Heap.ts:186</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the element in a certain index. O(1) operation.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Index</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getcontents" class="tsd-anchor"></a>
 					<h3>get<wbr>Contents</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -244,7 +276,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L165">struct/Heap.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L165">struct/Heap.ts:165</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -267,7 +299,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L44">struct/Heap.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L44">struct/Heap.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -289,7 +321,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L144">struct/Heap.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L144">struct/Heap.ts:144</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -311,7 +343,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L117">struct/Heap.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L117">struct/Heap.ts:117</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -342,7 +374,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L82">struct/Heap.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L82">struct/Heap.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -373,7 +405,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L178">struct/Heap.ts:178</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L178">struct/Heap.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -395,7 +427,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L66">struct/Heap.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L66">struct/Heap.ts:66</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -426,7 +458,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L58">struct/Heap.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L58">struct/Heap.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -457,7 +489,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/6cb7e92/src/struct/Heap.ts#L74">struct/Heap.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/alehuo/mapgo-backend/blob/af860f7/src/struct/Heap.ts#L74">struct/Heap.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -512,6 +544,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_struct_heap_.heap.html#queue" class="tsd-kind-icon">queue</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_struct_heap_.heap.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_struct_heap_.heap.html#getcontents" class="tsd-kind-icon">get<wbr>Contents</a>
