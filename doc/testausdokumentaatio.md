@@ -4,6 +4,8 @@ Tämä dokumentti sisältää testituloksia, kun olen testannut ja verrannut its
 
 Tietorakenteille on toteutettu yksikkötestejä, jotka suoritetaan käyttämällä ```mocha-typescript``` -kirjastoa. Codecov-palvelu pitää huolta rivikattavuuden tarkistamisesta.
 
+Testit suoritetaan komennolla ```yarn test```.
+
 ## ArrayList
 
 ArrayListiä on verrattu Javasta löytyvään ArrayListiin. Testisyötteenä on kokonaislukuja, joiden lukumäärä lisättynä listaan vaihtelee. Testit aloittavat yhdellä luvulla, sitten kaksi jne.. noudattaen kaavaa 2^n. Viimeinen testi lisää ArrayListiin hieman yli 8 miljoonaa lukua. Aika mitataan jokaisessa testitapauksessa ensimmäisen luvun lisäyksestä viimeisen luvun lisäykseen.
@@ -74,6 +76,23 @@ Koska minimikeko on toteutettu taulukolla ja halutaan hakea objekti jostain taul
 
 # Dijkstran algoritmi
 
+Dijkstran algoritmin testaukseen on käytetty itse toteutettuja verkkoja. Etäisyydet on laskettu käsin ja on varmistettu, että ne on laskettu oikein. Verrattuna A*-algoritmiin Dijkstran algoritmi käy paljon enemmän solmuja läpi. Dijkstran algoritmin pahin aikavaativuus on O(|E] + |V|log|V]), joka alkaa tuntumaan suuria verkkoja käytettäessä.
+
 # AStar-algoritmi
 
+Koska AStar-algoritmi pohjautuu Dijkstran algoritmiin, on testauksessa käytetty samoja verkkoja kuin Dijkstran algoritmissä. Heuristiikkafunktioita on olemassa kaksi: etäisyys maaliin ja (etäisyys maaliin + etäisyys alkuun). On havaittu, että heuristiikkafunktio, mikä laskee pelkästään etäisyyden maaliin, on parempi algoritmin kannalta. Algoritmin suoritusaika on nopeampi tällä heuristiikkafunktiolla, mikä ilmenee allaolevasta kuvasta:
+
+Vasemmalla: pelkkä etäisyys maaliin, oikealla: etäisyys maaliin + etäisyys alkuun
+
+![Heuristiikkafunktioiden vertailu](heuristics_comparison.jpg)
+
+Kuvasta voi myös huomata, miten nätisti A* algoritmi "kääntyy" maalia kohden. Aivan kuin alku- ja loppupisteiden väliin piirtyisi ellipsi.
+
+Repositoriosta löytyy JSON-tiedosto, joka sisältää yli 200000 solmua sisältävän verkon. Vaikka Front-end ei pysy Dijkstran algoritmin tahdissa (Sivu jäätyy, kun on piirretty n. 20000 kaarta) A* algoritmi suoriutuu lyhimmän reitin etsinnästä todella vikkelästi.
+
+Tästä voidaan tulkita, että oikean heuristiikkafunktion kanssa A* joutuu käymään murto-osan kaaria läpi verrattuna Dijkstran algoritmiin, joten algoritmin suoritusaika on nopeampi, keskimäärin luokkaa O(|E]), missä |E| on kaarien lukumäärä.
+
+
 # BFS-algoritmi
+
+BFS-algoritmiä on testattu erikokoisilla verkoilla. Testaus on sinänsä triviaalia, sillä kaaripainojen oletetaan olevan vakioita.
