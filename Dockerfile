@@ -3,7 +3,10 @@ FROM node:8-slim
 WORKDIR /server
 
 COPY . /server
-RUN npm install
+
+RUN yarn
+
+RUN yarn test
 
 EXPOSE 8081
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
