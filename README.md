@@ -24,13 +24,17 @@ Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit 
 1. Kloonaa repo
 2. Suorita komento ```yarn```
 3. Tämän jälkeen aja testit komennolla ```yarn test```
-4. ```npm start```
+4. ```yarn start``` käynnistääksesi sovelluksen.
 
 Tämän jälkeen siirry [Front-endin](https://github.com/alehuo/mapgo-frontend) repositorioon ja noudata siellä olevia ohjeita.
 
+### Codecov
+
+Testien jälkeen aja ```yarn upload-codecov``` päivittääksesi testikattavuuden Codecov-palveluun.
+
 ### Docker
 
-Vaihtoehtoisesti voit hakea projektin Dockerin image repositoriosta ja suorittaa sen komennolla ```yarn run-container```. Ei aja itse testejä (vielä)
+Vaihtoehtoisesti voit hakea projektin Dockerin image repositoriosta ja suorittaa sen komennolla ```yarn run-container```.
 
 ### Buildaaminen Dockerilla
 
