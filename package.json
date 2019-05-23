@@ -4,15 +4,32 @@
   "description": "",
   "main": "dist/src/app.js",
   "scripts": {
-    "start": "tsc && node --max-old-space-size=8192 dist/src/app.js",
+    "start": "ts-node src/app.ts",
     "build": "npm test && tsc",
-    "pretest": "tsc",
-    "test": "nyc mocha",
-    "upload-codecov": "nyc report --reporter=json && codecov -f coverage/*.json",
+    "test": "NODE_ENV=test mocha --recursive --require ts-node/register --bail",
+    "coverage": "NODE_ENV=test nyc npm test",
+    "codecov": "codecov -f coverage/*.json",
     "genDoc": "typedoc --module commonjs --target ES6 --out doc/typedoc src/",
     "build-container": "docker build -t alehuo/mapgo-backend .",
     "run-container": "docker run -p 8081:8081 -d alehuo/mapgo-backend",
     "publish-container": "docker push alehuo/mapgo-backend"
+  },
+  "nyc": {
+    "include": [
+      "app/*.ts",
+      "app/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "json",
+      "html"
+    ],
+    "all": true
   },
   "keywords": [
     "Visualizer",
@@ -25,26 +42,24 @@
   "author": "Aleksi Huotala",
   "license": "MIT",
   "devDependencies": {
-    "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.44",
-    "@types/node": "^8.0.49",
-    "assert": "^1.4.1",
-    "chai": "^4.1.2",
-    "codecov": "^3.0.0",
-    "mocha": "^4.0.1",
-    "mocha-typescript": "^1.1.12",
-    "nyc": "^11.2.1",
-    "source-map-support": "^0.5.0",
-    "ts-node": "^3.3.0",
-    "typedoc": "^0.9.0",
-    "typescript": "^2.5.3"
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^12.0.2",
+    "@types/socket.io": "^2.1.2",
+    "assert": "^2.0.0",
+    "chai": "^4.2.0",
+    "codecov": "^3.5.0",
+    "dotenv": "^8.0.0",
+    "mocha": "^6.1.4",
+    "mocha-typescript": "^1.1.17",
+    "nyc": "^14.1.1",
+    "source-map-support": "^0.5.12",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.4.5"
   },
   "dependencies": {
-    "@types/socket.io": "^1.4.31",
-    "dotenv": "^4.0.0",
-    "mocha": "^4.0.1",
-    "mocha-typescript": "^1.1.12",
-    "socket.io": "^2.0.4",
-    "typescript": "^2.5.3"
+    "socket.io": "^2.2.0"
   }
 }
