@@ -2,48 +2,47 @@
 
 ![Mapgo logo](doc/mapgo_logo.png)
 
-
 [![Build Status](https://travis-ci.org/alehuo/mapgo-backend.svg?branch=master)](https://travis-ci.org/alehuo/mapgo-backend)
 [![codecov](https://codecov.io/gh/alehuo/mapgo-backend/branch/master/graph/badge.svg)](https://codecov.io/gh/alehuo/mapgo-backend)
 [![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-Tämä repositorio sisältää back endin lähdekoodin Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit -kurssin projektille. Front endin lähdekoodi löytyy [täältä](https://github.com/alehuo/mapgo-frontend). 
-Projektin viikkoraportit tulevat löytymään back endin repositoriosta.
+Tämä repo sisältää back-endin lähdekoodin Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit -kurssin projektille. Front-endin lähdekoodi löytyy [täältä](https://github.com/alehuo/mapgo-frontend).
+Projektin viikkoraportit tulevat löytymään back-endin repositoriosta.
 
-### Mapgo-sovellukseen pääset käsiksi [tästä](http://mapgo-front.herokuapp.com/)
+**Mapgo-sovellukseen pääset käsiksi [tästä](http://mapgo-front.herokuapp.com/)**
 
 ## Projekti
 
-Projektin ideana on toteuttaa web-sovellus, joka piirtää karttoja. Karttojen piirtämiseen käytetään reittienhakualgoritmejä, joita ovat mm. Dijkstran algoritmi, A* ja BFS.
+Projektin ideana on toteuttaa web-sovellus, joka piirtää karttoja. Karttojen piirtämiseen käytetään reittienhakualgoritmejä, joita ovat mm. Dijkstran algoritmi, A\* ja BFS.
 
-Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit koodataan TypeScriptillä. Front end tulee olemaan yksisivuinen Reactilla toteutettu sovellus. Front end ja back end yhdistetään käyttämällä WebSocket-yhteyttä.
+Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit toteutetaan TypeScriptillä. Front-end tulee olemaan yksisivuinen Reactilla toteutettu sovellus. Front end ja back end yhdistetään käyttämällä WebSocket-yhteyttä.
 
 ## Sovelluksen käyttöohjeet
 
 1. Kloonaa repo
-2. Suorita komento ```yarn```
-3. Tämän jälkeen aja testit komennolla ```yarn test```
-4. ```yarn start``` käynnistääksesi sovelluksen.
+2. Suorita komento `yarn install`
+3. Tämän jälkeen aja testit komennolla `yarn test`
+4. `yarn start` käynnistääksesi sovelluksen.
 
-Tämän jälkeen siirry [Front-endin](https://github.com/alehuo/mapgo-frontend) repositorioon ja noudata siellä olevia ohjeita.
+Tämän jälkeen siirry [Front-endin](https://github.com/alehuo/mapgo-frontend) repoon ja noudata siellä olevia ohjeita.
 
 ### Codecov
 
-Testien jälkeen aja ```yarn upload-codecov``` päivittääksesi testikattavuuden Codecov-palveluun.
+Testien jälkeen aja `yarn upload-codecov` päivittääksesi testikattavuuden Codecov-palveluun.
 
 ### Docker
 
-Vaihtoehtoisesti voit hakea projektin Dockerin image repositoriosta ja suorittaa sen komennolla ```yarn run-container```.
+Vaihtoehtoisesti voit buildata projektista Docker-imagen ja suorittaa sen komennolla `yarn run-container`.
 
 ### Buildaaminen Dockerilla
 
-1. Luo Docker-kuva komennolla ```yarn build-container```.
-2. Käynnistä Docker-instanssi komennolla ```yarn run-container```
+1. Luo Docker-image komennolla `yarn build-container`.
+2. Käynnistä Docker-instanssi komennolla `yarn run-container`
 
 ## Linkkejä
 
-### [Front endin GitHub-repositorio](https://github.com/alehuo/mapgo-frontend)
+### [Front-endin GitHub-repositorio](https://github.com/alehuo/mapgo-frontend)
 
 ### Viikkoraportit
 
