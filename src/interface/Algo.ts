@@ -1,5 +1,5 @@
 interface Algo {
-    execute(): void;
+  execute(): void;
 }
 
 export default Algo;

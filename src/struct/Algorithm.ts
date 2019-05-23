@@ -1,142 +1,142 @@
-import { ArrayList, Step, Edge, Coordinate, Point } from "../struct";
-import { Statistics, MathUtils } from "../utils";
+import { ArrayList, Coordinate, Edge, Point, Step } from "../struct";
+import { MathUtils, Statistics } from "../utils";
 
 /**
  * Algorithm interface is used to standardize different path finding algorithms.
  * @author Aleksi Huotala
  */
 abstract class Algorithm {
+  /**
+   * Infinity
+   */
+  public INFINITY = Number.MAX_SAFE_INTEGER;
+  /**
+   * Graph.
+   */
+  private graph: Array<ArrayList<Edge>>;
 
-    /**
-     * Graph.
-     */
-    private graph: ArrayList<Edge>[];
+  /**
+   * Coordinate list. Index points to the coordinate a single node has.
+   */
+  private coordlist: Coordinate[];
 
-    /**
-     * Coordinate list. Index points to the coordinate a single node has.
-     */
-    private coordlist: Coordinate[];
+  /**
+   * Statistics.
+   */
+  private stats: Statistics;
 
-    /**
-     * Statistics.
-     */
-    private stats: Statistics;
+  constructor(
+    graph: Array<ArrayList<Edge>>,
+    coordList: Coordinate[],
+    stats: Statistics,
+    minMaxData: number[],
+  ) {
+    this.graph = graph;
+    this.coordlist = coordList;
+    this.stats = stats;
+    this.stats.setMinMaxData(minMaxData);
+  }
 
-    /**
-     * Infinity
-     */
-    INFINITY: number = Number.MAX_SAFE_INTEGER;
+  /**
+   * Returns the algorithm's steps.
+   */
+  public getSteps() {
+    this.stats.done();
+    return this.stats.asArray();
+  }
 
-    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics, minMaxData: number[]) {
-        this.graph = graph;
-        this.coordlist = coordList;
-        this.stats = stats;
-        this.stats.setMinMaxData(minMaxData);
+  /**
+   * Returns the steps as a JSON string.
+   */
+  public getStepsAsJSON(pretty: boolean = false) {
+    let level: number = 0;
+    if (pretty) {
+      level = 2;
     }
+    return JSON.stringify(this.getSteps(), this.replacer, level);
+  }
 
-    /**
-     * Returns the algorithm's steps.
-     */
-    public getSteps(): Step[] {
-        this.stats.done();
-        return this
-            .stats
-            .asArray();
-    }
+  public abstract run(startingNode?: number, endingNode?: number): void;
 
-    /**
-     * Returns the steps as a JSON string.
-     */
-    public getStepsAsJSON(pretty: boolean = false): string {
-        let level: number = 0;
-        if (pretty) {
-            level = 2;
-        }
-        return JSON.stringify(this.getSteps(), this.replacer, level);
-    }
+  /**
+   * Adds a new edge. Conversion to xy is applied here.
+   * @param step Step
+   */
+  public addEdge(startingCoordinate: Coordinate, endingCoordinate: Coordinate) {
+    const startingPoint = MathUtils.convertCoordinateToPoint(
+      startingCoordinate,
+    );
+    const endingPoint = MathUtils.convertCoordinateToPoint(endingCoordinate);
+    this.stats.addEdge(startingPoint, endingPoint);
+  }
 
-    /**
-     * Replacer method to parse the Step[] array.
-     * @param key
-     * @param value
-     */
-    private replacer(key, value) {
-        if (key == "index") {
-            return undefined;
-        }
-        return value;
-    }
+  /**
+   * Clears the steps -ArrayList.
+   */
+  public resetSteps() {
+    this.stats.resetSteps();
+  }
 
-    public abstract run(startingNode?: number, endingNode?: number): void;
+  public getGraph() {
+    return this.graph;
+  }
 
-    /**
-     * Adds a new edge. Conversion to xy is applied here.
-     * @param step Step
-     */
-    public addEdge(startingCoordinate: Coordinate, endingCoordinate: Coordinate) {
-        let startingPoint: Point = MathUtils.convertCoordinateToPoint(startingCoordinate);
-        let endingPoint: Point = MathUtils.convertCoordinateToPoint(endingCoordinate);
-        this.stats.addEdge(startingPoint, endingPoint);
-    }
+  public getCoordList() {
+    return this.coordlist;
+  }
 
-    /**
-     * Clears the steps -ArrayList.
-     */
-    public resetSteps(): void {
-        this.stats.resetSteps();
-    }
+  public getMinX() {
+    return this.stats.getMinX();
+  }
 
-    public getGraph(): ArrayList<Edge>[] {
-        return this.graph;
-    }
+  public getMaxX() {
+    return this.stats.getMaxX();
+  }
 
-    public getCoordList(): Coordinate[] {
-        return this.coordlist;
-    }
+  public getMinY() {
+    return this.stats.getMinY();
+  }
 
-    public getMinX(): number {
-        return this.stats.getMinX();
-    }
+  public getMaxY() {
+    return this.stats.getMaxY();
+  }
 
-    public getMaxX(): number {
-        return this.stats.getMaxX();
-    }
+  public getRoadMaxId() {
+    return this.stats.getRoadMaxId();
+  }
 
-    public getMinY(): number {
-        return this.stats.getMinY();
-    }
+  public getStartX() {
+    return this.stats.getStartX();
+  }
 
-    public getMaxY(): number {
-        return this.stats.getMaxY();
-    }
+  public getEndY() {
+    return this.stats.getEndY();
+  }
 
-    public getRoadMaxId(): number {
-        return this.stats.getRoadMaxId();
-    }
+  public getEndX() {
+    return this.stats.getEndX();
+  }
 
-    public getStartX(): number {
-        return this.stats.getStartX();
-    }
+  public getStartY() {
+    return this.stats.getStartY();
+  }
 
-    public getEndY(): number {
-        return this.stats.getEndY();
-    }
+  public setStartCoords(point: Point) {
+    this.stats.setStartingPoint(point);
+  }
 
-    public getEndX(): number {
-        return this.stats.getEndX();
-    }
+  public setEndCoords(point: Point) {
+    this.stats.setEndingPoint(point);
+  }
 
-    public getStartY(): number {
-        return this.stats.getStartY();
-    }
-
-    public setStartCoords(point: Point) {
-        this.stats.setStartingPoint(point);
-    }
-
-    public setEndCoords(point: Point) {
-        this.stats.setEndingPoint(point);
-    }
+  /**
+   * Replacer method to parse the Step[] array.
+   * @param key
+   * @param value
+   */
+  private replacer(key: string, value: any) {
+    return key === "index" ? undefined : value;
+  }
 }
 
 export default Algorithm;

@@ -1,47 +1,41 @@
-import {ArrayList, Coordinate, Road, Point} from "./";
+import { ArrayList, Point, Road } from "./";
 
 /**
  * Step class.
  */
 class Step {
+  /**
+   * Each step contains roads that will be used when visualizing the drawing of the map.
+   */
+  private r: ArrayList<Road>;
 
-    /**
-     * Each step contains roads that will be used when visualizing the drawing of the map.
-     */
-    private r : ArrayList < Road >;
+  /**
+   * Constructor.
+   * @param arrSize Array size (number of roads per step)
+   */
+  constructor(arrSize: number) {
+    this.r = new ArrayList<Road>(arrSize);
+  }
 
-    /**
-     * Constructor.
-     * @param arrSize Array size (number of roads per step)
-     */
-    constructor(arrSize : number) {
-        this.r = new ArrayList < Road > (arrSize);
-    }
+  /**
+   * Adds a new road.
+   * @param startPoint Starting point
+   * @param endPoint Ending point
+   */
+  public addRoad(startPoint: Point, endPoint: Point, roadId: number) {
+    this.r.add(new Road(startPoint, endPoint, roadId));
+  }
 
-    /**
-     * Adds a new road.
-     * @param startPoint Starting point
-     * @param endPoint Ending point
-     */
-    public addRoad(startPoint : Point, endPoint : Point, roadId: number) {
-        this
-            .r
-            .add(new Road(startPoint, endPoint, roadId));
-    }
+  /**
+   * Returns the roads as an array.
+   */
+  public getRoads() {
+    return this.r.asArray(true);
+  }
 
-    /**
-     * Returns the roads as an array.
-     */
-    public getRoads() : Road[] {
-        return this
-            .r
-            .asArray(true);
-    }
-
-    public count(): number {
-        return this.r.size();
-    }
-
+  public count() {
+    return this.r.size();
+  }
 }
 
 export default Step;

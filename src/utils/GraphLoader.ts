@@ -1,89 +1,86 @@
-import * as fs from 'fs';
-import JsonNode from './../interface/JsonNode';
-import JsonEdge from './../interface/JsonEdge';
-import { Edge, ArrayList, Tuple, Coordinate } from './../struct';
-import { Arrays } from './../utils';
-import MathUtils from './MathUtils';
-import Point from '../struct/Point';
-import MinMaxData from '../interface/MinMaxData';
+import * as fs from "fs";
+import JsonNode from "./../interface/JsonNode";
+import { ArrayList, Coordinate, Edge, Tuple } from "./../struct";
+import { Arrays } from "./../utils";
+import MathUtils from "./MathUtils";
 
 /**
  * Graphloader.
  * @author Aleksi Huotala
  */
 class GraphLoader {
+  /**
+   * Loads the graph from the defined JSON file.
+   */
+  public static loadFile(fileName: string) {
+    let minX = Number.MAX_SAFE_INTEGER;
+    let maxX = Number.MIN_SAFE_INTEGER;
+    let minY = Number.MAX_SAFE_INTEGER;
+    let maxY = Number.MIN_SAFE_INTEGER;
 
-    /**
-     * Loads the graph from the defined JSON file.
-     */
-    public static loadFile(fileName: string): Tuple<ArrayList<Edge>[],
-        Tuple<Coordinate[], number[]>> {
+    console.log("Starting to load graph from %s", fileName);
 
-        let minX: number = Number.MAX_SAFE_INTEGER;
-        let maxX: number = Number.MIN_SAFE_INTEGER;
-        let minY: number = Number.MAX_SAFE_INTEGER;
-        let maxY: number = Number.MIN_SAFE_INTEGER;
+    // Open handle
+    const handle = fs.readFileSync(fileName);
 
-        console.log('Starting to load graph from %s', fileName);
+    // Parse data to json
+    const data: JsonNode[] = JSON.parse(handle.toString("UTF-8"));
 
-        // Open handle
-        let handle: any = fs.readFileSync(fileName);
+    // Create adjacency list
+    const adjList = new Array<ArrayList<Edge>>(data.length);
+    Arrays.fill(adjList, null);
+    Object.seal(adjList);
 
-        // Parse data to json
-        let data: JsonNode[] = JSON.parse(handle);
+    // Create coordinate list
+    const coordinates = new Array<Coordinate>(data.length);
+    Arrays.fill(coordinates, null);
+    Object.seal(coordinates);
 
-        // Create adjacency list
-        let adjList: ArrayList<Edge>[] = new Array<ArrayList<Edge>>(data.length);
-        Arrays.fillObj(adjList, null);
-        Object.seal(adjList);
+    // Fill it with stuff
+    for (let i = 0; i < data.length; i++) {
+      if (adjList[i] == null) {
+        adjList[i] = new ArrayList<Edge>();
+      }
 
-        // Create coordinate list
-        let coordinates: Coordinate[] = new Array<Coordinate>(data.length);
-        Arrays.fillObj(coordinates, null);
-        Object.seal(coordinates);
+      // Starting node
+      const node = data[i];
+      // Starting node's edges
+      const edges = node.e;
 
-        // Fill it with stuff
-        for (let i = 0; i < data.length; i++) {
+      // Add coordinate
+      coordinates[i] = new Coordinate(node.la, node.lo);
 
-            if (adjList[i] == null) {
-                adjList[i] = new ArrayList<Edge>();
-            }
+      const point = MathUtils.convertCoordinateToPoint(coordinates[i]);
 
-            // Starting node
-            let node: JsonNode = data[i];
-            // Starting node's edges
-            let edges: JsonEdge[] = node.e;
+      if (point.x < minX) {
+        minX = point.x;
+      }
+      if (point.x > maxX) {
+        maxX = point.x;
+      }
+      if (point.y < minY) {
+        minY = point.y;
+      }
+      if (point.y > maxY) {
+        maxY = point.y;
+      }
 
-            // Add coordinate
-            coordinates[i] = new Coordinate(node.la, node.lo);
-
-            let point: Point = MathUtils.convertCoordinateToPoint(coordinates[i]);
-
-            if (point.x < minX) {
-                minX = point.x;
-            }
-            if (point.x > maxX) {
-                maxX = point.x;
-            }
-            if (point.y < minY) {
-                minY = point.y;
-            }
-            if (point.y > maxY) {
-                maxY = point.y;
-            }
-
-            // Loop through edges and add them to the adjacency list
-            for (let j = 0; j < edges.length; j++) {
-                let edge: JsonEdge = edges[j];
-                adjList[i].add(new Edge(edge.i, edge.w));
-            }
-        }
-
-        console.log('Loaded graph from %s with %d nodes, created adjacency list', fileName, data.length);
-
-        // Return the adjacency list and coordinate list
-        return new Tuple(adjList, new Tuple(coordinates, [minX, maxX, minY, maxY]));
+      // Loop through edges and add them to the adjacency list
+      for (let j = 0; j < edges.length; j++) {
+        const edge = edges[j];
+        adjList[i].add(new Edge(edge.i, edge.w));
+      }
     }
+
+    console.log(
+      "Loaded graph from %s with %d nodes, created adjacency list",
+      fileName,
+      data.length,
+    );
+
+    // Return the adjacency list and coordinate list
+    return new Tuple(adjList, new Tuple(coordinates, [minX, maxX, minY, maxY]));
+  }
 }
 
 export default GraphLoader;

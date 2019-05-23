@@ -3,31 +3,17 @@
  * @author Aleksi Huotala
  */
 class Node {
+  /**
+   * Latitude
+   */
+  public lat: number;
 
-    /**
-     * Node id
-     */
-    public number : number;
+  /**
+   * Longitude
+   */
+  public lon: number;
 
-    /**
-     * Current weight
-     */
-    public weight : number;
-
-    /**
-     * Latitude
-     */
-    public lat : number;
-
-    /**
-     * Longitude
-     */
-    public lon : number;
-
-    constructor(num : number, w : number) {
-        this.weight = w;
-        this.number = num;
-    }
+  constructor(readonly number: number, readonly weight: number) {}
 }
 
 export default Node;

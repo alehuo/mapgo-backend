@@ -4,7 +4,7 @@ WORKDIR /server
 
 COPY . /server
 
-RUN yarn
+RUN yarn install
 
 RUN yarn test
 

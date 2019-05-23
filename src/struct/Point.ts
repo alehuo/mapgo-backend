@@ -2,19 +2,12 @@
  * Point class.
  */
 class Point {
-    /**
-     * Latitude.
-     */
-    public x: number;
-    /**
-     * Longitude.
-     */
-    public y: number;
-
-    constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-    }
+  /**
+   * Point class
+   * @param x X-coordinate
+   * @param y Y-coordinate
+   */
+  constructor(readonly x: number, readonly y: number) {}
 }
 
 export default Point;

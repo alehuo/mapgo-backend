@@ -1,3 +1,5 @@
---ui mocha-typescript
 --require source-map-support/register
-dist/test/*.js
+--require ts-node/register
+--watch-extensions ts
+--recursive
+test/**/*.ts test/**/*.tsx

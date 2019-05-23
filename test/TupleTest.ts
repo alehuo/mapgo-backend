@@ -1,20 +1,20 @@
-import { suite, test, slow, timeout } from 'mocha-typescript';
-import * as assert from 'assert'
-import { Tuple } from '../src/struct/index';
+import * as assert from "assert";
+import { suite, test } from "mocha-typescript";
+import { Tuple } from "../src/struct/index";
 
 /**
  * Tests for Tuple class.
  * @author Aleksi Huotala
  */
-@suite class TupleTest {
-
-    @test testGetterAndSetter() {
-        let num: number = 42;
-        let str: string = "HelloWorld";
-        let tuple: Tuple<number, string> = new Tuple<number, string>(num, str);
-        assert.deepEqual(tuple.arg2, str);
-        assert.deepEqual(tuple.arg1, num);
-        assert.deepEqual(tuple.getSecond(), str);
-        assert.deepEqual(tuple.getFirst(), num);
-    }
+@suite
+class TupleTest {
+  @test public testGetterAndSetter() {
+    const num = 42;
+    const str = "HelloWorld";
+    const tuple = new Tuple<number, string>(num, str);
+    assert.deepEqual(tuple.arg2, str);
+    assert.deepEqual(tuple.arg1, num);
+    assert.deepEqual(tuple.getSecond(), str);
+    assert.deepEqual(tuple.getFirst(), num);
+  }
 }

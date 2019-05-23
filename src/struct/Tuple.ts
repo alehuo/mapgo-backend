@@ -1,20 +1,19 @@
 /**
  * Tuple class for encapsulating two objects.
  */
-class Tuple < T,
-K > {
+class Tuple<T, K> {
+  constructor(readonly arg1: T, readonly arg2: K) {
+    this.arg1 = arg1;
+    this.arg2 = arg2;
+  }
 
-    public arg1 : T;
-    public arg2 : K;
+  public getFirst() {
+    return this.arg1;
+  }
 
-    constructor(arg1 : T, arg2 : K) {
-        this.arg1 = arg1;
-        this.arg2 = arg2;
-    }
-
-    public getFirst() : T {return this.arg1;}
-
-    public getSecond() : K {return this.arg2;}
+  public getSecond() {
+    return this.arg2;
+  }
 }
 
 export default Tuple;

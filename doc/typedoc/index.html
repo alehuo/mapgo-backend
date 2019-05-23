@@ -72,7 +72,7 @@
 				<a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3"></a></p>
 				<p>Tämä repositorio sisältää back endin lähdekoodin Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit -kurssin projektille. Front endin lähdekoodi löytyy <a href="https://github.com/alehuo/mapgo-frontend">täältä</a>.
 				Projektin viikkoraportit tulevat löytymään back endin repositoriosta.</p>
-				<h3 id="mapgo-sovellukseen-p-set-k-siksi-t-st-http-mapgo-front-herokuapp-com-">Mapgo-sovellukseen pääset käsiksi <a href="http://mapgo-front.herokuapp.com/">tästä</a></h3>
+				<h3 id="mapgo-sovellukseen-p-set-k-siksi-t-st-">Mapgo-sovellukseen pääset käsiksi <a href="http://mapgo-front.herokuapp.com/">tästä</a></h3>
 				<h2 id="projekti">Projekti</h2>
 				<p>Projektin ideana on toteuttaa web-sovellus, joka piirtää karttoja. Karttojen piirtämiseen käytetään reittienhakualgoritmejä, joita ovat mm. Dijkstran algoritmi, A* ja BFS.</p>
 				<p>Projektissa käytettävät tietorakenteet, algoritmit ja niihin kuuluvat testit koodataan TypeScriptillä. Front end tulee olemaan yksisivuinen Reactilla toteutettu sovellus. Front end ja back end yhdistetään käyttämällä WebSocket-yhteyttä.</p>
@@ -81,18 +81,20 @@
 					<li>Kloonaa repo</li>
 					<li>Suorita komento <code>yarn</code></li>
 					<li>Tämän jälkeen aja testit komennolla <code>yarn test</code></li>
-					<li><code>npm start</code></li>
+					<li><code>yarn start</code> käynnistääksesi sovelluksen.</li>
 				</ol>
 				<p>Tämän jälkeen siirry <a href="https://github.com/alehuo/mapgo-frontend">Front-endin</a> repositorioon ja noudata siellä olevia ohjeita.</p>
+				<h3 id="codecov">Codecov</h3>
+				<p>Testien jälkeen aja <code>yarn upload-codecov</code> päivittääksesi testikattavuuden Codecov-palveluun.</p>
 				<h3 id="docker">Docker</h3>
-				<p>Vaihtoehtoisesti voit hakea projektin Dockerin image repositoriosta ja suorittaa sen komennolla <code>yarn run-container</code>. Ei aja itse testejä (vielä)</p>
+				<p>Vaihtoehtoisesti voit hakea projektin Dockerin image repositoriosta ja suorittaa sen komennolla <code>yarn run-container</code>.</p>
 				<h3 id="buildaaminen-dockerilla">Buildaaminen Dockerilla</h3>
 				<ol>
 					<li>Luo Docker-kuva komennolla <code>yarn build-container</code>.</li>
 					<li>Käynnistä Docker-instanssi komennolla <code>yarn run-container</code></li>
 				</ol>
 				<h2 id="linkkej-">Linkkejä</h2>
-				<h3 id="-front-endin-github-repositorio-https-github-com-alehuo-mapgo-frontend-"><a href="https://github.com/alehuo/mapgo-frontend">Front endin GitHub-repositorio</a></h3>
+				<h3 id="front-endin-github-repositorio"><a href="https://github.com/alehuo/mapgo-frontend">Front endin GitHub-repositorio</a></h3>
 				<h3 id="viikkoraportit">Viikkoraportit</h3>
 				<ul>
 					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti1.md">Viikkoraportti 1</a></p>
@@ -107,11 +109,13 @@
 					</li>
 					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti6.md">Viikkoraportti 6</a></p>
 					</li>
+					<li><p><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/Viikkoraportti7.md">Viikkoraportti 7</a></p>
+					</li>
 				</ul>
-				<h3 id="-m-rittelydokumentaatio-https-github-com-alehuo-mapgo-backend-blob-master-doc-m-rittelydokumentaatio-md-"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/määrittelydokumentaatio.md">Määrittelydokumentaatio</a></h3>
-				<h3 id="-testausdokumentaatio-https-github-com-alehuo-mapgo-backend-blob-master-doc-testausdokumentaatio-md-"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/testausdokumentaatio.md">Testausdokumentaatio</a></h3>
-				<h3 id="-toteutusdokumentaatio-https-github-com-alehuo-mapgo-backend-blob-master-doc-toteutusdokumentaatio-md-"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/toteutusdokumentaatio.md">Toteutusdokumentaatio</a></h3>
-				<h3 id="-typedoc-http-htmlpreview-github-io-https-github-com-alehuo-mapgo-backend-blob-master-doc-typedoc-index-html-"><a href="http://htmlpreview.github.io/?https://github.com/alehuo/mapgo-backend/blob/master/doc/typedoc/index.html">Typedoc</a></h3>
+				<h3 id="m-rittelydokumentaatio"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/m%C3%A4%C3%A4rittelydokumentaatio.md">Määrittelydokumentaatio</a></h3>
+				<h3 id="testausdokumentaatio"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/testausdokumentaatio.md">Testausdokumentaatio</a></h3>
+				<h3 id="toteutusdokumentaatio"><a href="https://github.com/alehuo/mapgo-backend/blob/master/doc/toteutusdokumentaatio.md">Toteutusdokumentaatio</a></h3>
+				<h3 id="typedoc"><a href="http://htmlpreview.github.io/?https://github.com/alehuo/mapgo-backend/blob/master/doc/typedoc/index.html">Typedoc</a></h3>
 				<h2 id="lisenssi">Lisenssi</h2>
 				<p>Tämä projekti on lisensoitu lisenssillä GNU General Public License 3.0.</p>
 			</div>

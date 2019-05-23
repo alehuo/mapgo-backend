@@ -6,10 +6,10 @@
   "scripts": {
     "start": "ts-node src/app.ts",
     "build": "npm test && tsc",
-    "test": "NODE_ENV=test mocha --recursive --require ts-node/register --bail",
+    "test": "mocha",
     "coverage": "NODE_ENV=test nyc npm test",
     "codecov": "codecov -f coverage/*.json",
-    "genDoc": "typedoc --module commonjs --target ES6 --out doc/typedoc src/",
+    "genDoc": "typedoc --out doc/typedoc src/",
     "build-container": "docker build -t alehuo/mapgo-backend .",
     "run-container": "docker run -p 8081:8081 -d alehuo/mapgo-backend",
     "publish-container": "docker push alehuo/mapgo-backend"

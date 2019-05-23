@@ -1,167 +1,181 @@
-import { Algorithm, ArrayList, Edge, Coordinate, Heap, Node, AStarNode, Point } from "../struct/index";
-import { Statistics, Arrays, MathUtils } from "../utils/index";
-import { AStarComparator } from "../comparator/index";
 import Comparator from "../interface/Comparator";
+import {
+  Algorithm,
+  ArrayList,
+  AStarNode,
+  Coordinate,
+  Edge,
+  Heap,
+  Node,
+  Point,
+} from "../struct/index";
+import { Arrays, MathUtils, Statistics } from "../utils/index";
 
 /**
  * A* algorithm.
  * @author Aleksi Huotala
  */
 class AStar extends Algorithm {
+  /**
+   * Distance starting array
+   */
+  private distStart: number[];
 
-    /**
-     * Distance starting array
-     */
-    private distStart: number[];
+  /**
+   * Distance ending array
+   */
+  private distEnd: number[];
 
-    /**
-     * Distance ending array
-     */
-    private distEnd: number[];
+  /**
+   * Path array
+   */
+  private path: number[];
 
-    /**
-     * Path array
-     */
-    private path: number[];
+  /**
+   * Number of nodes
+   */
+  private nodeCount: number;
 
+  /**
+   * Comparator.
+   */
+  private comparator: Comparator<Node>;
 
-    /**
-     * Number of nodes
-     */
-    private nodeCount: number;
+  constructor(
+    graph: Array<ArrayList<Edge>>,
+    coordList: Coordinate[],
+    stats: Statistics,
+    minMaxData: number[],
+    comparator: Comparator<Node>,
+  ) {
+    super(graph, coordList, stats, minMaxData);
 
-    /**
-     * Comparator.
-     */
-    private comparator: any;
+    // Set node count
+    this.nodeCount = graph.length;
 
-    constructor(graph: ArrayList<Edge>[], coordList: Coordinate[], stats: Statistics, minMaxData: number[], comparator: Comparator<Node>) {
-        super(graph, coordList, stats, minMaxData);
+    // Comparator
+    this.comparator = comparator;
 
-        // Set node count
-        this.nodeCount = graph.length;
+    // Fill starting distance array.
+    this.distStart = new Array<number>(this.nodeCount);
+    Arrays.fill(this.distStart, this.INFINITY);
+    Object.seal(this.distStart);
 
-        // Comparator
-        this.comparator = comparator;
+    // Fill ending distance array
+    this.distEnd = new Array<number>(this.nodeCount);
+    Arrays.fill(this.distEnd, this.INFINITY);
+    Object.seal(this.distEnd);
 
-        // Fill starting distance array.
-        this.distStart = new Array<number>(this.nodeCount);
-        Arrays.fillNum(this.distStart, this.INFINITY);
-        Object.seal(this.distStart);
+    // Fill path array.
+    this.path = new Array<number>(this.nodeCount);
+    Arrays.fill(this.path, 0);
+    Object.seal(this.path);
+  }
 
-        // Fill ending distance array
-        this.distEnd = new Array<number>(this.nodeCount);
-        Arrays.fillNum(this.distEnd, this.INFINITY);
-        Object.seal(this.distEnd);
+  public calculate(start: number, end: number) {
+    // Initialize
+    this.initialize(start, end);
+    // Visited list
+    const visited = new Array<boolean>(this.nodeCount);
+    Arrays.fill(visited, false);
+    Object.seal(visited);
 
-        // Fill path array.
-        this.path = new Array<number>(this.nodeCount);
-        Arrays.fillNum(this.path, 0);
-        Object.seal(this.path);
-    }
+    // Minimum heap that takes the goal's coordinates as its argument.
+    const heap = new Heap<AStarNode>(this.comparator);
 
-    /**
-     * Initializes data structures.
-     * @param start Starting node
-     */
-    private initialize(start: number, end: number): void {
-        Arrays.fillNum(this.distStart, this.INFINITY);
-        Arrays.fillNum(this.path, 0);
-        this.distStart[start] = 0;
-    }
+    // Insert starting node
+    heap.heapInsert(new AStarNode(start, this.distStart[start]));
 
-    public calculate(start: number, end: number): number {
-        // Initialize
-        this.initialize(start, end);
-        // Visited list
-        let visited: boolean[] = new Array<boolean>(this.nodeCount);
-        Arrays.fillBoolean(visited, false);
-        Object.seal(visited);
+    while (!heap.isEmpty()) {
+      const u = heap.heapDelMin();
 
-        // Minimum heap that takes the goal's coordinates as its argument.
-        let heap: Heap<AStarNode> = new Heap<AStarNode>(this.comparator);
+      if (u.number === end) {
+        break;
+      }
 
-        // Insert starting node
-        heap.heapInsert(new AStarNode(start, this.distStart[start]));
+      for (let i = 0; i < this.getGraph()[u.number].size(); i++) {
+        // Starting
+        const strt = u.number;
+        // Destination edge, O(1) operation
+        const dest = this.getGraph()[strt].get(i);
 
-        while (!heap.isEmpty()) {
+        if (!visited[dest.getDest()]) {
+          // O(1)
+          if (
+            this.distStart[dest.getDest()] >
+            this.distStart[strt] + dest.getWeight()
+          ) {
+            this.distStart[dest.getDest()] =
+              this.distStart[strt] + dest.getWeight();
 
-            let u: Node = heap.heapDelMin();
+            // Add path
+            this.path[dest.getDest()] = strt;
 
-            if (u.number == end) {
-                break;
-            }
+            // Add a new edge.
+            this.addEdge(
+              this.getCoordList()[u.number],
+              this.getCoordList()[dest.getDest()],
+            );
 
-            for (let i = 0; i < this.getGraph()[u.number].size(); i++) {
-                // Starting
-                let strt: number = u.number;
-                // Destination edge, O(1) operation
-                let dest: Edge = this
-                    .getGraph()[strt]
-                    .get(i);
-
-                if (!visited[dest.getDest()]) {
-                    // O(1)
-                    if (this.distStart[dest.getDest()] > this.distStart[strt] + dest.getWeight()) {
-                        this.distStart[dest.getDest()] = this.distStart[strt] + dest.getWeight();
-
-                        // Add path
-                        this.path[dest.getDest()] = strt;
-
-                        // Add a new edge.
-                        this.addEdge(this.getCoordList()[u.number], this.getCoordList()[dest.getDest()]);
-
-                        // Add new node
-                        let tmpNode: Node = new Node(dest.getDest(), this.getCoordList[strt]);
-                        tmpNode.lat = this.getCoordList()[dest.getDest()].lat;
-                        tmpNode.lon = this.getCoordList()[dest.getDest()].lon;
-                        heap.heapInsert(tmpNode);
-                    }
-                }
-            }
-            visited[u.number] = true;
-
+            // Add new node
+            const tmpNode = new Node(dest.getDest(), this.getCoordList[strt]);
+            tmpNode.lat = this.getCoordList()[dest.getDest()].lat;
+            tmpNode.lon = this.getCoordList()[dest.getDest()].lon;
+            heap.heapInsert(tmpNode);
+          }
         }
-        return this.distStart[end];
+      }
+      visited[u.number] = true;
+    }
+    return this.distStart[end];
+  }
+
+  /**
+   * Execute the algorithm.
+   */
+  public run(startingNode?: number, endingNode?: number) {
+    if (startingNode == null || startingNode === undefined) {
+      startingNode = 0;
+    } else {
+      if (startingNode < 0) {
+        startingNode = 0;
+      }
+      if (startingNode > this.nodeCount - 1) {
+        startingNode = this.nodeCount - 1;
+      }
     }
 
-    /**
-     * Execute the algorithm.
-     */
-    public run(startingNode?: number, endingNode?: number): void {
-        if (startingNode == null || startingNode === undefined) {
-            startingNode = 0;
-        } else {
-            if (startingNode < 0) {
-                startingNode = 0;
-            }
-            if (startingNode > this.nodeCount - 1) {
-                startingNode = this.nodeCount - 1;
-            }
-        }
+    if (endingNode == null || endingNode === undefined) {
+      endingNode = this.nodeCount - 1;
+    } else {
+      if (endingNode > this.nodeCount - 1) {
+        endingNode = this.nodeCount - 1;
+      }
 
-        if (endingNode == null || endingNode === undefined) {
-            endingNode = this.nodeCount - 1;
-        } else {
-            if (endingNode > this.nodeCount - 1) {
-                endingNode = this.nodeCount - 1;
-            }
-
-            if (endingNode < 0) {
-                endingNode = 0;
-            }
-        }
-
-        let startCoords: Coordinate = this.getCoordList()[startingNode];
-        let startingPoint: Point = MathUtils.convertCoordinateToPoint(startCoords);
-        let endCoords: Coordinate = this.getCoordList()[endingNode];
-        let endingPoint: Point = MathUtils.convertCoordinateToPoint(endCoords);
-        this.setStartCoords(startingPoint);
-        this.setEndCoords(endingPoint);
-
-        this.calculate(startingNode, endingNode);
+      if (endingNode < 0) {
+        endingNode = 0;
+      }
     }
 
+    const startCoords = this.getCoordList()[startingNode];
+    const startingPoint = MathUtils.convertCoordinateToPoint(startCoords);
+    const endCoords = this.getCoordList()[endingNode];
+    const endingPoint = MathUtils.convertCoordinateToPoint(endCoords);
+    this.setStartCoords(startingPoint);
+    this.setEndCoords(endingPoint);
+
+    this.calculate(startingNode, endingNode);
+  }
+
+  /**
+   * Initializes data structures.
+   * @param start Starting node
+   */
+  private initialize(start: number, end: number) {
+    Arrays.fill(this.distStart, this.INFINITY);
+    Arrays.fill(this.path, 0);
+    this.distStart[start] = 0;
+  }
 }
 
 export default AStar;
